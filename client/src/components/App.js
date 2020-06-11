@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import HallOfFame from "./hall-of-fame/HallOfFame";
+import Testimonials from "./testimonials/Testimonials";
 import './App.css'
 import Carousel from "./Carousel/Carousel";
 import Navbar from "./Navbar/Navbar";
@@ -8,14 +10,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.min.js"
 
-function App() {
+export default () => {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <Carousel />
       <TopPicks />
+      <HallOfFame />
+      <Testimonials />
     </div>
   );
-}
+};
 
-export default App;
