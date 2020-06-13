@@ -21,8 +21,6 @@ export default () => {
           <div className="item" href="#">
             Drama/Acting
           </div>
-         
-          
         </div>
 
         <div className="ui link cards">
@@ -42,8 +40,11 @@ export default () => {
             image_link="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
           />
         </div>
-        <div classname="ui segment" style={{display: 'flex', justifyContent: 'center'}}>
-          <button className="ui red button massive" >View More</button>
+        <div
+          className="ui segment"
+          style={{display: "flex", justifyContent: "center"}}
+        >
+          <button className="ui red button massive">View More</button>
         </div>
       </div>
     </div>
