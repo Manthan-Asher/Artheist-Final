@@ -1,0 +1,23 @@
+p {
+  font-weight: 500;
+  font-size: large;
+}
+
+.description {
+  box-sizing: content-box;
+  display: flex !important;
+  flex-wrap: wrap;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  font-size: 150% !important;
+  padding-top: 3vh;
+}
+
+.description-box {
+  padding: 6vh 0vh;
+}
+
+.desc-title {
+  font-size: 4vw !important;
+  padding-bottom: 2vh;
+}
