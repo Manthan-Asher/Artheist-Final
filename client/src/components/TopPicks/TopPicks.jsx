@@ -102,7 +102,7 @@ class TopPicks extends Component {
 
         <div className="row">
           <div className="row__inner">
-            <div className="tile">
+            {/* <div className="tile">
               <div className="tile__media">
                 <img
                   className="tile__img"
@@ -113,7 +113,7 @@ class TopPicks extends Component {
               <div className="tile__details">
                 <div className="tile__title">Top Gear</div>
               </div>
-            </div>
+            </div> */}
             <div
               className="tile"
               onMouseEnter={this.play1}
@@ -232,7 +232,7 @@ class TopPicks extends Component {
               </div>
             </div>
 
-            <div className="tile">
+            {/* <div className="tile">
               <div className="tile__media">
                 <img
                   className="tile__img"
@@ -321,9 +321,9 @@ class TopPicks extends Component {
               <div className="tile__details">
                 <div className="tile__title">Top Gear</div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="tile">
+            {/* <div className="tile">
               <div className="tile__media">
                 <img
                   className="tile__img"
@@ -386,8 +386,8 @@ class TopPicks extends Component {
               <div className="tile__details">
                 <div className="tile__title">Top Gear</div>
               </div>
-            </div>
-          </div>
+            </div>*/}
+          </div> 
         </div>
       </div>
     );
