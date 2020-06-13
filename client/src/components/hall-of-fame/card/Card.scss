@@ -1,10 +1,9 @@
 .card {
-
-    height: 60% !important;
-
+    height: 110% !important;
     .content {
+        background-color: #1B1C1D;
 
-        opacity: 0;
+        // opacity: 100%;
 
         .header {
             font-size: 200% !important;
@@ -13,24 +12,18 @@
         color: white !important;
     }
 
-    &:hover {
-        transition: 0.5s !important;
-        transform: translateY(-50px) !important;
-        .content {
-            animation: anim 0.5s none ease-in-out;
-            opacity: 100%;
+    &:hover{
+        transition: 0.25s !important;
+        transform: translateY(100px) !important;
+        animation: anim 0.5s none ease-in-out;
+        // background-color: transparent !important;
+        // background-image: none !important;
+        height: 60% !important;
+        .content{
+            // opacity: 0;
+            display: none;
+
         }
-
-        height: 100% !important;
-
-        .image {
-            .img {
-
-                text-shadow: -12px -12px 12px 0 rgba($color: white, $alpha: 0.04),
-                    12px 12px 12px 0 rgba($color: black, $alpha: 1) !important;
-            }
-        }
-
     }
 
 
@@ -44,8 +37,18 @@
     width: 25% !important;
 
 @keyframes anim {
-    from {opacity: 0;}
-    to {opacity: 100%;}
+    from {
+        .content{
+            display: block;
+        }
+        height: 110% !important;
+    }
+    to {
+        .content{
+            display: none;
+        }
+        height: 60% !important;
+    }
 }
 
 }

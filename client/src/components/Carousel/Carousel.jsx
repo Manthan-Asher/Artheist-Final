@@ -25,53 +25,53 @@ export default class Carousel extends Component {
       variableWidth: true,
       waitForAnimate: false,
       pauseOnHover: true,
-      cssEase: 'ease'
+      cssEase: "ease",
     };
     return (
       <div className="carouselContainer">
-        <h2>Cover Flow Carousel</h2> 
+        <h2>Cover Flow Carousel</h2>
         <Slider {...settings}>
           <div className="contestPoster">
             <img src={one}></img>
             <div>
-             <h4>Active Contest</h4>
-             <button className="participateBtn">Participate Now</button>
-           </div>
+              <h4>Active Contest</h4>
+              <button className="participateBtn">Participate Now</button>
+            </div>
           </div>
           <div className="contestPoster">
-            <img src={two}></img>  
+            <img src={two}></img>
             <div>
-             <h4>Active Contest</h4>
-             <button className="participateBtn">Participate Now</button>
-           </div>
+              <h4>Active Contest</h4>
+              <button className="participateBtn">Participate Now</button>
+            </div>
           </div>
           <div className="contestPoster">
             <img src={three}></img>
             <div>
-             <h4>Active Contest</h4>
-             <button className="participateBtn">Participate Now</button>
-           </div>
+              <h4>Active Contest</h4>
+              <button className="participateBtn">Participate Now</button>
+            </div>
           </div>
           <div className="contestPoster">
             <img src={four}></img>
             <div>
-             <h4>Active Contest</h4>
-             <button className="participateBtn">Participate Now</button>
-           </div>
+              <h4>Active Contest</h4>
+              <button className="participateBtn">Participate Now</button>
+            </div>
           </div>
           <div className="contestPoster">
-           <img src={five}></img>
-           <div>
-             <h4>Active Contest</h4>
-             <button className="participateBtn">Participate Now</button>
-           </div>
+            <img src={five}></img>
+            <div>
+              <h4>Active Contest</h4>
+              <button className="participateBtn">Participate Now</button>
+            </div>
           </div>
           <div className="contestPoster">
-          <img src={six}></img>
-          <div>
-             <h4>Active Contest</h4>
-             <button className="participateBtn">Participate Now</button>
-           </div>
+            <img src={six}></img>
+            <div>
+              <h4>Active Contest</h4>
+              <button className="participateBtn">Participate Now</button>
+            </div>
           </div>
         </Slider>
       </div>
