@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./topPicks.scss";
 import "../../../node_modules/video-react/dist/video-react.css";
 import {Player, BigPlayButton, ControlBar} from "video-react";
+import Button from "@material-ui/core/Button";
 
 // import x from "../../assets/videos/pqr.mp4";
 // import y from "../../assets/videos/abc.mp4";
@@ -12,6 +13,14 @@ import {Player, BigPlayButton, ControlBar} from "video-react";
 class TopPicks extends Component {
   constructor(props, context) {
     super(props, context);
+
+    this.state = {
+      button1: false,
+      button2: false,
+      button3: false,
+      button4: false,
+      button5: false,
+    };
 
     this.play1 = this.play1.bind(this);
     this.play2 = this.play2.bind(this);
@@ -45,35 +54,50 @@ class TopPicks extends Component {
     const {player} = this.player1.getState();
     if (player.currentTime < 10) {
       this.player1.play();
-      setTimeout(() => this.pause1(), 11000 - player.currentTime * 1000);
+      setTimeout(() => {
+        this.pause1();
+        this.setState({button1: true});
+      }, 11000 - player.currentTime * 1000);
     }
   }
   play2() {
     const {player} = this.player2.getState();
     if (player.currentTime < 10) {
       this.player2.play();
-      setTimeout(() => this.pause2(), 11000 - player.currentTime * 1000);
+      setTimeout(() => {
+        this.pause2();
+        this.setState({button2: true});
+      }, 11000 - player.currentTime * 1000);
     }
   }
   play3() {
     const {player} = this.player3.getState();
     if (player.currentTime < 10) {
       this.player3.play();
-      setTimeout(() => this.pause3(), 11000 - player.currentTime * 1000);
+      setTimeout(() => {
+        this.pause3();
+        this.setState({button3: true});
+      }, 11000 - player.currentTime * 1000);
     }
   }
   play4() {
     const {player} = this.player4.getState();
     if (player.currentTime < 10) {
       this.player4.play();
-      setTimeout(() => this.pause4(), 11000 - player.currentTime * 1000);
+      setTimeout(() => {
+        this.pause4();
+        this.setState({button4: true});
+      }, 11000 - player.currentTime * 1000);
     }
   }
   play5() {
     const {player} = this.player5.getState();
     if (player.currentTime < 10) {
       this.player5.play();
-      setTimeout(() => this.pause5(), 11000 - player.currentTime * 1000);
+      setTimeout(() => {
+        this.pause5();
+        this.setState({button5: true});
+      }, 11000 - player.currentTime * 1000);
     }
   }
 
@@ -102,7 +126,7 @@ class TopPicks extends Component {
 
         <div className="row">
           <div className="row__inner">
-            {/* <div className="tile">
+            <div className="tile">
               <div className="tile__media">
                 <img
                   className="tile__img"
@@ -113,7 +137,7 @@ class TopPicks extends Component {
               <div className="tile__details">
                 <div className="tile__title">Top Gear</div>
               </div>
-            </div> */}
+            </div>
             <div
               className="tile"
               onMouseEnter={this.play1}
@@ -128,6 +152,11 @@ class TopPicks extends Component {
                     this.player1 = player1;
                   }}
                 >
+                  {this.state.button1 ? (
+                    <Button variant="contained" className="video-button">
+                      Click Here to watch more
+                    </Button>
+                  ) : null}
                   <BigPlayButton position="center" />
                   <ControlBar disableCompletely={true} />
                 </Player>
@@ -151,6 +180,11 @@ class TopPicks extends Component {
                     this.player2 = player2;
                   }}
                 >
+                  {this.state.button2 ? (
+                    <Button variant="contained" className="video-button">
+                      Click Here to watch more
+                    </Button>
+                  ) : null}
                   <BigPlayButton position="center" />
                   <ControlBar disableCompletely={true} />
                 </Player>
@@ -175,6 +209,11 @@ class TopPicks extends Component {
                     this.player3 = player3;
                   }}
                 >
+                  {this.state.button3 ? (
+                    <Button variant="contained" className="video-button">
+                      Click Here to watch more
+                    </Button>
+                  ) : null}
                   <BigPlayButton position="center" />
                   <ControlBar disableCompletely={true} />
                 </Player>
@@ -199,6 +238,11 @@ class TopPicks extends Component {
                     this.player4 = player4;
                   }}
                 >
+                  {this.state.button4 ? (
+                    <Button variant="contained" className="video-button">
+                      Click Here to watch more
+                    </Button>
+                  ) : null}
                   <BigPlayButton position="center" />
                   <ControlBar disableCompletely={true} />
                 </Player>
@@ -223,6 +267,11 @@ class TopPicks extends Component {
                     this.player5 = player5;
                   }}
                 >
+                  {this.state.button5 ? (
+                    <Button variant="contained" className="video-button">
+                      Click Here to watch more
+                    </Button>
+                  ) : null}
                   <BigPlayButton position="center" />
                   <ControlBar disableCompletely={true} />
                 </Player>
@@ -387,7 +436,7 @@ class TopPicks extends Component {
                 <div className="tile__title">Top Gear</div>
               </div>
             </div>*/}
-          </div> 
+          </div>
         </div>
       </div>
     );
