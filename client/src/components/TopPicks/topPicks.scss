@@ -170,3 +170,13 @@ p {
 .tile:hover ~ .tile {
   transform: translate3d($moveRight, 0, 0);
 }
+
+.video-button {
+  background-color: transparent !important;
+  text-align: center !important;
+  position: relative;
+  left: 3vw;
+  bottom: 11vh;
+  z-index: 2;
+  border: 2px solid white;
+}

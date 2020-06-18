@@ -42,7 +42,11 @@ export default () => {
         </div>
         <div
           className="ui segment"
+<<<<<<< HEAD
           style={{display: "flex", justifyContent: "center", backgroundColor: "#1B1C1D"}}
+=======
+          style={{display: "flex", justifyContent: "center",width: 230, margin: "0 auto"}}
+>>>>>>> 884621ea7ab85839a08aa229c1be9890b8c542bb
         >
           <button className="ui red button massive">View More</button>
         </div>
