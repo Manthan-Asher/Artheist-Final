@@ -23,7 +23,7 @@ export default () => {
           </div>
         </div>
 
-        <div className="ui link cards">
+        <div className="link1">
           <Card
             date="December 29, 2019"
             name="Aayushi Kumari"
@@ -42,7 +42,7 @@ export default () => {
         </div>
         <div
           className="ui segment"
-          style={{display: "flex", justifyContent: "center"}}
+          style={{display: "flex", justifyContent: "center", backgroundColor: "#1B1C1D"}}
         >
           <button className="ui red button massive">View More</button>
         </div>
