@@ -19,7 +19,7 @@ export default class Carousel extends Component {
       slidesToShow: 3,
       speed: 600,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 15000,
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       variableWidth: true,

@@ -1,6 +1,7 @@
 
 .slick-slider , .slick-list {
     height: 500px;
+    margin-top: -48px;
 }
 
 .slick-track {
@@ -18,8 +19,8 @@
 {
     float: left;
     box-sizing: border-box;
-    height: 100%;
-    width: 900px;
+    height: 338px;
+    width: 640px;
     min-height: 1px;
     border: 1px solid black !important;
 }
@@ -83,17 +84,26 @@
 
 h2 {
     visibility: hidden;
-    margin-bottom: 30px !important;
+    margin-bottom: 0px !important;
 }
 
 .carouselContainer {
     /* background-color: dodgerblue; */
-    opacity: 1;
+    background: url('../../assets/finall.png');
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: 110% 100%;
+    width: 100%;
+    /* opacity: 1; */
     position: relative;
     margin-bottom: 0px;
     height: 92vh;
 }
 
+.carouselContainer h2 {
+    margin-bottom: 82px !important;
+}
+/* 
 .carouselContainer::before {
     content: "";
     display: block;
@@ -116,7 +126,7 @@ h2 {
     width: 200px;
     z-index: 1;
     opacity: .8;  
-}
+} */
 
 .contestPoster {
     position: relative;

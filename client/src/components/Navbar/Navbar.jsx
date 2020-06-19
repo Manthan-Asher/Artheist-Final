@@ -7,7 +7,7 @@ class NavBar extends Component {
   render() {
     return (
       <>
-        <Navbar bg="info" expand="lg">
+        <Navbar bg="dark" expand="lg">
           <Navbar.Brand href="#home">artHeist</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
