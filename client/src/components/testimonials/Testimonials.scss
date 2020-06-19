@@ -1,4 +1,26 @@
 .main-test {
 
     background-color: #1B1C1D !important;
+
+    .images {
+        display: flex;
+        justify-content: space-between;
+
+        .image {
+            margin-top: 5%;
+            width: 30%;
+
+            img {
+                max-width: 100%;
+            }
+
+            box-shadow: -12px -12px 12px 0 rgba($color: white, $alpha: 0.04),
+            12px 12px 12px 0 rgba($color: black, $alpha: 1) !important;
+
+            &:hover{
+                transition: 0.25s;
+                transform: scale(1.1)
+            }
+        }
+    }
 }
