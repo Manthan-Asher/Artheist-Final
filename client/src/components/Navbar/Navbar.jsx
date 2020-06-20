@@ -1,13 +1,23 @@
 import React, {Component} from "react";
 import {Nav, Navbar, Dropdown, Button} from "react-bootstrap";
 import "./Navbar.css";
+import Login from "../Login/Login";
 
 class NavBar extends Component {
-  state = {};
+  state = {open: false};
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
   render() {
     return (
       <>
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="info" expand="lg">
           <Navbar.Brand href="#home">artHeist</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -22,7 +32,6 @@ class NavBar extends Component {
                 <Dropdown.Toggle variant="none" id="dropdown-basic">
                   <i className="fa fa-bars" aria-hidden="true"></i>
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
                   <Dropdown.Item href="#/action-1">About Us</Dropdown.Item>
                   <Dropdown.Item href="#/action-2">What we do ?</Dropdown.Item>
@@ -32,9 +41,15 @@ class NavBar extends Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Nav>
-            <Button variant="danger">Sign Up | Login</Button>
+            <Button variant="danger">Sign Up</Button>
+            <Button variant="outline" onClick={this.handleOpen}>
+              Login
+            </Button>
           </Navbar.Collapse>
         </Navbar>
+        {this.state.open ? (
+          <Login handleClose={this.handleClose} openButton={this.state.open} />
+        ) : null}
       </>
     );
   }

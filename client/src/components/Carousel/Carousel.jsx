@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import "./carousel.css";
 
@@ -29,7 +29,7 @@ export default class Carousel extends Component {
     };
     return (
       <div className="carouselContainer">
-        <h2>Cover Flow Carousel</h2>
+        <h2 className="carousel-title">Cover Flow Carousel</h2>
         <Slider {...settings}>
           <div className="contestPoster">
             <img src={one}></img>
