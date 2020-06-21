@@ -2,21 +2,29 @@ import React, {Component} from "react";
 import {Nav, Navbar, Dropdown, Button} from "react-bootstrap";
 import "./Navbar.css";
 import Login from "../Login/Login";
+import Signup from "../Signup/Signup";
 
 class NavBar extends Component {
-  state = {open: false};
+  state = {loginOpen: false, signupOpen: false};
 
-  handleOpen = () => {
-    this.setState({open: true});
+  handleLoginOpen = () => {
+    this.setState({loginOpen: true});
   };
 
-  handleClose = () => {
-    this.setState({open: false});
+  handleLoginClose = () => {
+    this.setState({loginOpen: false});
+  };
+  handleSignupOpen = () => {
+    this.setState({signupOpen: true});
+  };
+
+  handleSignupClose = () => {
+    this.setState({signupOpen: false});
   };
 
   render() {
     return (
-      <>
+      <div>
         <Navbar bg="info" expand="lg">
           <Navbar.Brand href="#home">artHeist</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -41,16 +49,19 @@ class NavBar extends Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Nav>
-            <Button variant="danger">Sign Up</Button>
-            <Button variant="outline" onClick={this.handleOpen}>
+            <Button variant="danger" onClick={this.handleSignupOpen}>Sign Up</Button>
+            <Button variant="outline" onClick={this.handleLoginOpen}>
               Login
             </Button>
           </Navbar.Collapse>
         </Navbar>
-        {this.state.open ? (
-          <Login handleClose={this.handleClose} openButton={this.state.open} />
+        {this.state.loginOpen ? (
+          <Login handleClose={this.handleLoginClose} openButton={this.state.loginOpen} />
         ) : null}
-      </>
+        {this.state.signupOpen ? (
+          <Signup handleClose={this.handleSignupClose} openButton={this.state.signupOpen} />
+        ) : null}
+      </div>
     );
   }
 }
