@@ -5,14 +5,14 @@
 }
 
 .slick-track {
-    height: 450px;
-    padding: 25px 0px;
-    width: 13000px !important;
+  height: 450px;
+  padding: 25px 0px;
+  width: 13000px !important;
 }
 
 .slick-slider .slick-list .slick-track .slick-active {
-    transform: scaleX(0.8) scaleY(0.8);
-    z-index: 4;
+  transform: scaleX(0.8) scaleY(0.8);
+  z-index: 4;
 }
 
 .slick-slider .slick-list .slick-track .slick-slide
@@ -25,83 +25,82 @@
     border: 1px solid black !important;
 }
 
- .slick-slider .slick-list .slick-track .slick-slide div {
-    height: 100%;
-} 
-
-.slick-slider .slick-list .slick-track .slick-slide img {
-    height: 100%;
-    width: 100%;
-    display: block;
-    overflow: hidden;
+.slick-slider .slick-list .slick-track .slick-slide div {
+  height: 100%;
 }
 
+.slick-slider .slick-list .slick-track .slick-slide img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
 
 .slick-slider .slick-list .slick-track .slick-current {
-    color: white;
-    opacity: 1;
-    transform: scale(1.1);
-    transition: all 0.9s ease;
-    margin: 0 auto;
-    z-index: 4;
+  color: white;
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.9s ease;
+  margin: 0 auto;
+  z-index: 4;
 }
 
 .slick-slider .slick-track,
-.slick-slider .slick-list
-{
-    -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-.slick-slider  .slick-dots {
-    top: 96%;
-    height: 30px;
+.slick-slider .slick-dots {
+  top: 96%;
+  height: 30px;
 }
 
 .slick-dots li button {
-    color: white ;
+  color: white;
 }
 
-.slick-slider > .slick-prev::before , .slick-slider > .slick-next::before{
-    color: white;
-    background-color: transparent;
+.slick-slider > .slick-prev::before,
+.slick-slider > .slick-next::before {
+  color: white;
+  background-color: transparent;
 }
 
 .slick-slider > .slick-prev {
-    left: 45px !important;
-    z-index: 2 !important;
-    background-color: transparent;
+  left: 45px !important;
+  z-index: 2 !important;
+  background-color: transparent;
 }
 
 .slick-slider > .slick-next {
-    right: 45px !important;
-    z-index: 2 !important;
-    background-color: transparent;
+  right: 45px !important;
+  z-index: 2 !important;
+  background-color: transparent;
 }
 
-h2 {
-    visibility: hidden;
-    margin-bottom: 0px !important;
+.carousel-title {
+  visibility: hidden;
+  margin-bottom: 0px !important;
 }
 
 .carouselContainer {
-    /* background-color: dodgerblue; */
-    background: url('../../assets/finall.png');
-    background-repeat: no-repeat;
-    background-position:  center;
-    background-size: 110% 100%;
-    width: 100%;
-    /* opacity: 1; */
-    position: relative;
-    margin-bottom: 0px;
-    height: 92vh;
+  /* background-color: dodgerblue; */
+  background: url("../../assets/finall.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110% 100%;
+  width: 100%;
+  /* opacity: 1; */
+  position: relative;
+  margin-bottom: 0px;
+  height: 92vh;
 }
 
 .carouselContainer h2 {
-    margin-bottom: 82px !important;
+  margin-bottom: 82px !important;
 }
 /* 
 .carouselContainer::before {
@@ -129,15 +128,15 @@ h2 {
 } */
 
 .contestPoster {
-    position: relative;
+  position: relative;
 }
 
 .contestPoster > div {
-    position: absolute;
-    width: 200px;
-    height: auto;
-    top: 10px;
-    right: 10px;
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 10px;
+  right: 10px;
 }
 
 .contestPoster > div > .participateBtn {
