@@ -1,0 +1,17 @@
+.MuiButtonBase-root {
+    max-height: 140px;
+}
+
+.MuiCard-root {
+    height: auto;
+}
+
+.MuiCardContent-root > h2 {
+    visibility: visible;
+}
+
+.MuiCardActions-spacing > :not(:first-child) {
+    margin-left: 40px !important;
+    background-color: #f755a6;
+    color: white !important;
+}

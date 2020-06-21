@@ -1,0 +1,48 @@
+.ContestContainer {
+    width: 75%;
+    display: inline-block;
+    height: auto;
+    padding: 20px;
+}
+
+.ContestContainer > div > .MuiAppBar-colorPrimary {
+    background-color: white !important;
+}
+
+.MuiButtonBase-root {
+    color: black !important;
+}
+
+.Mui-selected {
+    border-bottom: 2px solid crimson !important;
+}
+
+.Mui-selected::after {
+    content: " ";
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+.Mui-selected:focus {
+    text-decoration: none;
+}
+
+.MuiTab-root , .MuiTab-root:hover{
+    text-decoration: none;
+}
+
+.MuiTypography-body1 {
+    margin: 0 !important;
+    max-width: 100%;
+} 
+
+.MuiCard-root {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+}

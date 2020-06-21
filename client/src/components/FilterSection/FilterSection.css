@@ -1,0 +1,98 @@
+.FilterContainer {
+  float: left; 
+  margin-top: 100px !important;
+  width: 25% !important;
+  
+}
+
+.SubFilters > button {
+  padding: 5px;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  width: 100px;
+  margin: 10px 0;
+}
+
+.SubFilters > button > i {
+  padding-left: 20px;
+}
+
+.SubFilters > ul > li {
+  padding: 8px;
+}
+
+#checkbox {
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 976px) {
+  .FilterContainer {
+    width: 20% !important;
+    display: inline-block !important;
+  }
+  .Filter {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+  .SubFilters {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+  .fa-filter {
+    display: none;
+  }
+}
+@media screen and (max-width: 975px) {
+  .FilterContainer {
+    display: none;
+  }
+}
+
+.Filter > header > span {
+  font-weight: bold;
+}
+
+.SubFilters > ul > li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.SubFilters ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.SubFilters > button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.SubFilters {
+  display: block;
+}
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}

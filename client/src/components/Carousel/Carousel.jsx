@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "./carousel.css";
 
-import one from "../../assets/1.jpg";
-import two from "../../assets/2.jpg";
-import three from "../../assets/3.jpg";
-import four from "../../assets/4.jpg";
-import five from "../../assets/5.jpg";
-import six from "../../assets/6.jpg";
+// import one from "../../assets/1.jpg";
+// import two from "../../assets/2.jpg";
+// import three from "../../assets/3.jpg";
+// import four from "../../assets/4.jpg";
+// import five from "../../assets/5.jpg";
+// import six from "../../assets/6.jpg";
 
 export default class Carousel extends Component {
   render() {
@@ -32,42 +32,42 @@ export default class Carousel extends Component {
         <h2>Cover Flow Carousel</h2>
         <Slider {...settings}>
           <div className="contestPoster">
-            <img src={one}></img>
+            <img src="https://images.unsplash.com/photo-1474308305481-198184645d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>
             </div>
           </div>
           <div className="contestPoster">
-            <img src={two}></img>
+            <img src="https://images.unsplash.com/photo-1474308371634-c715850e8d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>
             </div>
           </div>
           <div className="contestPoster">
-            <img src={three}></img>
+          <img src="https://images.unsplash.com/photo-1474308305481-198184645d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>
             </div>
           </div>
           <div className="contestPoster">
-            <img src={four}></img>
+          <img src="https://images.unsplash.com/photo-1474308371634-c715850e8d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>
             </div>
           </div>
           <div className="contestPoster">
-            <img src={five}></img>
+          <img src="https://images.unsplash.com/photo-1474308305481-198184645d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>
             </div>
           </div>
           <div className="contestPoster">
-            <img src={six}></img>
+          <img src="https://images.unsplash.com/photo-1474308371634-c715850e8d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Nav, Navbar, Dropdown, Button} from "react-bootstrap";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
   state = {};
@@ -8,16 +9,20 @@ class NavBar extends Component {
     return (
       <>
         <Navbar bg="dark" expand="lg">
-          <Navbar.Brand href="#home">artHeist</Navbar.Brand>
+          <Link to="/" >
+            <Navbar.Brand href="#home">artHeist</Navbar.Brand>
+          </Link>        
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="#home" className="mb4">
+              <Nav.Link href="#feed" className="mb4">
                 Feed
               </Nav.Link>
-              <Nav.Link href="#link">Contest</Nav.Link>
-              <Nav.Link href="#home">Create Contest</Nav.Link>
-              <Nav.Link href="#link">Artists</Nav.Link>
+              <Link to="/contest" className="contest-link">
+                <Nav.Link href="#contests" to="/contest">Contest</Nav.Link>
+              </Link>
+              <Nav.Link href="#createContest">Create Contest</Nav.Link>
+              <Nav.Link href="#artists">Artists</Nav.Link>
               <Dropdown>
                 <Dropdown.Toggle variant="none" id="dropdown-basic">
                   <i className="fa fa-bars" aria-hidden="true"></i>

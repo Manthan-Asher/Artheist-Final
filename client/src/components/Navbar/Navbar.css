@@ -10,9 +10,10 @@
     padding-right: 1em;
 }
 
-.dropdown-toggle:focus {
+.dropdown-toggle:focus , .dropdown-toggle:hover{
     box-shadow: none !important;
-}
+    color: white;
+} 
 
 .navbar {
     padding: 0 2em;
@@ -26,7 +27,6 @@
     padding-right: 2em !important;
     padding-left: 2em !important;
     font-size: large;
-    color: #000;
     color: white !important;
     opacity: .8;
     transition: all .1s ease-in;
@@ -37,8 +37,11 @@
     
 }
 
-
 .navbar-brand {
     font-size: xx-large;
     color: white !important;    
+}
+
+.contest-link:hover {
+    text-decoration: none;
 }
