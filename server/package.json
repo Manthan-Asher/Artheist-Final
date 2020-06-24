@@ -4,12 +4,20 @@
   "description": "Server for Artheist",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "server": "nodemon server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "config": "^3.3.1",
     "express": "^4.17.1",
+    "express-validator": "^6.6.0",
     "mongoose": "^5.9.17"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
   }
 }
