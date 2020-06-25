@@ -8,27 +8,28 @@ console.log('CONNECTED TO MONGODB');
 
 //  CREATING SCHEMA
 
-const userSchema = new mongoose.Schema({
+const contestSchema = new mongoose.Schema({
     name: String,
-    email: String,
-    password: String,
-    about: String,
-    social_media_handle: String,
-    contests: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'contest'
-    }],
-    imageUrl: String,
+    start_date: Date,
+    end_date: Date,
+    prize: Number,
+    type: String,
+    organised_by: mongoose.Schema.Types.ObjectId,
     posts: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'post'
     }],
-    mobile_number: Number,
-    type: String,
+    description: String,
+    status: Boolean,
+    imageUrl: String,
+    juries: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'jury'
+    }],
 })
 
 
 //  ADD PLUGINS FOR PASSPORT HERE!!
 
 //  EXPORTING MODEL
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Contest", contestSchema);
