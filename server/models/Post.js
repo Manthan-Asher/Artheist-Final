@@ -1,27 +1,33 @@
 const mongoose = require("mongoose");
-const config = require('../config/config');
-
-const db = config.mongoURL; // Address of Website
-
-mongoose.connect(db);
-console.log('CONNECTED TO MONGODB');
 
 //  CREATING SCHEMA
 
-const postSchema = new mongoose.Schema({
-    name: String,
-    participant: mongoose.Schema.Types.ObjectId,
-    likes: Number,
-    contest: mongoose.Schema.Types.ObjectId,
-    videoUrl: String,
+const PostSchema = new mongoose.Schema({
+  participant: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  likes: [
+    {
+      user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    },
+  ],
+  contest: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Contest",
+  },
+  URL: {
     type: String,
-    ranking: Number,
-    report: Number,
-    jury_score: Number,
-})
-
+    required: true,
+  },
+  ranking: Number,
+  jury_score: Number,
+});
 
 //  ADD PLUGINS FOR PASSPORT HERE!!
 
 //  EXPORTING MODEL
-module.exports = mongoose.model("Post", postSchema);
+module.exports = Post = mongoose.model("Post", postSchema);

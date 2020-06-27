@@ -1,34 +1,48 @@
 const mongoose = require("mongoose");
-const config = require('../config/config');
-
-const db = config.mongoURL; // Address of Website
-
-mongoose.connect(db);
-console.log('CONNECTED TO MONGODB');
+const passportLocalMongoose = require("passport-local-mongoose");
+const findOrCreate = require("mongoose-findorcreate");
 
 //  CREATING SCHEMA
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    password: String,
-    about: String,
-    social_media_handle: String,
-    contests: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'contest'
-    }],
-    imageUrl: String,
-    posts: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'post'
-    }],
-    mobile_number: Number,
+const UserSchema = new mongoose.Schema({
+  name: {
     type: String,
-})
-
+  },
+  site_name: {
+    type: String,
+  },
+  username: {
+    type: String,
+  },
+  password: String,
+  googleId: String,
+  facebookId: String,
+  avatar: String,
+  about: String,
+  social_media_handle: String,
+  contests: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Contest",
+    },
+  ],
+  posts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post",
+    },
+  ],
+  mobile_number: {
+    type: Number,
+  },
+});
 
 //  ADD PLUGINS FOR PASSPORT HERE!!
+UserSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(findOrCreate);
+
+const User = mongoose.model("User", UserSchema);
 
 //  EXPORTING MODEL
-module.exports = mongoose.model("User", userSchema);
+
+module.exports = User;
