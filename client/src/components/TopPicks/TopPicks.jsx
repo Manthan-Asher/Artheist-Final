@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./topPicks.scss";
 import "../../../node_modules/video-react/dist/video-react.css";
 import {Player, BigPlayButton, ControlBar} from "video-react";
-import Button from "@material-ui/core/Button";
+import {Button} from "@material-ui/core";
 
 // import x from "../../assets/videos/pqr.mp4";
 // import y from "../../assets/videos/abc.mp4";
