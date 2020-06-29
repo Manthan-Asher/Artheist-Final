@@ -7,17 +7,97 @@ p {
   box-sizing: content-box;
   display: flex !important;
   flex-wrap: wrap;
-  padding-left: 20vw;
-  padding-right: 20vw;
-  font-size: 150% !important;
-  padding-top: 3vh;
+  font-size: 17px !important;
+  padding-top: 3%;
+  letter-spacing: 0.05em;
+  line-height: 28px;
 }
 
 .description-box {
-  padding: 6vh 0vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  display: flex;
+  align-items: center;
+  color: white !important;
+  background: url('../../assets/WhatWeDoBg.png');
+  background-size: cover;
+  background-position: 0px 0px;
+  padding: 20px 20px;
+  margin-top: 10% !important;
+  width: 35%;
+  height: 70%;
 }
 
 .desc-title {
-  font-size: 4vw !important;
+  font-size: 36px !important;
+  line-height: 44px;
   padding-bottom: 2vh;
+}
+
+.what-we-do {
+  margin-top: 100px;
+  height: 100vh;
+  position: relative;
+  
+}
+
+.what-we-do img {
+  height: auto;
+  width: 60%;
+  padding: 0%;
+  margin: 2%;
+  margin-top: 4%;
+}
+
+.MuiButtonBase-root {
+  color: #ff4230 ;
+}
+
+.whatWeDoBtn {
+  background-color: #f1f1f1 !important;
+  border-radius: 10px !important;
+  padding: 4px 8px !important;
+  color: #ff4230 !important;
+  border: 2px solid white !important;
+  outline: 0 !important;
+  margin-top: 20px !important;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.whatWeDoBtn:hover {
+  background-color: #ddd !important;
+}
+
+@media screen and (max-width: 1010px) {
+  .bgContainer{
+    display: block;
+    margin: 0 auto;
+    width: 755px;
+    height: auto;
+  }
+  
+  .bgContainer img {
+    width: 100%;
+  }
+
+   .description-box {
+    position: initial;
+    width: 60%;
+    height: 500px;
+    margin: 30px auto;
+    background-size: contain;
+  } 
+  .what-we-do {
+    height: auto;
+    margin: 0 10%;
+  }
+  .description {
+    padding: 0px;
+  }
+  
+
 }

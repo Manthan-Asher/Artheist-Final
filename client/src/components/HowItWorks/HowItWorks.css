@@ -1,0 +1,93 @@
+.how-it-works {
+    width: 80%;
+    height: 100vh;
+    background-color: #f1f1f1;
+    margin: 300px 10%;
+    padding-top: 50px;
+    position: relative;
+}
+
+.how-it-works::before {
+    content: "";
+    display: block;
+    background-image: url('../../assets/bottom_shadow2.png');
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: -30px;
+    left: 25px;
+    right: 25px;
+    height: 30px;
+    opacity: 0.8;
+    transform: rotate(180deg);
+}
+
+.how-it-works::after {
+    content: "";
+    display: block;
+    background-image: url('../../assets/bottom_shadow2.png');
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    bottom: -30px;
+    left: 25px;
+    right: 25px;
+    height: 30px;
+    transform: rotate(0deg);
+}
+
+.how-it-works h1 {
+    text-align: center;
+}
+
+.how-it-works .step {
+    display: inline-block;
+    width: 45%;
+    height: 150px;
+    margin: 30px 2.5%;
+
+}
+.step-content {
+    display: inline-block;
+    height: 100%;
+}
+
+.step-icon {
+    width: 110px;
+    height: 100%;
+    float: left;
+}
+
+.step-icon > img {
+    width: 100px;
+    height: 100px;
+    box-shadow: 1px 1px 9px 1px  #777;
+}
+
+.step-content {
+    width: calc(100% - 130px);
+}
+
+.step-content h4 {
+    text-align: left;
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.step-content p {
+    text-align: justify;
+    padding: 10px;
+    font-size: medium;
+}
+
+.step-content > button {
+    background-color: dodgerblue;
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: medium;
+}

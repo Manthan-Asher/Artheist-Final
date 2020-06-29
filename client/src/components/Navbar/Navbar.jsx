@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
+import Logo from "../../assets/artHeist_logo.png";
 
 class NavBar extends Component {
   state = {loginOpen: false, signupOpen: false};
@@ -26,16 +27,15 @@ class NavBar extends Component {
   render() {
     return (
       <>
-        {/* <Navbar bg="dark" expand="lg">
-                */}
       <div>
-        <Navbar bg="info" expand="lg">
-          <Link to="/" >
-            <Navbar.Brand href="#home">artHeist</Navbar.Brand>
+        <Navbar bg="info" expand="lg" className="navBar">
+          <Link to="/home" >
+            <img src={Logo} className="logo-img" />
+            <Navbar.Brand href="#home" className="navbar-brand">artHeist</Navbar.Brand>
           </Link> 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
+            <Nav className="ml-5 mr-auto">
               <Nav.Link href="#feed" className="mb4">
                 Feed
               </Nav.Link>
@@ -57,10 +57,8 @@ class NavBar extends Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Nav>
-            <Button variant="danger" onClick={this.handleSignupOpen}>Sign Up</Button>
-            <Button variant="outline" onClick={this.handleLoginOpen}>
-              Login
-            </Button>
+            <Button variant="outline" onClick={this.handleSignupOpen} className="signUpBtn">Sign Up</Button>
+            <Button variant="outline" onClick={this.handleLoginOpen} className="loginBtn">Login</Button>
           </Navbar.Collapse>
         </Navbar>
         {this.state.loginOpen ? (

@@ -11,7 +11,7 @@
 }
 
 .MuiCardActions-spacing > :not(:first-child) {
-    margin-left: 40px !important;
+    margin-left: 10px !important;
     background-color: #f755a6;
     color: white !important;
 }

@@ -14,9 +14,9 @@ export default () => {
     <Router>
         <Navbar />
          <Switch> 
-            <Route path="/" exact component={HomePage} ></Route>
+            <Route path="/home" exact component={HomePage} ></Route>
             <Route path="/contest" exact component={Contest} ></Route>
-            <Redirect to="/" />
+            <Redirect to="/home" />
          </Switch> 
         <Footer />
     </Router>

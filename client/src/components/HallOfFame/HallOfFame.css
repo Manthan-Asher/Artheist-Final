@@ -1,0 +1,55 @@
+.HallOfFameContainer {
+    height: auto;
+    width: 100%;
+    padding: 5% 10%;
+    background-color: #1b1c1d;
+    padding-bottom: 10%;
+    color: white !important;
+}
+
+.HallOfFameContainer > h1 {
+    text-align: left;
+    font-size: 50px;
+}
+
+.tabs {
+    background: #1b1c1d;
+    color: white !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.MuiButtonBase-root {
+    color: initial ;
+}
+
+.tabs > div > div > a:hover {
+    color: #fff;
+}
+
+.tabPanel {
+    margin-top: 30px;
+    height: 400px;
+}
+
+.tabPanel > div , .tabPanel > div > p{
+    height: inherit;
+}
+
+.MuiPaper-elevation4 {
+    box-shadow: initial !important;
+}
+
+.fameBtnContainer {
+    width: 96px;
+    margin: 0 auto;
+}
+
+.hallOfFameBtn {
+    padding: 10px;
+    color: white;
+    background-color: crimson;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+}

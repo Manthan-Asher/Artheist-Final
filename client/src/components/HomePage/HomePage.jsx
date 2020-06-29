@@ -2,8 +2,9 @@ import React from 'react';
 import Carousel from "../Carousel/Carousel";
 import TopPicks from "../TopPicks/TopPicks";
 import Description from "../Description/Description";
-import HallOfFame from "../hall-of-fame/HallOfFame";
-import Testimonials from "../testimonials/Testimonials";
+import HallOfFame from "../HallOfFame/HallOfFame";
+import Testimonials from "../Testimonials/Testimonials";
+import HowItWorks from '../HowItWorks/HowItWorks';
 
 const HomePage = () => {
     return ( 
@@ -11,6 +12,7 @@ const HomePage = () => {
           <Carousel />
           <TopPicks />
           <Description />
+          <HowItWorks />
           <HallOfFame />
           <Testimonials />
         </>

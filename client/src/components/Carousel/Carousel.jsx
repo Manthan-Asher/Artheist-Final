@@ -2,12 +2,7 @@ import React, {Component} from "react";
 import Slider from "react-slick";
 import "./carousel.css";
 
-// import one from "../../assets/1.jpg";
-// import two from "../../assets/2.jpg";
-// import three from "../../assets/3.jpg";
-// import four from "../../assets/4.jpg";
-// import five from "../../assets/5.jpg";
-// import six from "../../assets/6.jpg";
+import ccc from "../../assets/carousal_demo.png";
 
 export default class Carousel extends Component {
   render() {
@@ -20,8 +15,8 @@ export default class Carousel extends Component {
       speed: 600,
       autoplay: true,
       autoplaySpeed: 15000,
-      dots: true,
-      dotsClass: "slick-dots slick-thumb",
+      // dots: true,
+      // dotsClass: "slick-dots slick-thumb",
       variableWidth: true,
       waitForAnimate: false,
       pauseOnHover: true,
@@ -29,10 +24,9 @@ export default class Carousel extends Component {
     };
     return (
       <div className="carouselContainer">
-        <h2 className="carousel-title">Cover Flow Carousel</h2>
         <Slider {...settings}>
           <div className="contestPoster">
-            <img src="https://images.unsplash.com/photo-1474308305481-198184645d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></img>
+            <img src={ccc}></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>

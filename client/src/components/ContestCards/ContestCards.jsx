@@ -79,6 +79,7 @@ export default function NavTabs() {
           <Tabs
             variant="fullWidth"
             value={value}
+            className="tabs2"
             onChange={handleChange}
             aria-label="nav tabs example"
           >
