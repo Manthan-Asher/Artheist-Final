@@ -38,7 +38,8 @@ label {
   margin-bottom: 5px;
 }
 
-#email, #password {
+#email,
+#password {
   background: transparent;
   border: 0;
   font-size: 20px;

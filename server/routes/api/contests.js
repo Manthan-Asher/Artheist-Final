@@ -9,8 +9,9 @@ const passport = require("passport");
 router.get("/", (req, res) => {
   if (req.isAuthenticated()) {
     res.send("Congo you made it through");
+  } else {
+    res.redirect("/");
   }
-  res.redirect("/");
 });
 
 module.exports = router;

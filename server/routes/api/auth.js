@@ -35,9 +35,16 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({googleId: profile.id}, function (err, user) {
-        return cb(err, user);
-      });
+      User.findOrCreate(
+        {
+          googleId: profile.id,
+          name: profile.displayName,
+          avatar: profile.photos[0].value,
+        },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
     }
   )
 );
@@ -51,9 +58,13 @@ passport.use(
       callbackURL: "http://localhost:5000/auth/facebook/contests",
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({facebookId: profile.id}, function (err, user) {
-        return cb(err, user);
-      });
+      console.log(profile);
+      User.findOrCreate(
+        {facebookId: profile.id, name: profile.displayName, avatar: ""},
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
     }
   )
 );
@@ -62,7 +73,13 @@ passport.use(
 //@desc   Login with google
 //@access  Public
 
-router.get("/google", passport.authenticate("google", {scope: ["profile"]}));
+router.get(
+  "/google",
+  passport.authenticate("google", {scope: ["profile"]}),
+  (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+  }
+);
 
 //@route   GET /auth/google/contests
 //@desc    Redirected page after login with google
@@ -70,10 +87,13 @@ router.get("/google", passport.authenticate("google", {scope: ["profile"]}));
 
 router.get(
   "/google/contests",
-  passport.authenticate("google", {failureRedirect: "/"}),
+  passport.authenticate("google", {
+    failureRedirect: "http://localhost:3000",
+  }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/contests");
+    res.redirect("http://localhost:3000/signup");
+    // console.log(req.user);
   }
 );
 
@@ -81,7 +101,13 @@ router.get(
 //@desc   Login with facebook
 //@access  Public
 
-router.get("/facebook", passport.authenticate("facebook"));
+router.get(
+  "/facebook",
+  passport.authenticate("facebook", {scope: ["profile"]}),
+  (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+  }
+);
 
 //@route   GET /auth/facebook/contests
 //@desc    Redirected page after login with facebook
@@ -89,11 +115,27 @@ router.get("/facebook", passport.authenticate("facebook"));
 
 router.get(
   "/facebook/contests",
-  passport.authenticate("facebook", {failureRedirect: "/"}),
+  passport.authenticate("facebook", {failureRedirect: "http://localhost:3000"}),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/contests");
+    res.redirect("http://localhost:3000/signup");
   }
 );
+
+router.get("/login", (req, res) => {
+  if (req.user) {
+    res.status(200).json({
+      success: true,
+      message: "user has successfully authenticated",
+      user: req.user,
+      cookies: req.cookies,
+    });
+  } else {
+    res.status(401).json({
+      success: false,
+      message: "user failed to authenticate.",
+    });
+  }
+});
 
 module.exports = router;

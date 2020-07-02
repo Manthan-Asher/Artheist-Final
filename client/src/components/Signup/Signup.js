@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import {connect} from "react-redux";
+import {register} from "../../actions/auth";
+import {Redirect} from "react-router-dom";
 import {
   Button,
   Dialog,
@@ -60,20 +63,47 @@ const handleFocus3 = (e) => {
   });
 };
 
-export default function Login({ openButton, handleClose }) {
+const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
   const [input, setInput] = useState({
     name: "",
     email: "",
     password: "",
-    type: "",
   });
 
+  const {name, email, password} = input;
+
+  const [showPassword, togglePassword] = useState(false);
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setInput((prevValue) => {
-      return { ...prevValue, [name]: value };
+      return {...prevValue, [name]: value};
     });
   };
+
+  const Submit = async () => {
+    const user = {
+      name,
+      username: email,
+      password,
+    };
+
+    await register(user);
+  };
+
+  if (isAuthenticated) {
+    return <Redirect to="/signup" />;
+  }
+
+  function loginWithFacebook() {
+    // window.location.href = "http://localhost:5000/auth/facebook/contests";
+    window.open("http://localhost:5000/auth/facebook", "_self");
+  }
+
+  function loginWithGoogle() {
+    // window.location.href = "http://localhost:5000/auth/google/contests";
+    window.open("http://localhost:5000/auth/google", "_self");
+  }
 
   return (
     <div>
@@ -87,12 +117,18 @@ export default function Login({ openButton, handleClose }) {
           <Button
             size="large"
             variant="contained"
-            style={{ backgroundColor: "red", fontWeight: "bold" }}
+            style={{backgroundColor: "red", fontWeight: "bold"}}
+            onClick={loginWithGoogle}
           >
             <i className="fab fa-google" />
             Signup with Google
           </Button>
-          <Button size="large" color="primary" variant="contained">
+          <Button
+            size="large"
+            color="primary"
+            variant="contained"
+            onClick={loginWithFacebook}
+          >
             <i className="fab fa-facebook" />
             Signup with Facebook
           </Button>
@@ -100,7 +136,7 @@ export default function Login({ openButton, handleClose }) {
         <DialogContent>
           <hr />
           <DialogContentText>OR</DialogContentText>
-          <p style={{ marginBottom: "-6vh" }}>Signup manually</p>
+          <p style={{marginBottom: "-6vh"}}>Signup manually</p>
           <svg viewBox="0 0 320 300">
             <defs>
               <linearGradient
@@ -111,16 +147,8 @@ export default function Login({ openButton, handleClose }) {
                 y2="193.49992"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop
-                  style={{ stopColor: "#ff00ff" }}
-                  offset="0"
-                  id="stop876"
-                />
-                <stop
-                  style={{ stopColor: "#ff0000" }}
-                  offset="1"
-                  id="stop878"
-                />
+                <stop style={{stopColor: "#ff00ff"}} offset="0" id="stop876" />
+                <stop style={{stopColor: "#ff0000"}} offset="1" id="stop878" />
               </linearGradient>
             </defs>
             <path d="m 40,120.00016 250.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
@@ -149,34 +177,51 @@ export default function Login({ openButton, handleClose }) {
 
             <label for="password">Password</label>
             <input
-              type="password"
+              className="password-input"
+              type={showPassword ? "text" : "password"}
               id="password"
               onFocus={handleFocus3}
               name="password"
               value={input.password}
               onChange={handleChange}
             />
+            <span>
+              <i
+                onClick={() => togglePassword(!showPassword)}
+                className={`password-icon fas fa-${
+                  showPassword ? "eye-slash" : "eye"
+                }`}
+              ></i>
+            </span>
           </div>
         </DialogContent>
         <DialogActions>
           <Button
             onClick={handleClose}
             variant="contained"
-            style={{ backgroundColor: "red", fontWeight: "bold" }}
+            style={{backgroundColor: "red", fontWeight: "bold"}}
             className="buttons"
           >
             Cancel
           </Button>
           <Button
-            onClick={handleClose}
+            onClick={Submit}
             color="primary"
             variant="contained"
             className="buttons"
           >
-            Login
+            Register
           </Button>
         </DialogActions>
       </Dialog>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps, {register})(Signup);

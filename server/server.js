@@ -1,9 +1,19 @@
 const express = require("express");
+const cors = require("cors");
 const passport = require("passport");
 const session = require("express-session");
 const connectDB = require("./config/db");
 const config = require("config");
 const Secret = config.get("sessionSecret");
+
+// connect Database
+connectDB();
+
+var corsOptions = {
+  credentials: true,
+  origin: "http://localhost:3000",
+  methods: "GET,POST,PATCH,PUT,DELETE",
+};
 
 const app = express();
 
@@ -21,8 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// connect Database
-connectDB();
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("API running ....Login Now");

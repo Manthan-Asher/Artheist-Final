@@ -1,12 +1,13 @@
 .App {
   text-align: center;
 }
-/* 
+
 body {
   overflow-x: hidden;
-} */
+}
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
