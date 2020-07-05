@@ -51,12 +51,11 @@ router.post("/", async (req, res) => {
       password,
       (err, user) => {
         if (err) {
-          res.status(400);
-          res.send(err.message);
+          return res.send(err);
         } else {
           passport.authenticate("local")(req, res, function () {
             res.status(200);
-            res.send("User registered");
+            res.json(req.user);
           });
         }
       }
@@ -80,18 +79,15 @@ router.post("/login", (req, res) => {
 
   req.login(user, (err) => {
     if (err) {
-      res.status(400);
-      res.send(err.message);
+      res.send({errors: [err]});
     } else {
       passport.authenticate("local")(req, res, function () {
         res.status(200);
-        res.send("User Logged in successfully");
+        res.json(req.user);
       });
     }
   });
 });
-
-module.exports = router;
 
 //@route   GET /user/logout
 //@desc   Logout user

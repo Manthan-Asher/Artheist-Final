@@ -1,4 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {connect} from "react-redux";
+import {login} from "../../actions/auth";
+import {Redirect, Link} from "react-router-dom";
 import {
   Button,
   Dialog,
@@ -44,11 +47,13 @@ const handleFocus2 = (e) => {
   });
 };
 
-export default function Login({openButton, handleClose}) {
+const Login = ({openButton, handleClose, login, isAuthenticated}) => {
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
+
+  const {email, password} = input;
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -57,6 +62,28 @@ export default function Login({openButton, handleClose}) {
     });
   };
 
+  const Submit = async () => {
+    const user = {
+      username: email,
+      password,
+    };
+    await login(user);
+  };
+
+  if (isAuthenticated) {
+    return <Redirect to="/signup" />;
+  }
+
+  const loginWithFacebook = () => {
+    // window.location.href = "http://localhost:5000/auth/facebook/contests";
+    window.open("http://localhost:5000/auth/facebook", "_self");
+  };
+
+  function loginWithGoogle() {
+    // window.location.href = "http://localhost:5000/auth/google/contests";
+    window.open("http://localhost:5000/auth/google", "_self");
+  }
+
   return (
     <div>
       <Dialog
@@ -64,17 +91,25 @@ export default function Login({openButton, handleClose}) {
         onClose={openButton}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Login Now</DialogTitle>
+        <DialogTitle id="form-dialog-title" style={{fontWeight: "bold"}}>
+          Login Now
+        </DialogTitle>
         <DialogActions className="icon-button">
           <Button
             size="large"
             variant="contained"
-            style={{backgroundColor: "red", fontWeight: "bold"}}
+            style={{backgroundColor: "red"}}
+            onClick={loginWithGoogle}
           >
             <i className="fab fa-google" />
             Login with Google
           </Button>
-          <Button size="large" color="primary" variant="contained">
+          <Button
+            size="large"
+            color="primary"
+            variant="contained"
+            onClick={loginWithFacebook}
+          >
             <i className="fab fa-facebook" />
             Login with Facebook
           </Button>
@@ -131,7 +166,7 @@ export default function Login({openButton, handleClose}) {
             Cancel
           </Button>
           <Button
-            onClick={handleClose}
+            onClick={Submit}
             color="primary"
             variant="contained"
             className="buttons"
@@ -142,4 +177,12 @@ export default function Login({openButton, handleClose}) {
       </Dialog>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps, {login})(Login);

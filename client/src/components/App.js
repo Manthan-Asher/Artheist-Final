@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 import { BrowserRouter as Router, Route , Switch, Redirect } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import Contest from "./ContestPage/Contest";
+import SignUpPage from './SignupPage/SignUpPage';
 
 export default () => {
   return (
@@ -16,6 +17,7 @@ export default () => {
          <Switch> 
             <Route path="/home" exact component={HomePage} ></Route>
             <Route path="/contest" exact component={Contest} ></Route>
+            <Route path="/signup" exact component={SignUpPage} ></Route>
             <Redirect to="/home" />
          </Switch> 
         <Footer />
