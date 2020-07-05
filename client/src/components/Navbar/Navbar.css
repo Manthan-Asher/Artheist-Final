@@ -115,4 +115,11 @@
     padding-left: .8em;
     padding-right: .8em;
   }
+  .navbar-nav {
+    margin-left: 10px !important;
+  }
+  .navbar-nav .nav-link {
+    padding-right: 1em !important;
+    padding-left: 1em !important;
+  }
 }

@@ -21,14 +21,14 @@ export default function ImgMediaCard() {
   return (
     <Card className={classes.root}>
       
-        <CardMedia
+        <div
           // component="video"
           // height="180"
         >
           <video width="330" height="180" controls poster="https://387b72ivq1z3mni0n261y7l1-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/app-store-video.jpg">
             <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" type="video/mp4" />
           </video>
-        </CardMedia>
+        </div>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Artist Name

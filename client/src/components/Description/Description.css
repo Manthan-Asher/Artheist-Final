@@ -75,8 +75,10 @@ p {
 @media screen and (max-width: 1010px) {
   .bgContainer{
     display: block;
+    float: left;
+    /* margin-top: -100px !important; */
     margin: 0 auto;
-    width: 755px;
+    width: 60%;
     height: auto;
   }
   
@@ -85,15 +87,18 @@ p {
   }
 
    .description-box {
+    display: inline-block;
     position: initial;
-    width: 60%;
-    height: 500px;
-    margin: 30px auto;
-    background-size: contain;
+    width: 40%;
+    height: auto;
+    /* margin: 30px auto; */
+    background-size: 100% auto;
   } 
   .what-we-do {
-    height: auto;
-    margin: 0 10%;
+    height: 100vh;
+    padding-top: 100px;
+    margin: 0 5%;
+    width: 90%;
   }
   .description {
     padding: 0px;

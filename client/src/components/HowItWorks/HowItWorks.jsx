@@ -7,7 +7,7 @@ const HowItWorks = () => {
       <h1>How It Works ?</h1>
       <div className="step">
         <div className="step-icon">
-          <img src="https://loading.io/assets/img/c/icon/search.svg" />
+          <img src="#" />
         </div>
         <div className="step-content">
           <h4>Head1</h4>
@@ -20,7 +20,7 @@ const HowItWorks = () => {
       </div>
       <div className="step">
         <div className="step-icon" >
-          <img src="https://loading.io/assets/img/c/icon/search.svg" />
+          <img src="#" />
         </div>
         <div className="step-content">
           <h4>Head2</h4>
@@ -33,7 +33,7 @@ const HowItWorks = () => {
       </div>
       <div className="step">
         <div className="step-icon">
-          <img src="https://loading.io/assets/img/c/icon/search.svg" />
+          <img src="#" />
         </div>
         <div className="step-content">
           <h4>Head3</h4>
@@ -46,7 +46,7 @@ const HowItWorks = () => {
       </div>
       <div className="step">
         <div className="step-icon">
-          <img src="https://icons8.com/vue-static/landings/animated-icons/icons/submit-progress/submit-progress.gif" />
+          <img src="#" />
         </div>
         <div className="step-content">
           <h4>Head4</h4>

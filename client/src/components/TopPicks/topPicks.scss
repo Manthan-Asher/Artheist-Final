@@ -21,10 +21,17 @@ $moveRight: $tileWidth * ($growFactor - 1);
 // }
 
 .contain {
+  width: 100%;
+  max-width: 100%;
+  //overflow-x: hidden;
+  height: 100vh;
+  padding: 10vh 0;
+  color: white;
   background: url('../../assets/stage1.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;  
+  background-color: #0e0f11;
 }
 
 * {
@@ -57,16 +64,11 @@ p {
   text-decoration: underline;
 }
 
-.contain {
-  width: 100%;
-  height: 100vh;
-  padding: 10vh 0;
-  color: white;
-  background-color: #0e0f11;
-}
 .row {
-  overflow-x: scroll !important;
-  width: 150%;
+  overflow-x: scroll;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .row::-webkit-scrollbar {

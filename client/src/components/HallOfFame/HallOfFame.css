@@ -53,3 +53,21 @@
     border: 0;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 1010px) {
+    .tabPanel {
+        margin-top: 20px;
+        height: auto;
+    }
+    .MuiBox-root {
+        padding: 10px 0 !important;
+    }
+    .MuiCard-root {
+        margin: 0 !important;
+        margin-right: 10px !important;
+        width: 32% !important;
+    }
+    video {
+        width: 256px;
+    }
+}

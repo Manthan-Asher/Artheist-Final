@@ -5,6 +5,7 @@
     margin: 300px 10%;
     padding-top: 50px;
     position: relative;
+    border-radius: 5px;
 }
 
 .how-it-works::before {
@@ -90,4 +91,37 @@
     margin-left: 10px;
     font-weight: bold;
     font-size: medium;
+}
+
+@media screen and (max-width: 1010px) {
+    .how-it-works {
+        margin: 200px auto;
+        border-radius: 5px;
+    }
+    .how-it-works h1 {
+        font-size: 35px;
+    } 
+    .how-it-works::before {
+        top: -25px;
+        height: 25px;
+        opacity: 0.7;
+    }
+    .how-it-works::after {
+        bottom: -25px;
+        height: 25px;
+        opacity: 0.7;
+    }
+    .step-content p {
+        text-align: justify;
+        padding: 10px;
+        letter-spacing: 0em;
+        word-spacing: 0;
+        font-size: small;
+        font-weight: 400;
+    }
+    .step-content > button {
+        background-color: dodgerblue;
+        padding: 4px 15px;
+        font-weight: 400;
+    }
 }
