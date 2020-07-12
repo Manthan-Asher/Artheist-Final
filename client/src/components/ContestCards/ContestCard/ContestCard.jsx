@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import contestPhoto from "../../../assets/contest.jpg";
+import { Link } from "react-router-dom";
 
 import "./ContestCard.css";
 
@@ -41,7 +42,7 @@ export default function ImgMediaCard() {
       {/* </CardActionArea> */}
       <CardActions>
         <Button size="small" color="primary">
-          Learn More
+          <Link to="/contestDesc"> Learn More</Link>
         </Button>
         <Button size="small" color="secondary" variant="outlined">
           Enter Contest

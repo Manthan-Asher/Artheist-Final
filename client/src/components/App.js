@@ -9,16 +9,19 @@ import { BrowserRouter as Router, Route , Switch, Redirect } from "react-router-
 import HomePage from "./HomePage/HomePage";
 import Contest from "./ContestPage/Contest";
 import SignUpPage from './SignupPage/SignUpPage';
+import ContestDesc from "./ContestDescription/ContestDesc";
 
 export default () => {
   return (
     <Router>
         <Navbar />
          <Switch> 
+            <Route path="/" exact component={HomePage} ></Route>
             <Route path="/home" exact component={HomePage} ></Route>
             <Route path="/contest" exact component={Contest} ></Route>
             <Route path="/signup" exact component={SignUpPage} ></Route>
-            <Redirect to="/home" />
+            <Route path="/contestDesc" exact component={ContestDesc} ></Route>
+            {/* <Redirect to="/home" /> */}
          </Switch> 
         <Footer />
     </Router>

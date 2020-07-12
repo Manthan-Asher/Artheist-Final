@@ -8,7 +8,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 const Description = () => {
   return (
     <div className="what-we-do">
-      <ScrollAnimation animateIn="fadeIn" delay={700} duration={2}>
+      <ScrollAnimation animateIn="fadeIn" delay={500} duration={2}>
         <div className="bgContainer">
           <img src={bg} />
         </div>
