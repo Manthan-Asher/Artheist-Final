@@ -1,18 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React, {useEffect} from "react";
+import PropTypes from "prop-types";
+import {getContests} from "../../actions/contests";
+import {connect} from "react-redux";
+import {makeStyles} from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 import "./ContestCards.css";
 
-import ContestCard from "./ContestCard/ContestCard";
+import ImgMediaCard from "./ContestCard/ContestCard";
 import Pagination from "../Pagination/Pagination";
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const {children, value, index, ...other} = props;
 
   return (
     <div
@@ -40,7 +42,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `nav-tab-${index}`,
-    'aria-controls': `nav-tabpanel-${index}`,
+    "aria-controls": `nav-tabpanel-${index}`,
   };
 }
 
@@ -63,14 +65,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavTabs() {
+function NavTabs({getContests, contests: {contests}}) {
+  useEffect(() => {
+    getContests();
+  }, [getContests]);
+
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
 
   return (
     <div className="ContestContainer">
@@ -84,47 +89,48 @@ export default function NavTabs() {
             aria-label="nav tabs example"
           >
             <LinkTab label="Active Contests" href="/drafts" {...a11yProps(0)} />
-            <LinkTab label="Upcoming Contests" href="/trash" {...a11yProps(1)} />
+            <LinkTab
+              label="Upcoming Contests"
+              href="/trash"
+              {...a11yProps(1)}
+            />
             <LinkTab label="Previous Contests" href="/spam" {...a11yProps(2)} />
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
+          {contests.length > 0 &&
+            contests.map((contest) => (
+              <ImgMediaCard key={contest._id} contest={contest} />
+            ))}
         </TabPanel>
         <TabPanel value={value} index={1}>
-        <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
+          {contests.length > 0 ? (
+            contests.map((contest) => (
+              <ImgMediaCard key={contest._id} contest={contest} />
+            ))
+          ) : (
+            <h1>Loading..</h1>
+          )}
         </TabPanel>
         <TabPanel value={value} index={2}>
-        <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
-          <ContestCard />
+          {contests.length > 0 ? (
+            contests.map((contest) => (
+              <ImgMediaCard key={contest._id} contest={contest} />
+            ))
+          ) : (
+            <h1>Loading..</h1>
+          )}
         </TabPanel>
         <div>
-        <Pagination />
+          <Pagination />
+        </div>
       </div>
-      </div>    
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  contests: state.contests,
+});
+
+export default connect(mapStateToProps, {getContests})(NavTabs);

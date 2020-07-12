@@ -6,13 +6,14 @@ const contestSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   start_date: {
-    type: Date,
+    type: String,
     required: true,
   },
   end_date: {
-    type: Date,
+    type: String,
     required: true,
   },
   prize: {
@@ -23,7 +24,7 @@ const contestSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  organised_by: {
+  organized_by: {
     type: String,
     required: true,
   },
@@ -39,7 +40,7 @@ const contestSchema = new mongoose.Schema({
   },
   status: {
     type: Boolean,
-    required: true,
+    // required: true,
   },
   imageUrl: String,
   juries: [
@@ -49,8 +50,6 @@ const contestSchema = new mongoose.Schema({
     },
   ],
 });
-
-//  ADD PLUGINS FOR PASSPORT HERE!!
 
 //  EXPORTING MODEL
 module.exports = Contest = mongoose.model("Contest", contestSchema);
