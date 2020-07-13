@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
   facebookId: String,
   avatar: String,
   about: String,
-  social_media_handle: String,
+  insta_handle: String,
   contests: [
     {
       type: mongoose.Schema.Types.ObjectId,
