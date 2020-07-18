@@ -17,7 +17,8 @@ const UserSchema = new mongoose.Schema({
   password: String,
   googleId: String,
   facebookId: String,
-  avatar: String,
+  profile_pic: String,
+  avatar: Buffer,
   about: String,
   insta_handle: String,
   contests: [

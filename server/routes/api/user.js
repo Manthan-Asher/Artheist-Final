@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
         siteName,
         about,
         social_media_handle,
-        avatar: avatarImage,
+        profile_pic: avatarImage,
       },
       password,
       (err, user) => {

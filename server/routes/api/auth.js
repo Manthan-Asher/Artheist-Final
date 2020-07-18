@@ -39,7 +39,7 @@ passport.use(
         {
           googleId: profile.id,
           name: profile.displayName,
-          avatar: profile.photos[0].value,
+          profile_pic: profile.photos[0].value,
         },
         function (err, user) {
           return cb(err, user);
@@ -60,7 +60,7 @@ passport.use(
     function (accessToken, refreshToken, profile, cb) {
       console.log(profile);
       User.findOrCreate(
-        {facebookId: profile.id, name: profile.displayName, avatar: ""},
+        {facebookId: profile.id, name: profile.displayName},
         function (err, user) {
           return cb(err, user);
         }
