@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
-const findOrCreate = require("mongoose-findorcreate");
 
 //  CREATING SCHEMA
 
@@ -40,10 +39,5 @@ const UserSchema = new mongoose.Schema({
 
 //  ADD PLUGINS FOR PASSPORT HERE!!
 UserSchema.plugin(passportLocalMongoose);
-UserSchema.plugin(findOrCreate);
 
-const User = mongoose.model("User", UserSchema);
-
-//  EXPORTING MODEL
-
-module.exports = User;
+mongoose.model("User", UserSchema);

@@ -1,17 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 const upload = require("../../config/multer");
+const passport = require("passport");
 const sharp = require("sharp");
+const requireLogin = require("../../middleware/requireLogin");
 
-const User = require("../../models/User");
+const User = mongoose.model("User");
 
 router.patch(
   "/me/avatar",
+  requireLogin,
   upload.single("avatar"),
   async (req, res) => {
-    if (!req.user) {
-      return res.status(401).send("Please authenticate");
-    }
     const buffer = await sharp(req.file.buffer)
       .resize({width: 250, height: 250})
       .png()
@@ -25,7 +26,7 @@ router.patch(
   }
 );
 
-router.get("/:id/avatar", async (req, res) => {
+router.get("/:id/avatar", requireLogin, async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
 
