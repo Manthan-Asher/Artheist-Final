@@ -1,11 +1,22 @@
 .how-it-works {
     width: 80%;
-    height: 100vh;
-    background-color: #f1f1f1;
-    margin: 300px 10%;
-    padding-top: 50px;
+    height: auto;
+    min-height: 90%;
+    background-color: #ddd;
+    margin: 0% auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /*padding-bottom: 20px;
+    padding-right: 10%; */
     position: relative;
     border-radius: 5px;
+}
+
+.ddd {
+    /* height: calc(100vh - 68px); */
+    background-color: #f1f1f1;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .how-it-works::before {
@@ -15,10 +26,10 @@
     background-size: cover;
     background-position: center center;
     position: absolute;
-    top: -30px;
+    top: -20px;
     left: 25px;
     right: 25px;
-    height: 30px;
+    height: 20px;
     opacity: 0.8;
     transform: rotate(180deg);
 }
@@ -30,22 +41,25 @@
     background-size: cover;
     background-position: center center;
     position: absolute;
-    bottom: -30px;
+    bottom: -20px;
     left: 25px;
     right: 25px;
-    height: 30px;
+    height: 20px;
     transform: rotate(0deg);
 }
 
-.how-it-works h1 {
+.how-it-works > h1 {
     text-align: center;
+    font-size: 40px;
+    margin: 0 !important;
 }
 
 .how-it-works .step {
     display: inline-block;
-    width: 45%;
-    height: 150px;
-    margin: 30px 2.5%;
+    width: 46%;
+    height: auto;
+    min-height: 150px;
+    margin: 15px 1.5%;
 
 }
 .step-content {
@@ -75,17 +89,17 @@
     margin-bottom: 0;
 }
 
-.step-content p {
+.step-content > p {
     text-align: justify;
     padding: 10px;
     font-size: medium;
 }
 
 .step-content > button {
-    background-color: dodgerblue;
+    background-color: #fad149;
     border-radius: 5px;
     padding: 4px 8px;
-    color: #fff;
+    color: #444;
     border: 0;
     outline: 0;
     margin-left: 10px;

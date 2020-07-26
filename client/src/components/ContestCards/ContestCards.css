@@ -37,9 +37,10 @@
     text-decoration: none;
 }
 
-.MuiTypography-body1 {
+.ContestContainer > div > div > div > p {
     margin: 0 !important;
     max-width: 100%;
+    min-height: 700px;
 } 
 
 .MuiCard-root {

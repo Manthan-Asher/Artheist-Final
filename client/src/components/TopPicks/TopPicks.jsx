@@ -136,9 +136,9 @@ class TopPicks extends Component {
   render() {
     return (
       <div className="contain">
-        <h1>Our Top Picks</h1>
+        <h1>Top Picks</h1>
 
-        <p>Check out the winners of the Latest contest !</p>
+        {/* <p>Check out the winners of the Latest contest !</p> */}
 
         <div className="row">
           <div className="row__inner">
@@ -154,7 +154,7 @@ class TopPicks extends Component {
                 >
                   {/* {this.state.button1 ? (
                     <Button variant="contained" className="video-button">
-                      Click Here to watch the full video
+                      Continue Watching
                     </Button>
                   ) : null} */}
                   <BigPlayButton position="center" />
@@ -181,7 +181,7 @@ class TopPicks extends Component {
                 >
                   {this.state.button1 ? (
                     <Button variant="contained" className="video-button">
-                      Click Here to watch the full video
+                      Continue Watching
                     </Button>
                   ) : null}
                   <BigPlayButton position="center" />
@@ -209,7 +209,7 @@ class TopPicks extends Component {
                 >
                   {this.state.button2 ? (
                     <Button variant="contained" className="video-button">
-                      Click Here to watch the full video
+                      Continue Watching
                     </Button>
                   ) : null}
                   <BigPlayButton position="center" />
@@ -238,7 +238,7 @@ class TopPicks extends Component {
                 >
                   {this.state.button3 ? (
                     <Button variant="contained" className="video-button">
-                      Click Here to watch the full video
+                      Continue Watching
                     </Button>
                   ) : null}
                   <BigPlayButton position="center" />
@@ -267,7 +267,7 @@ class TopPicks extends Component {
                 >
                   {this.state.button4 ? (
                     <Button variant="contained" className="video-button">
-                      Click Here to watch the full video
+                      Continue Watching
                     </Button>
                   ) : null}
                   <BigPlayButton position="center" />
@@ -296,7 +296,7 @@ class TopPicks extends Component {
                 >
                   {this.state.button5 ? (
                     <Button variant="contained" className="video-button">
-                      Click Here to watch the full video
+                      Continue Watching
                     </Button>
                   ) : null}
                   <BigPlayButton position="center" />
@@ -307,164 +307,10 @@ class TopPicks extends Component {
                 <div className="tile__title">Top Gear</div>
               </div>
             </div>
-
-            {/* <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-7.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-8.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-10.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-11.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-12.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-13.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-14.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div> */}
-
-            {/* <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-15.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-16.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-17.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-18.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>
-
-            <div className="tile">
-              <div className="tile__media">
-                <img
-                  className="tile__img"
-                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-19.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="tile__details">
-                <div className="tile__title">Top Gear</div>
-              </div>
-            </div>*/}
           </div>
         </div>
+        <p className="topPicksPara">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veniam necessitatibus nisi excepturi officia quasi nam quo vero optio pariatur repudiandae aliquid, accusamus vitae saepe praesentium quidem sit? Provident, similique. "</p>
+        {/* <p className="topPicksPara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veniam necessitatibus nisi excepturi officia quasi nam quo vero optio pariatur repudiandae aliquid, accusamus vitae saepe praesentium quidem sit? Provident, similique</p> */}
       </div>
     );
   }

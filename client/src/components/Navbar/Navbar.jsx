@@ -4,7 +4,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-import Logo from "../../assets/artHeist_logo.png";
+import Logo from "../../assets/logo1.jpeg";
 
 class NavBar extends Component {
   state = {loginOpen: false, signupOpen: false};
@@ -28,7 +28,7 @@ class NavBar extends Component {
     return (
       <>
       <div>
-        <Navbar bg="info" expand="lg" className="navBar">
+        <Navbar bg="info" expand="lg" className="navBar fixed-top">
           <Link to="/home" >
             <img src={Logo} className="logo-img" />
             <Navbar.Brand href="#home" className="navbar-brand">artHeist</Navbar.Brand>

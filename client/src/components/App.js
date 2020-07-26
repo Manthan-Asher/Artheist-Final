@@ -26,7 +26,7 @@ export default () => {
             <Route path="/contest" exact component={Contest} ></Route>
             <Route path="/signup" exact component={SignUpPage} ></Route>
             <Route path="/contestDesc" exact component={ContestDesc} ></Route>
-            {/* <Redirect to="/home" /> */}
+            <Redirect to="/" /> 
          </Switch> 
         <Footer />
     </Router>

@@ -26,9 +26,13 @@ p {
   background-size: cover;
   background-position: 0px 0px;
   padding: 20px 20px;
-  margin-top: 10% !important;
+  margin-top: 8% !important;
   width: 35%;
   height: 70%;
+}
+
+.description-box > div {
+  min-height: initial;
 }
 
 .desc-title {
@@ -38,8 +42,8 @@ p {
 }
 
 .what-we-do {
-  margin-top: 100px;
-  height: 100vh;
+  /* margin-top: 100px; */
+  height: 92vh;
   position: relative;
   
 }
@@ -81,10 +85,10 @@ p {
     width: 60%;
     height: auto;
   }
-  
+/*   
   .bgContainer img {
     width: 100%;
-  }
+  } */
 
    .description-box {
     display: inline-block;
@@ -105,4 +109,20 @@ p {
   }
   
 
+}
+
+.bgContainer {
+  background-image: url("../../assets/artform2\(1\).png");
+
+  /* Set a specific height */
+  height: 100%;
+  width: 65%;
+  display: inline-block;
+  vertical-align: top;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-size: 60% 90% ;
+  background-position: bottom left; 
+  background-repeat: no-repeat;
+  /* background-size: contain; */
 }

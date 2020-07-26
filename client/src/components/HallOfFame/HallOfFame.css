@@ -28,7 +28,7 @@
 }
 
 .tabPanel {
-    margin-top: 30px;
+    margin-top: 0px;
     height: 400px;
 }
 
@@ -52,6 +52,10 @@
     outline: 0;
     border: 0;
     border-radius: 5px;
+}
+
+.HallOfFameContainer video {
+    width: 100%;
 }
 
 @media screen and (max-width: 1010px) {
