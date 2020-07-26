@@ -27,7 +27,4 @@ const PostSchema = new mongoose.Schema({
   jury_score: Number,
 });
 
-//  ADD PLUGINS FOR PASSPORT HERE!!
-
-//  EXPORTING MODEL
-module.exports = Post = mongoose.model("Post", postSchema);
+mongoose.model("Post", PostSchema);

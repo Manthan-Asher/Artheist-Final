@@ -1,21 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 const passport = require("passport");
 const gravatar = require("gravatar");
 
 // require Model
-const User = require("../../models/User");
-
-passport.use(User.createStrategy());
-passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function (id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
-});
+const User = mongoose.model("User");
 
 //@route   POST /user
 // @desc   Register user
@@ -46,7 +36,7 @@ router.post("/", async (req, res) => {
         siteName,
         about,
         social_media_handle,
-        avatar: avatarImage,
+        profile_pic: avatarImage,
       },
       password,
       (err, user) => {
@@ -87,15 +77,6 @@ router.post("/login", (req, res) => {
       });
     }
   });
-});
-
-//@route   GET /user/logout
-//@desc   Logout user
-//@access  Public
-
-router.get("/logout", (req, res) => {
-  req.logout();
-  res.send("User logged out successfully");
 });
 
 module.exports = router;

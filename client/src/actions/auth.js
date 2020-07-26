@@ -50,19 +50,11 @@ export const login = (user) => async (dispatch) => {
   }
 };
 
-export const authLogin = (responseJson) => async (dispatch) => {
+export const authLogin = () => async (dispatch) => {
   try {
-    // const config = {
-    //   headers: {
-    //     "Content-type": "application/json",
-    //     "Access-Control-Allow-Credentials": true,
-    //   },
-    //   withCredentials: true,
-    // };
+    const res = await axios.get("/auth/current_user");
 
-    // const res = await axios.get("http://localhost:5000/auth/login", config);
-
-    dispatch({type: LOGIN_SUCCESS, payload: responseJson.user});
+    dispatch({type: LOGIN_SUCCESS, payload: res.data});
   } catch (error) {
     dispatch({type: LOGIN_FAIL, payload: "User failed to Authenticate"});
   }

@@ -51,5 +51,4 @@ const contestSchema = new mongoose.Schema({
   ],
 });
 
-//  EXPORTING MODEL
-module.exports = Contest = mongoose.model("Contest", contestSchema);
+mongoose.model("Contest", contestSchema);

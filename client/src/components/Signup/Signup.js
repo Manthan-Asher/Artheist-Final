@@ -91,19 +91,19 @@ const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
     await register(user);
   };
 
-  if (isAuthenticated) {
-    return <Redirect to="/signup" />;
-  }
+  // if (isAuthenticated) {
+  //   return <Redirect to="/signup" />;
+  // }
 
-  function loginWithFacebook() {
-    // window.location.href = "http://localhost:5000/auth/facebook/contests";
-    window.open("http://localhost:5000/auth/facebook", "_self");
-  }
+  // function loginWithFacebook() {
+  //   // window.location.href = "http://localhost:5000/auth/facebook/contests";
+  //   window.open("http://localhost:5000/auth/facebook", "_self");
+  // }
 
-  function loginWithGoogle() {
-    // window.location.href = "http://localhost:5000/auth/google/contests";
-    window.open("http://localhost:5000/auth/google", "_self");
-  }
+  // function loginWithGoogle() {
+  //   // window.location.href = "http://localhost:5000/auth/google/contests";
+  //   window.open("http://localhost:5000/auth/google", "_self");
+  // }
 
   return (
     <div>
@@ -114,24 +114,24 @@ const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
       >
         <DialogTitle id="form-dialog-title">Signup Now</DialogTitle>
         <DialogActions className="icon-button">
-          <Button
+          <a
+            href="/auth/google"
             size="large"
             variant="contained"
             style={{backgroundColor: "red", fontWeight: "bold"}}
-            onClick={loginWithGoogle}
           >
             <i className="fab fa-google" />
             Signup with Google
-          </Button>
-          <Button
+          </a>
+          <a
+            href="/auth/facebook"
             size="large"
             color="primary"
             variant="contained"
-            onClick={loginWithFacebook}
           >
             <i className="fab fa-facebook" />
             Signup with Facebook
-          </Button>
+          </a>
         </DialogActions>
         <DialogContent>
           <hr />
