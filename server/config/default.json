@@ -1,0 +1,8 @@
+{
+  "mongoURL": "mongodb+srv://artheist:artheist123@artheist-0hzrc.mongodb.net/ArtHeist?retryWrites=true&w=majority",
+  "googleClientID": "1097983361080-eo524pnqde4far6ni0k952fhhgpn08lq.apps.googleusercontent.com",
+  "googleClientSecret": "Vw4bZGe6d-ey8zo6d_H-2jnG",
+  "facebookID": "2762565740682557",
+  "facebookSecret": "755dc6a5d133b6eaa2a0fa427c01a015",
+  "sessionSecret": "ArtHeist Secret"
+}

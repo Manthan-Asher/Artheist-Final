@@ -14,7 +14,7 @@ router.patch(
   upload.single("avatar"),
   async (req, res) => {
     const buffer = await sharp(req.file.buffer)
-      .resize({width: 250, height: 250})
+      .resize({ width: 250, height: 250 })
       .png()
       .toBuffer();
     req.user.avatar = buffer;
@@ -22,7 +22,7 @@ router.patch(
     res.status(200).send();
   },
   (error, req, res, next) => {
-    res.status(400).send({error: error.message});
+    res.status(400).send({ error: error.message });
   }
 );
 
@@ -39,6 +39,18 @@ router.get("/:id/avatar", requireLogin, async (req, res) => {
   } catch (e) {
     res.status(404).send();
   }
+});
+
+router.get("/:id", (req, res) => {
+  User.findById(req.params.id).then((user) => {
+    if (!user) {
+      return res.status(404).send({
+        message: `user not found with id ${req.params.id}`,
+      });
+    } else {
+      res.status(200).send(user);
+    }
+  });
 });
 
 module.exports = router;
