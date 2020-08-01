@@ -5,11 +5,16 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.min.js";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import Contest from "./ContestPage/Contest";
 import SignUpPage from "./SignupPage";
-import ImageGetter from './SignupPage/ImageGetter';
+import ImageGetter from "./SignupPage/ImageGetter";
 import ContestDesc from "./ContestDescription/ContestDesc";
 import UserProfile from "./UserProfile/UserProfile";
 import {authLogin} from "../actions/auth";
@@ -23,16 +28,23 @@ class App extends React.Component {
     return (
       <Router>
         <Navbar />
-         <Switch> 
-            <Route path="/" exact component={HomePage} ></Route>
-            <Route path="/home" exact component={HomePage} ></Route>
-            <Route path="/contest" exact component={Contest} ></Route>
-            <Route path="/additionalDetails" exact component={ImageGetter}></Route>
-            <Route path="/additionalDetailsProfile" exact component={SignUpPage}></Route>
-            <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
-            <Route path="/userProfile" exact component={UserProfile}></Route>
-            <Redirect to="/" /> 
-         </Switch> 
+        <Switch>
+          <Route path="/" exact component={HomePage}></Route>
+          <Route path="/home" exact component={HomePage}></Route>
+          <Route path="/contest" exact component={Contest}></Route>
+          <Route
+            path="/additionalDetails"
+            exact
+            component={ImageGetter}
+          ></Route>
+          <Route
+            path="/additionalDetailsProfile"
+            exact
+            component={SignUpPage}
+          ></Route>
+          <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
+          <Route path="/userProfile" exact component={UserProfile}></Route>
+        </Switch>
         <Footer />
       </Router>
     );

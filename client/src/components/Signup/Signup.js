@@ -63,7 +63,7 @@ const handleFocus3 = (e) => {
   });
 };
 
-const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
+const Signup = ({openButton, handleClose, register}) => {
   const [input, setInput] = useState({
     name: "",
     email: "",
@@ -90,20 +90,6 @@ const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
 
     await register(user);
   };
-
-  // if (isAuthenticated) {
-  //   return <Redirect to="/signup" />;
-  // }
-
-  // function loginWithFacebook() {
-  //   // window.location.href = "http://localhost:5000/auth/facebook/contests";
-  //   window.open("http://localhost:5000/auth/facebook", "_self");
-  // }
-
-  // function loginWithGoogle() {
-  //   // window.location.href = "http://localhost:5000/auth/google/contests";
-  //   window.open("http://localhost:5000/auth/google", "_self");
-  // }
 
   return (
     <div>
@@ -218,10 +204,4 @@ const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isAuthenticated: state.auth.isAuthenticated,
-  };
-};
-
-export default connect(mapStateToProps, {register})(Signup);
+export default connect(null, {register})(Signup);
