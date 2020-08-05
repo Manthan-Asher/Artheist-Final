@@ -1,5 +1,4 @@
 const express = require("express");
-// const cors = require("cors");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
@@ -10,12 +9,6 @@ require("./models/Post");
 require("./models/Contest");
 require("./services/passport");
 
-// var corsOptions = {
-//   credentials: true,
-//   origin: "http://localhost:3000",
-//   methods: "GET,POST,PATCH,PUT,DELETE",
-// };
-
 const app = express();
 
 // Init middleware
@@ -23,7 +16,7 @@ app.use(express.json());
 app.use(
   session({
     secret: keys.sessionSecret,
-    resave: false,
+    resave: true,
     saveUninitialized: false,
     cookie: {maxAge: 30 * 24 * 60 * 60 * 1000},
   })

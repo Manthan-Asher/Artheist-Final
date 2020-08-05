@@ -1,3 +1,3 @@
-import {MainFormContainer} from './MainFormContainer'
+import MainFormContainer from "./MainFormContainer";
 
 export default MainFormContainer;

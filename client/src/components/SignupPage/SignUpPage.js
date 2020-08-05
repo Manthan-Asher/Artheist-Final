@@ -1,30 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {authLogin} from "../../actions/auth";
 import {Form, Button, Image, Container, Row, Col} from "react-bootstrap";
 import "./SignUpPage.scss";
 
 class SignUpPage extends React.Component {
-  componentDidMount() {
-    fetch("http://localhost:5000/auth/login", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-      },
-    })
-      .then((response) => {
-        if (response.status === 200) return response.json();
-        throw new Error("failed to authenticate user");
-      })
-      .then((responseJson) => this.props.authLogin(responseJson))
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
   render() {
     const {user} = this.props.userData;
     if (!user) {
@@ -122,4 +101,4 @@ const mapStateToProps = (state) => ({
   userData: state.auth,
 });
 
-export default connect(mapStateToProps, {authLogin})(SignUpPage);
+export default connect(mapStateToProps)(SignUpPage);

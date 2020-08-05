@@ -14,15 +14,15 @@ router.patch(
   upload.single("avatar"),
   async (req, res) => {
     const buffer = await sharp(req.file.buffer)
-      .resize({ width: 250, height: 250 })
+      .resize({width: 250, height: 250})
       .png()
       .toBuffer();
     req.user.avatar = buffer;
     await req.user.save();
-    res.status(200).send();
+    res.status(200).send("Avatar Uploaded");
   },
   (error, req, res, next) => {
-    res.status(400).send({ error: error.message });
+    res.status(400).send({error: error.message});
   }
 );
 
@@ -37,20 +37,8 @@ router.get("/:id/avatar", requireLogin, async (req, res) => {
     res.set("Content-Type", "image/png");
     res.send(user.avatar);
   } catch (e) {
-    res.status(404).send();
+    res.status(404).send({error: e.message});
   }
-});
-
-router.get("/:id", (req, res) => {
-  User.findById(req.params.id).then((user) => {
-    if (!user) {
-      return res.status(404).send({
-        message: `user not found with id ${req.params.id}`,
-      });
-    } else {
-      res.status(200).send(user);
-    }
-  });
 });
 
 module.exports = router;

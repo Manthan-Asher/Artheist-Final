@@ -1,15 +1,16 @@
 import React from "react";
 
-import { Container } from "semantic-ui-react";
+import {Container} from "semantic-ui-react";
 
-import { UserDetails } from "./UserDetails";
-import { PersonalDetails } from "./PersonalDetails";
-import { About } from "./About";
-import { Success } from "./Success";
+import {UserDetails} from "./UserDetails";
+import {PersonalDetails} from "./PersonalDetails";
+import {About} from "./About";
+import {Success} from "./Success";
 
-import { Form } from "semantic-ui-react";
+import {Form} from "semantic-ui-react";
+import {connect} from "react-redux";
 
-export class MainFormContainer extends React.Component {
+class MainFormContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -27,6 +28,8 @@ export class MainFormContainer extends React.Component {
       phoneNumber: "",
       skills: "",
     };
+
+    // The above thing needs to be corrected
   }
 
   handleSubmit = (e) => {
@@ -39,8 +42,7 @@ export class MainFormContainer extends React.Component {
       };
     });
   };
-
-  handleChange = (event, { name, value, checked, type }) => {
+  handleChange = (event, {name, value, checked, type}) => {
     // if (type === "checkbox") {
     //   //TODO generic solution for these checkboxes!!
     //   let { interests } = this.state;
@@ -84,8 +86,8 @@ export class MainFormContainer extends React.Component {
   };
 
   render() {
-    const { step } = this.state;
     const {
+      step,
       firstName,
       lastName,
       email,
@@ -113,6 +115,10 @@ export class MainFormContainer extends React.Component {
       phoneNumber,
     };
 
+    if (!this.props.userData) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <Container textAlign="left">
         <Form onSubmit={this.handleSubmit}>
@@ -129,7 +135,7 @@ export class MainFormContainer extends React.Component {
   }
 }
 
-const Step = ({ step, values, handleChange, next, prev }) => {
+const Step = ({step, values, handleChange, next, prev}) => {
   switch (step) {
     case 1:
       return (
@@ -159,3 +165,9 @@ const Step = ({ step, values, handleChange, next, prev }) => {
       return null;
   }
 };
+
+const mapStateToProps = (state) => ({
+  userData: state.auth.user,
+});
+
+export default connect(mapStateToProps)(MainFormContainer);

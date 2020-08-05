@@ -1,8 +1,8 @@
 import React from "react";
-import { Form, Button, Input, Image } from "semantic-ui-react";
+import {Form, Button, Input, Image} from "semantic-ui-react";
 
 const UserDetails = (props) => {
-  const { firstName, lastName, username } = props.values;
+  const {firstName, lastName, username} = props.values;
   return (
     <React.Fragment>
       <div
@@ -10,7 +10,7 @@ const UserDetails = (props) => {
           height: "80vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <div>
@@ -48,4 +48,4 @@ const UserDetails = (props) => {
   );
 };
 
-export { UserDetails };
+export {UserDetails};
