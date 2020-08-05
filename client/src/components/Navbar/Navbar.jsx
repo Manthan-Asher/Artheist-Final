@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Nav, Navbar, Dropdown, Button} from "react-bootstrap";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Logo from "../../assets/logo1.jpeg";

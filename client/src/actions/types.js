@@ -6,3 +6,5 @@ export const LOGOUT = "LOGOUT";
 export const GET_CONTESTS = "GET_CONTESTS";
 export const GET_CONTEST = "GET_CONTEST";
 export const CONTEST_ERROR = "CONTEST_ERROR";
+export const ADD_AVATAR = "ADD_AVATAR";
+export const UPDATE_PROFILE_FAILED = "UPDATE_PROFILE_ERROR";

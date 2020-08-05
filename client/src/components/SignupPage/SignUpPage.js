@@ -18,7 +18,7 @@ class SignUpPage extends React.Component {
             style={{display: "flex", justifyContent: "center", height: "20vh"}}
           >
             <Image
-              src={user.profile_pic}
+              src={user.avatar}
               roundedCircle
               style={{maxHeight: "100%"}}
             />

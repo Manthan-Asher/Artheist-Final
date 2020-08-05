@@ -5,15 +5,21 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.min.js";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import {BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import AboutUs from "./AboutUs/AboutUs";
 import Contest from "./ContestPage/Contest";
-import SignUpPage from "./SignupPage/SignUpPage";
+import SignUpPage from "./SignupPage";
+import ImageGetter from "./SignupPage/ImageGetter";
 import ContestDesc from "./ContestDescription/ContestDesc";
 import UserProfile from "./UserProfile/UserProfile";
-import {authLogin} from "../actions/auth";
-import {connect} from "react-redux";
+import { authLogin } from "../actions/auth";
+import { connect } from "react-redux";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFilter, faFile, faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -35,6 +41,7 @@ class App extends React.Component {
             <Route path="/contest" exact component={Contest} ></Route>
             <Route path="/additionalDetails" exact component={SignUpPage}></Route>
             <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
+            <Route path="/profileChange" exact component={ImageGetter}></Route>
             <Route path="/userProfile" exact component={UserProfile}></Route>
             <Redirect to="/" /> 
          </Switch> 
@@ -44,4 +51,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, {authLogin})(App);
+export default connect(null, { authLogin })(App);

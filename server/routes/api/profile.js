@@ -19,7 +19,7 @@ router.patch(
       .toBuffer();
     req.user.avatar = buffer;
     await req.user.save();
-    res.status(200).send();
+    res.status(200).send("Avatar Uploaded");
   },
   (error, req, res, next) => {
     res.status(400).send({error: error.message});
@@ -37,7 +37,7 @@ router.get("/:id/avatar", requireLogin, async (req, res) => {
     res.set("Content-Type", "image/png");
     res.send(user.avatar);
   } catch (e) {
-    res.status(404).send();
+    res.status(404).send({error: e.message});
   }
 });
 

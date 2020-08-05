@@ -54,6 +54,12 @@ export const authLogin = () => async (dispatch) => {
   try {
     const res = await axios.get("/auth/current_user");
 
+    if (res.data === "") {
+      return dispatch({
+        type: LOGIN_FAIL,
+        payload: "User failed to Authenticate",
+      });
+    }
     dispatch({type: LOGIN_SUCCESS, payload: res.data});
   } catch (error) {
     dispatch({type: LOGIN_FAIL, payload: "User failed to Authenticate"});
