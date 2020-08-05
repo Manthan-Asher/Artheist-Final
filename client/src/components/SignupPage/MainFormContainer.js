@@ -1,14 +1,14 @@
 import React from "react";
 
-import {Container} from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 
-import {UserDetails} from "./UserDetails";
-import {PersonalDetails} from "./PersonalDetails";
-import {About} from "./About";
-import {Success} from "./Success";
+import { UserDetails } from "./UserDetails";
+import { PersonalDetails } from "./PersonalDetails";
+import { About } from "./About";
+import { Success } from "./Success";
 
-import {Form} from "semantic-ui-react";
-import {connect} from "react-redux";
+import { Form } from "semantic-ui-react";
+import { connect } from "react-redux";
 
 class MainFormContainer extends React.Component {
   constructor(props) {
@@ -38,11 +38,11 @@ class MainFormContainer extends React.Component {
     this.setState((prevState) => {
       return {
         ...prevState,
-        step: 4,
+        step: 3,
       };
     });
   };
-  handleChange = (event, {name, value, checked, type}) => {
+  handleChange = (event, { name, value, checked, type }) => {
     // if (type === "checkbox") {
     //   //TODO generic solution for these checkboxes!!
     //   let { interests } = this.state;
@@ -135,22 +135,13 @@ class MainFormContainer extends React.Component {
   }
 }
 
-const Step = ({step, values, handleChange, next, prev}) => {
+const Step = ({ step, values, handleChange, next, prev }) => {
   switch (step) {
     case 1:
       return (
         <UserDetails values={values} handleChange={handleChange} next={next} />
       );
     case 2:
-      return (
-        <PersonalDetails
-          values={values}
-          handleChange={handleChange}
-          next={next}
-          prev={prev}
-        />
-      );
-    case 3:
       return (
         <About
           values={values}
@@ -159,7 +150,7 @@ const Step = ({step, values, handleChange, next, prev}) => {
           prev={prev}
         />
       );
-    case 4:
+    case 3:
       return <Success values={values} />;
     default:
       return null;

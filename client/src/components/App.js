@@ -17,8 +17,8 @@ import SignUpPage from "./SignupPage";
 import ImageGetter from "./SignupPage/ImageGetter";
 import ContestDesc from "./ContestDescription/ContestDesc";
 import UserProfile from "./UserProfile/UserProfile";
-import {authLogin} from "../actions/auth";
-import {connect} from "react-redux";
+import { authLogin } from "../actions/auth";
+import { connect } from "react-redux";
 
 class App extends React.Component {
   componentDidMount() {
@@ -32,18 +32,11 @@ class App extends React.Component {
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/home" exact component={HomePage}></Route>
           <Route path="/contest" exact component={Contest}></Route>
-          <Route
-            path="/additionalDetails"
-            exact
-            component={ImageGetter}
-          ></Route>
-          <Route
-            path="/additionalDetailsProfile"
-            exact
-            component={SignUpPage}
-          ></Route>
+          <Route path="/additionalDetails" exact component={SignUpPage}></Route>
+          <Route path="/profileChange" exact component={ImageGetter}></Route>
           <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
           <Route path="/userProfile" exact component={UserProfile}></Route>
+          <Redirect to="/" />
         </Switch>
         <Footer />
       </Router>
@@ -51,4 +44,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, {authLogin})(App);
+export default connect(null, { authLogin })(App);
