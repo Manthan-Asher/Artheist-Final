@@ -4,8 +4,11 @@ import "./Search.css";
 
 const Search = () => {
     return ( 
-        <div className="search-contest">
-            <input type="text" name="search" placeholder="Browse Contests by keywords..."></input>
+        <div className="search-container">
+            <div className="search-bar">
+                <i className="fa fa-search" aria-hidden="true" /> 
+                <input type="text" name="search" placeholder="Browse Contests by keywords..."></input>
+            </div>
         </div>
      );
 }

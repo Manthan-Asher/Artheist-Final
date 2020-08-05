@@ -98,3 +98,29 @@
         font-size: medium !important;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .testimonialContainer {
+        padding: 50px 20px;
+    }
+    .testimonials {
+        margin: 0;
+        width: 100%;
+    }
+    .test-head {
+        font-size: 35px;
+        padding-top: 0px;
+    }
+    .testVideoSlider {
+        width: 1280px;
+    }
+    .testVideoSlider > video {
+        width: 200px;
+        height: 100px;
+    }
+    ::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    
+}

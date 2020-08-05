@@ -31,7 +31,7 @@ class ContestDesc extends Component {
         <div className="contestDescContainer">
           <div className="contest-poster">
             <img src={ccc} alt="" className="poster-image" />
-            <Button variant="primary" className="contest-button" size="lg">
+            <Button variant="warning" className="contest-button" size="lg">
               Enter The Contest Now
             </Button>
           </div>

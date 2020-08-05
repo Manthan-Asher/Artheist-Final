@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Search from "../Search/Search";
 import ContestCards from "../ContestCards/ContestCards";
 import Filter from "../FilterSection/FilterSection";
+//import MobileFilter from "../MobileFilter/MobileFilter"
 
 class Contest extends Component {
   render() {
@@ -9,6 +10,7 @@ class Contest extends Component {
       <>
         <Search />
         <Filter />
+        {/* <MobileFilter /> */}
         <ContestCards />
       </>
     );

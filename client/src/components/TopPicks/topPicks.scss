@@ -206,3 +206,12 @@ p {
   z-index: 2;
   border: 2px solid white;
 }
+
+@media screen and (max-width: 900px) {
+  .contain > h1 {
+    font-size: 40px;
+  }
+  .contain {
+    height: auto;
+  }
+}

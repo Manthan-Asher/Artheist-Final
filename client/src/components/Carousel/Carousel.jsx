@@ -4,6 +4,8 @@ import "./carousel.css";
 
 import ccc from "../../assets/carousal_demo.png";
 
+import MobileCarousel from "../MobileCarousel/MobileCarousel";
+
 export default class Carousel extends Component {
   render() {
     const settings = {
@@ -24,6 +26,7 @@ export default class Carousel extends Component {
     };
     return (
       <div className="carouselContainer">
+        <MobileCarousel />
         <Slider {...settings}>
           <div className="contestPoster">
             <img src={ccc}></img>

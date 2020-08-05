@@ -159,6 +159,7 @@ const Signup = ({openButton, handleClose, isAuthenticated, register}) => {
               type="text"
               id="name"
               name="name"
+              placeholder="Enter Your Name"
               onFocus={handleFocus}
               autoComplete="off"
               value={input.name}

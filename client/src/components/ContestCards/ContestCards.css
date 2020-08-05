@@ -52,3 +52,10 @@
 .tabs2 > div > div > a:hover {
     color: initial;
 }
+
+@media screen and (max-width: 975px) {
+    .ContestContainer {
+        width: 100% !important;
+        /* margin-top: 50px !important; */
+    }
+  }

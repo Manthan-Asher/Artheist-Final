@@ -1,0 +1,32 @@
+.mobileCarousel {
+    margin-top: 68px;
+    height: auto;
+    display: none;
+}
+
+.mobileCarousel > .carousel, .mobileCarousel > .carousel div {
+    height: 100%;
+}
+
+.mobileCarousel > .carousel div > img {
+    height: auto;
+}
+
+.mobileCarousel .carousel-control-prev, .mobileCarousel .carousel-control-next {
+    display: initial;
+}
+
+.mobileCarousel > .carousel .carousel-control-prev-icon, .mobileCarousel > .carousel  .carousel-control-next-icon {
+    top: 50%;
+    position: absolute;
+}
+
+.mobileCarousel > .carousel > .carousel-indicators {
+    top: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .mobileCarousel {
+      display: block;
+    }
+}

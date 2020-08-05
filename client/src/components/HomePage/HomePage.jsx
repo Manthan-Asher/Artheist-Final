@@ -6,10 +6,12 @@ import HallOfFame from "../HallOfFame/HallOfFame";
 import Testimonials from "../Testimonials/Testimonials";
 import HowItWorks from '../HowItWorks/HowItWorks';
 
+
 const HomePage = () => {
     return ( 
         <>
-          <Carousel />
+          
+          <Carousel /> 
           <TopPicks />
           <Description />
           <HowItWorks />

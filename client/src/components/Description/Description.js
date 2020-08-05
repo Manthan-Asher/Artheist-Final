@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "./Description.css";
 import bg from '../../assets/artform2(1).png';
-import ScrollAnimation from "react-animate-on-scroll";
+//import ScrollAnimation from "react-animate-on-scroll";
 
 const Description = () => {
   return (

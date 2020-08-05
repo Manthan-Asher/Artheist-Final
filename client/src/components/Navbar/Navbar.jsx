@@ -49,7 +49,9 @@ class NavBar extends Component {
                   <i className="fa fa-bars" aria-hidden="true"></i>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">About Us</Dropdown.Item>
+                  <Link to="/aboutUs">
+                    <Dropdown.Item href="aboutUs">About Us</Dropdown.Item>
+                  </Link>
                   <Dropdown.Item href="#/action-2">What we do ?</Dropdown.Item>
                   <Dropdown.Item href="#/action-3">Creators</Dropdown.Item>
                   <Dropdown.Item href="#/action-3">Testimonials</Dropdown.Item>

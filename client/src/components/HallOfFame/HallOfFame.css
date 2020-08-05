@@ -75,3 +75,27 @@
         width: 256px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .HallOfFameContainer {
+        padding: 50px 20px;
+    }
+    .HallOfFameContainer > h1 {
+        font-size: 35px;
+        margin-bottom: 1em;
+    }
+    .HallOfFameContainer > div > header > div > div > div > .MuiTab-root {
+        width: 25%;
+        padding: 0;
+        font-size: 0.8em;
+    }
+    .MuiCard-root {
+        width: 100% !important;
+        margin-right: 0 !important;
+        display: initial;
+        margin-bottom: 20px !important;
+    }
+    .MuiCardContent-root {
+        padding: 0 !important;
+    }
+}

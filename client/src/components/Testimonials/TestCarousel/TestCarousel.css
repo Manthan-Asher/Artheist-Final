@@ -39,3 +39,22 @@
 .carousel-indicators > li {
     background-color: #777;
 }
+
+@media screen and (max-width: 900px) {
+  .Carousel > div > div > div > div > h2 {
+      font-size: 1.3em;
+      margin-bottom: 0px;
+  }  
+  .carousel-item > img {
+      width: 120px;
+  }
+  .carousel-item > div {
+      height: 120px;
+      padding-left: 5px;
+      
+  }
+  .carousel-item > div > p {
+    font-size: 15px !important;
+    font-weight: normal;
+  }
+}
