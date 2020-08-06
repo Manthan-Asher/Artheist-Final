@@ -32,18 +32,18 @@ class App extends React.Component {
   }
   render() {
     return (
-      <Router>
+      <Router basename={window.location.pathname || " "}>
         <Navbar />
          <Switch> 
             {/* <Route path="/" exact component={HomePage} ></Route> */}
-            <Route path="/home" exact component={HomePage} ></Route>
+            <Route path="/" exact component={HomePage} ></Route>
             <Route path="/aboutUs" exact component={AboutUs} ></Route>
             <Route path="/contest" exact component={Contest} ></Route>
             <Route path="/additionalDetails" exact component={SignUpPage}></Route>
             <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
             <Route path="/profileChange" exact component={ImageGetter}></Route>
             <Route path="/userProfile" exact component={UserProfile}></Route>
-            <Redirect to="/home" /> 
+            {/* <Redirect to="/home" />  */}
          </Switch> 
         <Footer />
       </Router>
