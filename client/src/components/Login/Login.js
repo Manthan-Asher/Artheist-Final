@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {connect} from "react-redux";
 import {login} from "../../actions/auth";
-import {Redirect, Link} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import {
   Button,
   Dialog,
@@ -47,7 +47,7 @@ const handleFocus2 = (e) => {
   });
 };
 
-const Login = ({openButton, handleClose, login}) => {
+const Login = ({openButton, handleClose, login, history}) => {
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -67,7 +67,8 @@ const Login = ({openButton, handleClose, login}) => {
       username: email,
       password,
     };
-    await login(user);
+    await login(user, history);
+    handleClose();
   };
 
   return (
@@ -165,4 +166,4 @@ const Login = ({openButton, handleClose, login}) => {
   );
 };
 
-export default connect(null, {login})(Login);
+export default connect(null, {login})(withRouter(Login));

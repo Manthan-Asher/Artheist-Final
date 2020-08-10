@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
 import {register} from "../../actions/auth";
-import {Redirect} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import {
   Button,
   Dialog,
@@ -63,7 +63,7 @@ const handleFocus3 = (e) => {
   });
 };
 
-const Signup = ({openButton, handleClose, register}) => {
+const Signup = ({openButton, handleClose, register, history}) => {
   const [input, setInput] = useState({
     name: "",
     email: "",
@@ -83,12 +83,14 @@ const Signup = ({openButton, handleClose, register}) => {
 
   const Submit = async () => {
     const user = {
-      name,
+      firstName: name.split(" ")[0],
+      lastName: name.split(" ")[1],
       username: email,
       password,
     };
 
-    await register(user);
+    await register(user, history);
+    handleClose();
   };
 
   return (
@@ -140,12 +142,11 @@ const Signup = ({openButton, handleClose, register}) => {
             <path d="m 40,120.00016 250.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
           </svg>
           <div className="form">
-            <label for="name">Name</label>
+            <label for="name">Full Name</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Enter Your Name"
               onFocus={handleFocus}
               autoComplete="off"
               value={input.name}
@@ -205,4 +206,4 @@ const Signup = ({openButton, handleClose, register}) => {
   );
 };
 
-export default connect(null, {register})(Signup);
+export default connect(null, {register})(withRouter(Signup));

@@ -43,4 +43,15 @@ const UserSchema = new mongoose.Schema({
 //  ADD PLUGINS FOR PASSPORT HERE!!
 UserSchema.plugin(passportLocalMongoose);
 
+UserSchema.methods.toJSON = function () {
+  const user = this;
+  const userObject = user.toObject();
+
+  delete userObject.avatar;
+  delete userObject.salt;
+  delete userObject.hash;
+
+  return userObject;
+};
+
 mongoose.model("User", UserSchema);

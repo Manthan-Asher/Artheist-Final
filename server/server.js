@@ -13,12 +13,13 @@ const app = express();
 
 // Init middleware
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(
   session({
     secret: keys.sessionSecret,
     resave: true,
     saveUninitialized: false,
-    cookie: {maxAge: 30 * 24 * 60 * 60 * 1000},
+    cookie: {expires: 30 * 24 * 60 * 60 * 1000},
   })
 );
 
@@ -47,6 +48,7 @@ app.use("/user", require("./routes/api/user"));
 app.use("/auth", require("./routes/api/auth"));
 app.use("/contests", require("./routes/api/contests"));
 app.use("/profile", require("./routes/api/profile"));
+app.use("/posts", require("./routes/api/posts"));
 
 if (process.env.NODE_ENV === "production") {
   // express will serve up production assets

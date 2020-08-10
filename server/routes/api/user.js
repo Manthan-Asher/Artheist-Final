@@ -13,7 +13,8 @@ const User = mongoose.model("User");
 
 router.post("/", async (req, res) => {
   const {
-    name,
+    firstName,
+    lastName,
     username,
     password,
     mobile_number,
@@ -32,7 +33,8 @@ router.post("/", async (req, res) => {
       {
         username,
         mobile_number,
-        name,
+        firstName,
+        lastName,
         siteName,
         about,
         social_media_handle,
@@ -44,14 +46,12 @@ router.post("/", async (req, res) => {
           return res.send(err);
         } else {
           passport.authenticate("local")(req, res, function () {
-            res.status(200);
-            res.json(req.user);
+            res.status(200).send(user);
           });
         }
       }
     );
   } catch (error) {
-    console.log(error.message);
     res.status(500).send("Server Error");
   }
 });
@@ -60,23 +60,26 @@ router.post("/", async (req, res) => {
 //@desc   Login user
 //@access  Public
 
-router.post("/login", (req, res) => {
-  const {username, password} = req.body;
-  const user = new User({
-    username,
-    password,
-  });
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({username: req.body.username});
 
-  req.login(user, (err) => {
-    if (err) {
-      res.send({errors: [err]});
-    } else {
-      passport.authenticate("local")(req, res, function () {
-        res.status(200);
-        res.json(req.user);
-      });
+    if (!user) {
+      throw new Error("Unable to login");
     }
-  });
+
+    req.login(user, (err) => {
+      if (err) {
+        res.send(err);
+      } else {
+        passport.authenticate("local")(req, res, function () {
+          res.status(200).send(user);
+        });
+      }
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 module.exports = router;

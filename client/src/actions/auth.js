@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
@@ -8,7 +7,7 @@ import {
   LOGOUT,
 } from "./types";
 
-export const register = (user) => async (dispatch) => {
+export const register = (user, history) => async (dispatch) => {
   const body = JSON.stringify(user);
 
   try {
@@ -21,17 +20,21 @@ export const register = (user) => async (dispatch) => {
     };
     const res = await axios.post("/user", body, config);
 
-    if (res.data.errors.length > 0) {
-      dispatch({type: REGISTER_FAIL, payload: res.data.errors[0].message});
+    if (res.data.message) {
+      return dispatch({
+        type: REGISTER_FAIL,
+        payload: res.data.message,
+      });
     } else {
-      dispatch({type: REGISTER_SUCCESS, payload: res.data});
+      history.push("/additionalDetails");
+      return dispatch({type: REGISTER_SUCCESS, payload: res.data});
     }
   } catch (error) {
     dispatch({type: REGISTER_FAIL, payload: error.message});
   }
 };
 
-export const login = (user) => async (dispatch) => {
+export const login = (user, history) => async (dispatch) => {
   const body = JSON.stringify(user);
 
   try {
@@ -45,6 +48,7 @@ export const login = (user) => async (dispatch) => {
     const res = await axios.post("/user/login", body, config);
 
     dispatch({type: LOGIN_SUCCESS, payload: res.data});
+    history.push("/contest");
   } catch (error) {
     dispatch({type: LOGIN_FAIL, payload: "Invalid Credentials"});
   }

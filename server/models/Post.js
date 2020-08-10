@@ -6,6 +6,7 @@ const PostSchema = new mongoose.Schema({
   participant: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
   likes: [
     {
@@ -18,6 +19,11 @@ const PostSchema = new mongoose.Schema({
   contest: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Contest",
+    required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
   },
   URL: {
     type: String,

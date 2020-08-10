@@ -5,4 +5,5 @@ module.exports = {
   facebookID: process.env.FACEBOOK_ID,
   facebookSecret: process.env.FACEBOOK_SECRET,
   sessionSecret: process.env.SESSION_SECRET,
+  s3Bucket: process.env.S3_BUCKET,
 };
