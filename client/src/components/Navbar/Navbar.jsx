@@ -29,9 +29,9 @@ class NavBar extends Component {
       <>
       <div>
         <Navbar bg="info" expand="lg" className="navBar fixed-top">
-          <Link to="/home" >
+          <Link to="/" >
             <img src={Logo} className="logo-img" />
-            <Navbar.Brand href="#home" className="navbar-brand">artHeist</Navbar.Brand>
+            <Navbar.Brand  className="navbar-brand">artHeist</Navbar.Brand>
           </Link> 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
