@@ -43,28 +43,28 @@ class MainFormContainer extends React.Component {
     });
   };
   handleChange = (event, { name, value, checked, type }) => {
-    // if (type === "checkbox") {
-    //   //TODO generic solution for these checkboxes!!
-    //   let { interests } = this.state;
-    //   if (checked) {
-    //     interests = [...interests, value];
-    //   } else {
-    //     interests = interests.filter((item) => item !== value);
-    //   }
-    //   this.setState((prevState) => {
-    //     return {
-    //       ...prevState,
-    //       interests: interests,
-    //     };
-    //   });
-    // } else {
+    if (type === "checkbox") {
+      //TODO generic solution for these checkboxes!!
+      let { interests } = this.state;
+      if (checked) {
+        interests = [...interests, value];
+      } else {
+        interests = interests.filter((item) => item !== value);
+      }
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          interests: interests,
+        };
+      });
+    } else {
     this.setState((prevState) => {
       return {
         ...prevState,
         [name]: value,
       };
     });
-    // }
+    }
   };
 
   next = () => {
