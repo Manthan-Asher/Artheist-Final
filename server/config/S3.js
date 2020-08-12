@@ -1,11 +1,16 @@
 // Load the SDK and UUID
-process.env.AWS_SDK_LOAD_CONFIG = true;
+// process.env.AWS_SDK_LOAD_CONFIG = true;
 const AWS = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const keys = require("./keys");
 
-const s3 = new AWS.S3({apiVersion: "2006-03-01"});
+const s3 = new AWS.S3({
+  apiVersion: "2006-03-01",
+  accessKeyId: keys.accessKeyId,
+  secretAccessKey: keys.secretAccessKey,
+  region: keys.region,
+});
 
 var uploadPost = multer({
   limits: {

@@ -16,7 +16,10 @@ router.get(
 //@access  Public
 
 router.get("/google/contests", passport.authenticate("google"), (req, res) => {
-  res.redirect("/additionalDetails");
+  if (!req.user.isNew) {
+    return res.redirect("/additionalDetails");
+  }
+  res.redirect("/contest");
 });
 
 //@route   GET /auth/facebook
@@ -36,7 +39,10 @@ router.get(
   "/facebook/contests",
   passport.authenticate("facebook"),
   (req, res) => {
-    res.redirect("/additionalDetails");
+    if (!req.user.isNew) {
+      return res.redirect("/additionalDetails");
+    }
+    res.redirect("/contest");
   }
 );
 
