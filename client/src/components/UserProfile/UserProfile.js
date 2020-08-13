@@ -3,12 +3,6 @@ import "./UserProfile.css";
 // import { Button } from "react-bootstrap";
 import {Paper, Tab, Tabs} from "@material-ui/core";
 import {Form, Button, Input, TextArea, Container} from "semantic-ui-react";
-
-import cover from "../../assets/cover.jpg";
-import post1 from "../../assets/post1.jpg";
-import post2 from "../../assets/post2.jpg";
-import post3 from "../../assets/post3.jpg";
-import avatar from "../../assets/default-avatar.jpg";
 import {makeStyles} from "@material-ui/core";
 import {useState} from "react";
 
@@ -21,10 +15,10 @@ const useStyles = makeStyles({
 const UserFeed = () => {
   return (
     <div className="user-feed">
-      <img src={post1} alt="" className="post" />
-      <img src={post2} alt="" className="post" />
-      <img src={post3} alt="" className="post" />
-      <img src={post1} alt="" className="post" />
+      <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post1.jpg" alt="" className="post" />
+      <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post2.jpg" alt="" className="post" />
+      <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post3.jpg" alt="" className="post" />
+      <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post3.jpg" alt="" className="post" />
     </div>
   );
 };
@@ -124,10 +118,10 @@ const UserProfile = () => {
     <div className="user-profile">
       <div className="user-profile-container">
         <div className="user-cover-photo">
-          <img src={cover} alt="" className="cover-photo" />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/cover.jpg" alt="" className="cover-photo" />
         </div>
         <div className="user-avatar">
-          <img src={avatar} alt="" className="user-avatar-photo" />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg" alt="" className="user-avatar-photo" />
           <ul className="user-activity">
             <li className="info followers">Followers : 0</li>
             <li className="info contests">Contests : 0</li>

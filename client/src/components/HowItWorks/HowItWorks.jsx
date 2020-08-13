@@ -1,9 +1,5 @@
 import React from "react";
 import "./HowItWorks.css";
-import Profile from "../../assets/profile2.gif";
-import Browse from "../../assets/browse2.gif";
-import Register from "../../assets/register2.gif";
-import Upload from "../../assets/upload.gif";
 
   
 
@@ -15,7 +11,7 @@ const HowItWorks = () => {
       <div className="step">
         <div className="step-icon">
           {/* <img src={Profile} /> */}
-          <img src={Profile} />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/profile2.gif" alt="icons" />
         </div>
         <div className="step-content">
           <h4>Head1</h4>
@@ -28,7 +24,7 @@ const HowItWorks = () => {
       </div>
       <div className="step">
         <div className="step-icon" >
-          <img src={Browse} />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/browse2.gif" alt="icons" />
         </div>
         <div className="step-content">
           <h4>Head2</h4>
@@ -41,7 +37,7 @@ const HowItWorks = () => {
       </div>
       <div className="step">
         <div className="step-icon">
-          <img src={Register} />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/register2.gif" alt="icons" />
         </div>
         <div className="step-content">
           <h4>Head3</h4>
@@ -54,7 +50,7 @@ const HowItWorks = () => {
       </div>
       <div className="step">
         <div className="step-icon">
-          <img src={Upload} />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/upload.gif" alt="icons" />
         </div>
         <div className="step-content">
           <h4>Head4</h4>

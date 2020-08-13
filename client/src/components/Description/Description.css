@@ -22,7 +22,7 @@ p {
   display: flex;
   align-items: center;
   color: white !important;
-  background: url('../../assets/WhatWeDoBg.png');
+  background: url('https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/WhatWeDoBg.png');
   background-size: cover;
   background-position: 0px 0px;
   padding: 20px 20px;
@@ -77,7 +77,7 @@ p {
 }
 
 .bgContainer {
-  background-image: url("../../assets/artform2\(1\).png");
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2\(1\).png");
 
   /* Set a specific height */
   height: 100%;

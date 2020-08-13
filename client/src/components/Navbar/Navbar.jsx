@@ -4,7 +4,7 @@ import "./Navbar.css";
 import {Link} from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-import Logo from "../../assets/logo1.jpeg";
+
 
 class NavBar extends Component {
   state = {loginOpen: false, signupOpen: false};
@@ -30,34 +30,34 @@ class NavBar extends Component {
         <div>
           <Navbar bg="info" expand="lg" className="navBar fixed-top">
             <Link to="/">
-              <img src={Logo} className="logo-img" />
+              <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg" alt="logo" className="logo-img" />
               <Navbar.Brand className="navbar-brand">artHeist</Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-5 mr-auto">
-                <Nav.Link className="mb4">
-                  <Link to="/userProfile" style={{color: "inherit"}}>
+              <Nav className="ml-5 mr-auto">     
+                <Link to="/userProfile" className="navLink" style={{color: "inherit"}}>
+                  <Nav.Link href="/feed" className="mb4">
                     Feed
-                  </Link>
-                </Nav.Link>
-                <Link to="/contest" className="contest-link">
-                  <Nav.Link href="#contests" to="/contest">
+                  </Nav.Link>
+                </Link>               
+                <Link to="/contest" className="navLink">
+                  <Nav.Link href="/contests" to="/contest">
                     Contest
                   </Nav.Link>
                 </Link>
-                <Nav.Link href="#createContest">Create Contest</Nav.Link>
-                <Nav.Link>
-                  <Link to="/profileChange" style={{color: "inherit"}}>
+                <Nav.Link href="/createContest">Create Contest</Nav.Link>
+                <Link to="/profileChange" className="navLink" style={{color: "inherit"}}>
+                  <Nav.Link href="/artists">
                     Artists
-                  </Link>
-                </Nav.Link>
+                  </Nav.Link>
+                </Link>
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
                     <i className="fa fa-bars" aria-hidden="true"></i>
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Link to="/aboutUs">
+                    <Link to="/aboutUs" className="navLink">
                       <Dropdown.Item href="aboutUs">About Us</Dropdown.Item>
                     </Link>
                     <Dropdown.Item href="#/action-2">

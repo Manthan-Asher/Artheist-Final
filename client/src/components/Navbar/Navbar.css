@@ -114,6 +114,11 @@
   color: white;
 }
 
+.navLink:hover {
+  text-decoration: none !important;
+}
+
+
 @media screen and (max-width: 1135px) {
   .dropdown-toggle {
     padding-left: .8em;

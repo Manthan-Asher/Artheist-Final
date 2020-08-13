@@ -1,7 +1,5 @@
 import React from 'react';
 import "./AboutUs.css";
-import Logo from "../../assets/logo1.jpeg";
-import Member from "../../assets/ryan.jpg";
 
 
 const AboutUs = () => {
@@ -43,7 +41,7 @@ const AboutUs = () => {
                     inventore commodi possimus consectetur architecto.</p>
                 </div>
                 <div className="ourIntegrityImg">
-                    <img src={Logo} />
+                    <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg" alt="logo"/>
                 </div>
             </div>
             <div className="whoAreWe">
@@ -65,22 +63,22 @@ const AboutUs = () => {
                 <div>
                     <div className="memberPhotos">
                         <div>
-                            <img src={Member}/> 
+                            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg" alt="member-photo"/> 
                         </div>
                         <div>
-                            <img src={Member}/>
+                            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg" alt="member-photo"/>
                         </div>
                         <div>
-                            <img src={Member}/>
+                            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg" alt="member-photo"/>
                         </div>
                         <div>
-                            <img src={Member}/>
+                            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg" alt="member-photo"/>
                         </div>
                         <div>
-                            <img src={Member}/>
+                            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg" alt="member-photo"/>
                         </div>
                         <div>
-                            <img src={Member}/>
+                            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg" alt="member-photo"/>
                         </div>
                     </div>
                     <div className="aboutMember">

@@ -22,7 +22,7 @@
 .how-it-works::before {
     content: "";
     display: block;
-    background-image: url('../../assets/bottom_shadow2.png');
+    background-image: url('https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/bottom_shadow2.png');
     background-size: cover;
     background-position: center center;
     position: absolute;
@@ -37,7 +37,7 @@
 .how-it-works::after {
     content: "";
     display: block;
-    background-image: url('../../assets/bottom_shadow2.png');
+    background-image: url('https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/bottom_shadow2.png');
     background-size: cover;
     background-position: center center;
     position: absolute;

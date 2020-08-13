@@ -1,7 +1,9 @@
 import React from "react";
-import testPhoto from "../../../assets/testPhoto.png";
 import "./TestCarousel.css";
 import { Carousel } from "react-bootstrap";
+
+
+
 function TestCarousel() {
   return (
     <div className="Carousel">
@@ -9,7 +11,7 @@ function TestCarousel() {
         <Carousel.Item>
           <img
             className="bannerSize img-fluid"
-            src={testPhoto}
+            src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/testPhoto.png"
             alt="First slide"
           />
           <div>
@@ -20,7 +22,7 @@ function TestCarousel() {
         <Carousel.Item>
           <img
             className="bannerSize img-fluid"
-            src={testPhoto}
+            src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/testPhoto.png"
             alt="Second slide"
           />
            <div>
@@ -31,7 +33,7 @@ function TestCarousel() {
         <Carousel.Item>
           <img
             className="bannerSize img-fluid"
-            src={testPhoto}
+            src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/testPhoto.png"
             alt="Third slide"
           />
            <div>

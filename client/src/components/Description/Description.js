@@ -2,17 +2,11 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "./Description.css";
-import bg from '../../assets/artform2(1).png';
-//import ScrollAnimation from "react-animate-on-scroll";
+
 
 const Description = () => {
   return (
     <div className="what-we-do">
-      {/* <ScrollAnimation animateIn="fadeIn" delay={500} duration={2}>
-        <div className="bgContainer">
-          <img src={bg} />
-        </div>
-      </ScrollAnimation> */}
       <div className="bgContainer"></div>
       <div className="description-box">
         <Typography

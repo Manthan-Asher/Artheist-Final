@@ -88,13 +88,13 @@
 }
 
 .carouselContainer {
-  background: url("../../assets/finalseat.png");
+  background: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/finalseat.png");
   background-repeat: no-repeat;
   background-color: black;
   background-position: bottom;
   background-size: contain;
   position: relative;
-  margin-top: 100px; 
+  margin-top: 65px; 
   height: 92vh;
 }
 

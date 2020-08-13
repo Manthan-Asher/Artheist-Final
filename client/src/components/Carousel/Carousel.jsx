@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import Slider from "react-slick";
 import "./carousel.css";
-
-import ccc from "../../assets/carousal_demo.png";
-
 import MobileCarousel from "../MobileCarousel/MobileCarousel";
+
 
 export default class Carousel extends Component {
   render() {
@@ -29,7 +27,7 @@ export default class Carousel extends Component {
         <MobileCarousel />
         <Slider {...settings}>
           <div className="contestPoster">
-            <img src={ccc}></img>
+            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/carousal_demo.png" alt="carouselPhoto"></img>
             <div>
               <h4>Active Contest</h4>
               <button className="participateBtn">Participate Now</button>

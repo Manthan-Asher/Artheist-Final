@@ -1,11 +1,9 @@
 import React, {Component} from "react";
 import "./ContestDesc.css";
 import {Button} from "react-bootstrap";
-import logo from "../../assets/default-avatar.jpg";
 import {connect} from "react-redux";
 import {getContestById} from "../../actions/contests";
 
-import ccc from "../../assets/carousal_demo.png";
 
 class ContestDesc extends Component {
   componentDidMount() {
@@ -30,7 +28,7 @@ class ContestDesc extends Component {
       <div className="conDescBg">
         <div className="contestDescContainer">
           <div className="contest-poster">
-            <img src={ccc} alt="" className="poster-image" />
+            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/carousal_demo.png" alt="poster" className="poster-image" />
             <Button variant="warning" className="contest-button" size="lg">
               Enter The Contest Now
             </Button>
@@ -38,7 +36,7 @@ class ContestDesc extends Component {
           <div className="contestDetails">
             <div className="hostedBy">
               <div className="img-box">
-                <img src={logo} />
+                <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png" alt="avatar"/>
               </div>
               <div className="text-Info">
                 Hosted By <span>{organized_by}</span>
@@ -91,7 +89,7 @@ class ContestDesc extends Component {
                 return (
                   <div className="juryBox">
                     <div className="juryPhoto">
-                      <img src={logo}></img>
+                      <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png"></img>
                     </div>
                     <div className="juryName">{jury}</div>
                     <div className="jurySocialMedia">
