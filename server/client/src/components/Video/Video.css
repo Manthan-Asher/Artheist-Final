@@ -1,7 +1,0 @@
-.MuiCardMedia-root > video {
-    transition: all 0.5s ease-in-out;
-}
-
-.MuiCard-root:hover  video{
-    transform: scale(1.1);
-}
