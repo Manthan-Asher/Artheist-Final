@@ -1,0 +1,156 @@
+.FilterContainer {
+  float: left; 
+  margin-top: 100px !important;
+  width: 25%;
+  transition: all 0.2s ease-in-out;
+}
+
+.SubFilters ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.SubFilters {
+  display: block;
+}
+
+.SubFilters > button {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  margin: 10px 0;
+  background: none;
+  outline: none;
+}
+
+.SubFilters > button > i {
+  padding-left: 20px;
+}
+
+.SubFilters > ul > li {
+  padding: 8px;
+  position: relative;
+  list-style: none;
+}
+
+#checkbox {
+  margin-left: 15px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 12px;
+}
+
+.Filter > header > span {
+  font-weight: bold;
+  width: 100%;
+}
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+.filterToggle {
+  height: 60px;
+  padding: 15px 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+}
+
+
+
+.filterSection {
+  position: relative;
+}
+
+.closeFilter {
+  display: none;
+}
+
+@media screen and (min-width: 976px) {
+  .FilterContainer {
+    width: 20%;
+    display: inline-block;
+  }
+  .Filter, .SubFilters {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+  /* .fa-filter {
+    display: none;
+  } */
+}
+@media screen and (max-width: 975px) {
+  .FilterContainer.showFilter {
+    left: 0px;
+    display: block;
+    position: fixed;
+    width: 200px;
+    top: 68px;
+    z-index: 2;
+  }
+  .filterSection {
+    position: relative;
+  }
+  .FilterContainer {
+    display: block;
+    position: absolute;
+    height: calc(100vh - 68px);
+    width: 200px;
+    left: -200px;
+    top: 68px;
+    z-index: 2;
+    margin-top: 0 !important;
+    background-color: white;
+    /* overflow-y: scroll; */
+  }
+  .filterToggle {
+    display: block;
+  }
+  .Filter {
+    display: none;
+  }
+  .SubFilters {
+    width: 160px;
+    margin: 0 20px;
+  }
+  .closeFilter {
+    display: block;
+    height: 60px;
+    position: relative;
+  }
+  .closeFilter > i {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 25px;
+    width: 60px;
+    height: 100%;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  
+}
+
