@@ -1,0 +1,128 @@
+p {
+  font-weight: 500;
+  font-size: large;
+}
+
+.description {
+  box-sizing: content-box;
+  display: flex !important;
+  flex-wrap: wrap;
+  font-size: 17px !important;
+  padding-top: 3%;
+  letter-spacing: 0.05em;
+  line-height: 28px;
+}
+
+.description-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  display: flex;
+  align-items: center;
+  color: white !important;
+  background: url('../../assets/WhatWeDoBg.png');
+  background-size: cover;
+  background-position: 0px 0px;
+  padding: 20px 20px;
+  margin-top: 8% !important;
+  width: 35%;
+  height: 70%;
+}
+
+.description-box > div {
+  min-height: initial;
+}
+
+.desc-title {
+  font-size: 36px !important;
+  line-height: 44px;
+  padding-bottom: 2vh;
+}
+
+.what-we-do {
+  /* margin-top: 100px; */
+  height: 92vh;
+  position: relative;
+  
+}
+
+.what-we-do img {
+  height: auto;
+  width: 60%;
+  padding: 0%;
+  margin: 2%;
+  margin-top: 4%;
+}
+
+.MuiButtonBase-root {
+  color: #ff4230 ;
+}
+
+.whatWeDoBtn {
+  background-color: #f1f1f1 !important;
+  border-radius: 10px !important;
+  padding: 4px 8px !important;
+  color: #ff4230 !important;
+  border: 2px solid white !important;
+  outline: 0 !important;
+  margin-top: 20px !important;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.whatWeDoBtn:hover {
+  background-color: #ddd !important;
+}
+
+.bgContainer {
+  background-image: url("../../assets/artform2\(1\).png");
+
+  /* Set a specific height */
+  height: 100%;
+  width: 65%;
+  display: inline-block;
+  vertical-align: top;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-size: 60% 90% ;
+  background-position: bottom left; 
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+}
+
+@media screen and (max-width: 1010px) {
+  .bgContainer{
+    display: block;
+    /* float: left; */
+    /* margin-top: -100px !important; */
+    background-position: 0px 100px;
+    background-size: contain;
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+  }
+/*   
+  .bgContainer img {
+    width: 100%;
+  } */
+
+   .description-box {
+    display: block;
+    position: initial;
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+    background-size: 100% auto;
+  } 
+  .what-we-do {
+    height: auto;
+    padding-top: 100px;
+    margin: 0 5%;
+    width: 90%;
+  }
+  .description {
+    padding: 0px;
+  }
+}

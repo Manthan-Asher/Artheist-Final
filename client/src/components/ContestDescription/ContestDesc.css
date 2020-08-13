@@ -1,0 +1,240 @@
+.conDescBg {
+  background-color: #f1f1f1;
+}
+
+.contestDescContainer {
+  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0 100px 0;
+}
+
+.contestDescContainer > div {
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+  /* padding: 20px; */
+}
+
+.contestDetails {
+  width: 73%;
+  padding-right: 0 !important;
+  /* margin-right: 20px; */
+}
+
+.contestDetails > div {
+  width: 90%;
+  margin: 0 auto;
+  padding: 45px;
+  box-shadow: 0px 2px 5px 0px rgba(184, 181, 184, 1);
+  color: #555;
+  background-color: white !important;
+}
+
+.contestDetails > .hostedBy {
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 25px !important;
+}
+
+.contest-poster {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 3%;
+  width: 93%;
+  position: relative;
+}
+.poster-image {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.contest-button {
+  margin-left: 50%;
+  margin-top: 3%;
+  transform: translate(-50%);
+}
+
+.hostedBy > .img-box {
+  width: 150px;
+  height: 150px;
+  margin: 0 !important;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hostedBy > .text-Info {
+  height: 150px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 100px;
+  padding-top: 30px;
+  font-size: 26px;
+}
+
+.text-Info > span {
+  font-weight: 600;
+}
+
+.img-box > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.contestDetails > .overView {
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.overView > h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.overView > p {
+  text-align: justify;
+  max-width: none;
+  font-size: 15px;
+}
+
+.overView > p {
+  margin: 0;
+}
+
+.descriptionContent > h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  margin-bottom: 60px !important;
+}
+
+.descriptionContent > .desc-Left {
+  width: 50%;
+  padding: 0 0px;
+}
+
+.desc-Left > div {
+  margin-bottom: 40px !important;
+}
+
+.sub-desc > h2 {
+  font-weight: bold;
+}
+.sub-desc > h2,
+.sub-desc {
+  font-size: 18px !important;
+}
+
+.judgesDetails {
+  width: 25%;
+  box-shadow: 0px 2px 5px 0px rgba(184, 181, 184, 1);
+}
+
+.judgesDetails > div {
+  padding: 5px;
+  color: #555;
+  background-color: white !important;
+  box-shadow: none !important;
+  text-align: center;
+}
+
+.judgesDetails > div > h2 {
+  text-align: center !important;
+  margin-top: 25px;
+  font-size: 34px;
+}
+
+.juryBox {
+  padding-top: 40px !important;
+}
+
+.juryBox > .juryPhoto {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.juryPhoto > img {
+  height: 200px;
+  width: 200px;
+}
+
+.juryName {
+  margin-top: 10px;
+  font-size: 23px;
+  font-weight: bold !important;
+}
+
+.jurySocialMedia {
+  margin-top: 10px;
+}
+
+.jurySocialMedia > i {
+  font-size: 22px;
+  margin: 10px;
+}
+
+.juryAbout {
+  text-align: left;
+  margin: 15px 20px;
+}
+
+.juryBtn > button {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .contest-poster {
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 3%;
+    width: 100%;
+    position: relative;
+  }
+  .contestDescContainer {
+    padding-top: 68px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .contestDescContainer > div, .judgesDetails {
+    width: 100%;
+    display: block;
+  }
+
+  .judgesDetails {
+    margin-top: 30px;
+    box-shadow: none;
+  }
+  .judgesDetails > div {
+    width: 90%;
+    margin: 0 auto;
+    padding: 45px;
+    color: #555;
+    background-color: white !important;
+  }
+  .juryAbout {
+    max-width: 420px;
+    text-align: center;
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .hostedBy > .text-Info {
+    margin-left: 10px;
+  }
+  .hostedBy > .img-box {
+    width: 120px;
+    height: 120px;
+  }
+}
