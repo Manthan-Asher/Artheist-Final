@@ -1,7 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -29,7 +28,11 @@ function ImgMediaCard({
         component="img"
         alt="Contest"
         height="140"
-        image={imageUrl ? imageUrl : "https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/contest.jpg"}
+        image={
+          imageUrl
+            ? imageUrl
+            : "https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/contest.jpg"
+        }
         title="Contest"
       />
       <CardContent>

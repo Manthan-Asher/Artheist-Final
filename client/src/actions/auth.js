@@ -4,7 +4,6 @@ import {
   REGISTER_SUCCESS,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
-  LOGOUT,
 } from "./types";
 
 export const register = (user, history) => async (dispatch) => {

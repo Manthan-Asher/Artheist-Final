@@ -4,7 +4,6 @@ import {Button} from "react-bootstrap";
 import {connect} from "react-redux";
 import {getContestById} from "../../actions/contests";
 
-
 class ContestDesc extends Component {
   componentDidMount() {
     this.props.getContestById(this.props.match.params.id);
@@ -16,7 +15,6 @@ class ContestDesc extends Component {
     }
     const {
       type,
-      name,
       start_date,
       end_date,
       prize,
@@ -28,7 +26,11 @@ class ContestDesc extends Component {
       <div className="conDescBg">
         <div className="contestDescContainer">
           <div className="contest-poster">
-            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/carousal_demo.png" alt="poster" className="poster-image" />
+            <img
+              src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/carousal_demo.png"
+              alt="poster"
+              className="poster-image"
+            />
             <Button variant="warning" className="contest-button" size="lg">
               Enter The Contest Now
             </Button>
@@ -36,7 +38,10 @@ class ContestDesc extends Component {
           <div className="contestDetails">
             <div className="hostedBy">
               <div className="img-box">
-                <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png" alt="avatar"/>
+                <img
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png"
+                  alt="avatar"
+                />
               </div>
               <div className="text-Info">
                 Hosted By <span>{organized_by}</span>
@@ -89,7 +94,10 @@ class ContestDesc extends Component {
                 return (
                   <div className="juryBox">
                     <div className="juryPhoto">
-                      <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png"></img>
+                      <img
+                        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png"
+                        alt="jury"
+                      ></img>
                     </div>
                     <div className="juryName">{jury}</div>
                     <div className="jurySocialMedia">

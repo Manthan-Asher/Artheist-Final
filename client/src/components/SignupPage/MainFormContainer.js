@@ -3,7 +3,6 @@ import React from "react";
 import {Container} from "semantic-ui-react";
 
 import {UserDetails} from "./UserDetails";
-import {PersonalDetails} from "./PersonalDetails";
 import {About} from "./About";
 import {Success} from "./Success";
 

@@ -7,16 +7,7 @@ const genderOptions = [
 ];
 
 const UserDetails = (props) => {
-  const {
-    firstName,
-    lastName,
-    username,
-    email,
-    phoneNumber,
-    gender,
-    age,
-    dob,
-  } = props.values;
+  const {username, phoneNumber, gender, age, dob} = props.values;
 
   let ageOptions = [];
   for (var i = 18; i < 30; i++) {

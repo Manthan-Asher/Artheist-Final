@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles, withTheme } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -9,9 +9,8 @@ import Box from "@material-ui/core/Box";
 import "./HallOfFame.css";
 import Video from "../Video/Video";
 
-
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const {children, value, index, ...other} = props;
 
   return (
     <div
@@ -59,13 +58,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     // backgroundColor: theme.palette.background.paper,
-    height: 500
+    height: 500,
   },
   tab: {
-      color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
   },
 }));
-
 
 const HallOfFame = () => {
   const classes = useStyles();
@@ -76,7 +74,7 @@ const HallOfFame = () => {
 
   return (
     <div className="HallOfFameContainer">
-        <h1>Hall Of Fame</h1>
+      <h1>Hall Of Fame</h1>
       <div className={classes.tab}>
         <AppBar position="static" className="appBar">
           <Tabs
@@ -93,11 +91,11 @@ const HallOfFame = () => {
           </Tabs>
         </AppBar>
         <TabPanel className="tabPanel" value={value} index={0}>
-          <Video className="video"/>
-          <Video className="video"/>
-          <Video className="video"/>
+          <Video className="video" />
+          <Video className="video" />
+          <Video className="video" />
         </TabPanel>
-        <TabPanel  className="tabPanel" value={value} index={1}>
+        <TabPanel className="tabPanel" value={value} index={1}>
           <p>There are no videos for now come back soon......</p>
         </TabPanel>
         <TabPanel className="tabPanel" value={value} index={2}>
@@ -107,7 +105,7 @@ const HallOfFame = () => {
           <p>There are no videos for now come back soon......</p>
         </TabPanel>
         <div className="fameBtnContainer">
-            <button className="hallOfFameBtn">View More</button>
+          <button className="hallOfFameBtn">View More</button>
         </div>
       </div>
     </div>

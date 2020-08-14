@@ -5,12 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.min.js";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import AboutUs from "./AboutUs/AboutUs";
 import Contest from "./ContestPage/Contest";
@@ -43,7 +38,6 @@ class App extends React.Component {
           <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
           <Route path="/profileChange" exact component={ImageGetter}></Route>
           <Route path="/userProfile" exact component={UserProfile}></Route>
-          {/* <Redirect to="/home" />  */}
         </Switch>
         <Footer />
       </Router>
