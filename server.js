@@ -18,8 +18,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(
   session({
     secret: keys.sessionSecret,
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie: {expires: 30 * 24 * 60 * 60 * 1000},
     store: new MongoDBStore({
       uri: keys.mongoURL,
