@@ -27,7 +27,7 @@ app.use(
       expires: 1000 * 60 * 60 * 24 * 30,
       collection: "mySessions",
       connectionOptions: {
-        autoReconnect: true,
+        useUnifiedTopology: true,
       },
     }),
   })
