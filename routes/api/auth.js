@@ -16,7 +16,7 @@ router.get(
 //@access  Public
 
 router.get("/google/contests", passport.authenticate("google"), (req, res) => {
-  if (!req.user.isNew) {
+  if (req.user.isNew) {
     return res.redirect("/additionalDetails");
   }
   res.redirect("/contest");
@@ -39,7 +39,7 @@ router.get(
   "/facebook/contests",
   passport.authenticate("facebook"),
   (req, res) => {
-    if (!req.user.isNew) {
+    if (req.user.isNew) {
       return res.redirect("/additionalDetails");
     }
     res.redirect("/contest");

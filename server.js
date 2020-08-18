@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
+const MongoDBStore = require("connect-mongodb-session")(session);
 const keys = require("./config/keys");
 
 require("./models/User");
@@ -18,8 +19,17 @@ app.use(
   session({
     secret: keys.sessionSecret,
     resave: true,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {expires: 30 * 24 * 60 * 60 * 1000},
+    store: new MongoDBStore({
+      uri: keys.mongoURL,
+      databaseName: "ArtHeist",
+      expires: 1000 * 60 * 60 * 24 * 30,
+      collection: "mySessions",
+      connectionOptions: {
+        autoReconnect: true,
+      },
+    }),
   })
 );
 

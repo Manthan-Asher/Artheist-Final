@@ -2,22 +2,16 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const requireLogin = require("../../middleware/requireLogin");
-const cache = require("../../middleware/cache");
 
 const Contest = mongoose.model("Contest");
 //@route   GET /contests
 //@desc    get Contests
 //@access  Private
 
-router.get("/", requireLogin, cache(10), async (req, res) => {
+router.get("/", requireLogin, async (req, res) => {
   try {
     const contests = await Contest.find({});
     res.send(contests);
-
-    console.log({
-      Cache1: cache,
-      Cache2: Cache,
-    });
   } catch (error) {
     res.status(500).send(error.message);
   }
