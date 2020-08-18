@@ -39,7 +39,7 @@ class ContestDesc extends Component {
             <div className="hostedBy">
               <div className="img-box">
                 <img
-                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png"
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg"
                   alt="avatar"
                 />
               </div>
@@ -95,7 +95,7 @@ class ContestDesc extends Component {
                   <div className="juryBox">
                     <div className="juryPhoto">
                       <img
-                        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.png"
+                        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg"
                         alt="jury"
                       ></img>
                     </div>

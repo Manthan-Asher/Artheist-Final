@@ -6,6 +6,7 @@ const Post = mongoose.model("Post");
 const User = mongoose.model("User");
 const Contest = mongoose.model("Contest");
 const requireLogin = require("../../middleware/requireLogin");
+const cache = require("../../middleware/cache");
 const uploadPost = require("../../config/S3");
 // @route  POST /posts
 // @desc    Create a post
@@ -31,7 +32,7 @@ router.post("/", requireLogin, uploadPost.single("post"), async (req, res) => {
 // @desc   get all posts
 // @access  private
 
-router.get("/", requireLogin, async (req, res) => {
+router.get("/", requireLogin, cache(10), async (req, res) => {
   try {
     const posts = await Post.find().sort({date: -1});
     res.send(posts);
