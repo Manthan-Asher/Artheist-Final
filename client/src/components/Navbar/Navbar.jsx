@@ -63,7 +63,9 @@ class NavBar extends Component {
                     <Dropdown.Item href="#/action-2">
                       What we do ?
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Creators</Dropdown.Item>
+                    <Link to="/howItWorks" className="navLink">
+                      <Dropdown.Item href="howItWorks">How It Works?</Dropdown.Item>
+                    </Link>
                     <Dropdown.Item href="#/action-3">
                       Testimonials
                     </Dropdown.Item>

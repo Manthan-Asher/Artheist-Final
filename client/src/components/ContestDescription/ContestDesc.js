@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./ContestDesc.css";
-import {Button} from "react-bootstrap";
+import FileUploadBox from "./FileUploadDialog/FileUploadBox";
+//import {Button} from "react-bootstrap";
 import {connect} from "react-redux";
 import {getContestById} from "../../actions/contests";
 
@@ -31,9 +32,10 @@ class ContestDesc extends Component {
               alt="poster"
               className="poster-image"
             />
-            <Button variant="warning" className="contest-button" size="lg">
+            {/* <Button variant="warning" className="contest-button" size="lg">
               Enter The Contest Now
-            </Button>
+            </Button> */}
+            <FileUploadBox />
           </div>
           <div className="contestDetails">
             <div className="hostedBy">

@@ -51,10 +51,9 @@
   left: 0;
 }
 
-.contest-button {
-  margin-left: 50%;
-  margin-top: 3%;
-  transform: translate(-50%);
+.fileUploadBoxContainer {
+  width: 210px;
+  margin: 30px auto;
 }
 
 .hostedBy > .img-box {

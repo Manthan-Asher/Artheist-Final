@@ -7,6 +7,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
+import HowItWorksPage from "./HowItWorksPage/HowItWorksPage";
 import AboutUs from "./AboutUs/AboutUs";
 import Contest from "./ContestPage/Contest";
 import SignUpPage from "./SignupPage";
@@ -38,6 +39,7 @@ class App extends React.Component {
           <Route path="/contestDesc/:id" exact component={ContestDesc}></Route>
           <Route path="/profileChange" exact component={ImageGetter}></Route>
           <Route path="/userProfile" exact component={UserProfile}></Route>
+          <Route path="/howItWorks" exact component={HowItWorksPage}></Route>
         </Switch>
         <Footer />
       </Router>
