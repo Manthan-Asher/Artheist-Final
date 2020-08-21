@@ -146,3 +146,9 @@
     padding-left: 1em !important;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+}

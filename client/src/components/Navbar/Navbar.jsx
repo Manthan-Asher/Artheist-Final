@@ -4,7 +4,7 @@ import "./Navbar.css";
 import {Link} from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-
+import MobileNavbar from "../MobileNavbar/MobileNavbar";
 
 class NavBar extends Component {
   state = {loginOpen: false, signupOpen: false};
@@ -34,6 +34,10 @@ class NavBar extends Component {
               <Navbar.Brand className="navbar-brand">artHeist</Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+
+            <MobileNavbar />
+
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-5 mr-auto">     
                 <Link to="/userProfile" className="navLink" style={{color: "inherit"}}>
