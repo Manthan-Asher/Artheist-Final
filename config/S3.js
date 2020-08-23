@@ -14,7 +14,8 @@ const s3 = new AWS.S3({
 
 var uploadPost = multer({
   limits: {
-    fileSize: 52428800,
+    fileSize: 40000000,
+    files: 1,
   },
   storage: multerS3({
     s3,

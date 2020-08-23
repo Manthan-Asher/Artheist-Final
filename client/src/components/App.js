@@ -16,6 +16,7 @@ import ContestDesc from "./ContestDescription/ContestDesc";
 import UserProfile from "./UserProfile/UserProfile";
 import {authLogin} from "../actions/auth";
 import {connect} from "react-redux";
+import Alert from "./Alert/Alert";
 
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faFilter, faFile, faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -30,6 +31,7 @@ class App extends React.Component {
     return (
       <Router>
         <Navbar />
+        <Alert />
         <Switch>
           {/* <Route path="/" exact component={HomePage} ></Route> */}
           <Route path="/" exact component={HomePage}></Route>
