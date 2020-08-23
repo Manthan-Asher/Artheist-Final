@@ -27,13 +27,15 @@ router.post("/", requireLogin, uploadPost.single("post"), async (req, res) => {
   }
 });
 
-// @route  GET /posts
-// @desc   get all posts
+// @route  GET /posts/user/:userId
+// @desc   get posts by a user
 // @access  private
 
-router.get("/", requireLogin, async (req, res) => {
+router.get("/user/:userId", requireLogin, async (req, res) => {
   try {
-    const posts = await Post.find().sort({date: -1});
+    const posts = await Post.find({participant: req.params.userId}).sort({
+      date: -1,
+    });
     res.send(posts);
   } catch (error) {
     console.log(error.message);

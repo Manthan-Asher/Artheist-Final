@@ -11,7 +11,7 @@ class ContestDesc extends Component {
   }
 
   render() {
-    if (!this.props.contest) {
+    if (!this.props.contest || !this.props.userId) {
       return "Loading";
     }
     const {
@@ -35,7 +35,10 @@ class ContestDesc extends Component {
             {/* <Button variant="warning" className="contest-button" size="lg">
               Enter The Contest Now
             </Button> */}
-            <FileUploadBox />
+            <FileUploadBox
+              contestId={this.props.match.params.id}
+              userId={this.props.userId}
+            />
           </div>
           <div className="contestDetails">
             <div className="hostedBy">
@@ -126,6 +129,7 @@ class ContestDesc extends Component {
 
 const mapStateToProps = (state) => ({
   contest: state.contests.contest,
+  userId: state.auth.user._id,
 });
 
 export default connect(mapStateToProps, {getContestById})(ContestDesc);
