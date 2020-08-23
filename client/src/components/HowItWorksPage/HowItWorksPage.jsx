@@ -7,7 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "./HowItWorksPage.css";
-
+import Typical from 'react-typical';
 
 
 function TabPanel(props) {
@@ -84,7 +84,12 @@ const HowItWorksPage = () => {
                 <section className="howItWorksHeader">
                     <div>
                         <h1>How It Works?</h1>
-                        <h2>Artheist is #1 Contest Aggregation Platform</h2>
+                        {/* <h2>Artheist is #1 Contest Aggregation Platform</h2> */}
+                        <Typical
+                          steps={['Artheist is #1 Contest Aggregation Platform', 5000, 'Join Today For Early Benefits!', 5000]}
+                          loop={Infinity}
+                          wrapper="p"
+                        />
                     </div>
                 </section>
                 <section className="howItWorksPoster"></section>

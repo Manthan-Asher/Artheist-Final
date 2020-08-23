@@ -10,6 +10,9 @@
 .icon-button {
   justify-content: center !important;
 }
+.MuiDialog-paper {
+  overflow: hidden !important;
+}
 
 svg {
   position: absolute;
@@ -36,7 +39,6 @@ label {
   margin-bottom: 5px;
 }
 
-#name,
 #email,
 #password {
   background: transparent;
@@ -48,28 +50,13 @@ label {
   outline: none !important;
 }
 .MuiDialog-paperWidthSm {
-  height: 60vh !important;
-}
-
-.signUpDialog .MuiDialog-paperWidthSm {
-  height: 70vh !important;
+  height: 60vh;
 }
 
 .buttons {
   position: relative;
   bottom: 1vh;
   right: 1vh;
-}
-
-.password-input {
-  position: relative;
-}
-
-.password-icon {
-  position: absolute;
-  left: 130%;
-  right: 0%;
-  top: 195px;
 }
 
 
@@ -146,4 +133,5 @@ $button-active-blue: #1669F2;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 

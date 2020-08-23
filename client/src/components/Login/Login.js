@@ -11,7 +11,7 @@ import {
   DialogTitle,
 } from "@material-ui/core";
 import anime from "animejs/lib/anime.es.js";
-import "./Login.css";
+import "./Login.scss";
 
 var current = null;
 const handleFocus = (e) => {
@@ -78,11 +78,25 @@ const Login = ({openButton, handleClose, login, history}) => {
         onClose={openButton}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title" style={{fontWeight: "bold"}}>
+        {/* <DialogTitle id="form-dialog-title" style={{fontWeight: "bold"}}>
           Login Now
-        </DialogTitle>
+        </DialogTitle> */}
         <DialogActions className="icon-button">
-          <Button
+        <div className="google-btn-container">
+            <div class="google-btn">
+                <div class="google-icon-wrapper">
+                  <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                </div>
+                <a
+                href="/auth/google"
+                style={{textDecoration: "none", color: "inherit"}}
+                >
+                  <p class="btn-text"><b>Sign In with Google</b></p>
+                </a>
+                  
+            </div>
+          </div>
+          {/* <Button
             size="large"
             variant="contained"
             style={{backgroundColor: "red", fontWeight: "bold"}}
@@ -103,7 +117,7 @@ const Login = ({openButton, handleClose, login, history}) => {
               <i className="fab fa-facebook" />
               Login with Facebook
             </a>
-          </Button>
+          </Button> */}
         </DialogActions>
         <DialogContent>
           <hr />
@@ -131,19 +145,23 @@ const Login = ({openButton, handleClose, login, history}) => {
               type="email"
               id="email"
               name="email"
+              placeholder="Enter Your Email Address"
               onFocus={handleFocus}
               autoComplete="off"
               value={input.email}
               onChange={handleChange}
+              required
             />
             <label for="Password">Password</label>
             <input
               type="password"
               id="password"
+              placeholder="Enter Your Password"
               onFocus={handleFocus2}
               name="password"
               value={input.password}
               onChange={handleChange}
+              required
             />
           </div>
         </DialogContent>

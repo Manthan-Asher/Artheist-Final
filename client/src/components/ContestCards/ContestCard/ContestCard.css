@@ -10,12 +10,16 @@
     visibility: visible;
 }
 
-.MuiCardActions-spacing > :not(:first-child) {
+.MuiCardActions-spacing > button {
     margin-left: 10px !important;
     background-color: #f755a6;
     color: white !important;
 }
 
-.MuiCardActions-spacing > :not(:first-child):hover {
+.MuiCardActions-spacing > button:hover {
     color: #f755a6 !important;
+}
+.MuiCardActions-spacing > button > span > a {
+    text-decoration: none !important;
+    color: white !important;
 }

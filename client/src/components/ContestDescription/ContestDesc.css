@@ -200,7 +200,7 @@
     position: relative;
   }
   .contestDescContainer {
-    padding-top: 68px;
+    padding-top: 64px;
   }
 }
 
@@ -235,5 +235,15 @@
   .hostedBy > .img-box {
     width: 120px;
     height: 120px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hostedBy > .text-Info {
+    margin-left: 2px;
+  }
+  .hostedBy > .img-box {
+    width: 110px;
+    height: 110px;
   }
 }

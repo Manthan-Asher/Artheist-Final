@@ -1,5 +1,5 @@
 .aboutUsContainer {
-    margin-top: 65px;
+    margin-top: 64px;
     background-color: #0e0f11;
     color: white;
 }
@@ -71,6 +71,7 @@
 
 .essenceContent {
     width: 52%;
+    height: 500px;
     padding: 90px;
     background-color: #fafafa;
     color: black;
@@ -225,4 +226,41 @@
     text-align: justify;
     margin-top: 40px;
     padding: 0px 20px;
+}
+
+
+@media screen and (max-width: 750px) {
+    .artheistEssence > div {
+        display: block;
+    }
+    .trailerVideo > video {
+        transform: scale(0.5);
+    }
+    .ourIntegrity img {
+        width: 200px;
+        height: 300px;
+    }
+    .essenceLogo {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .essenceContent {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .essenceLogo {
+        background-position: 5%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .essenceLogo {
+        background-position: -3%;
+    }
+    .essenceContent {
+        padding: 60px;
+    }
 }
