@@ -3,6 +3,7 @@ import {
   LOGIN_SUCCESS,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  LOGOUT,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -21,6 +22,7 @@ const auth = (state = INITIAL_STATE, action) => {
 
     case LOGIN_FAIL:
     case REGISTER_FAIL:
+    case LOGOUT:
       return {
         ...state,
         isAuthenticated: false,

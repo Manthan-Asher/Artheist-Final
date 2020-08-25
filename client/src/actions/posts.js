@@ -9,12 +9,17 @@ import axios from "axios";
 
 const uploadPost = (post, onUploadProgress) => async (dispatch) => {
   try {
-    const config = {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+    const headers = {
+      "Content-Type": "multipart/form-data",
     };
-    const res = await axios.post("/posts", post, config, onUploadProgress);
+
+    const res = await axios.request({
+      method: "post",
+      url: "/posts",
+      data: post,
+      headers,
+      onUploadProgress,
+    });
 
     AlertToast("Your post has been Successfully Uploaded!", "success");
 

@@ -1,30 +1,32 @@
 import React from "react";
-import { Input, Form, Button, Checkbox, TextArea } from "semantic-ui-react";
+import {Input, Form, Button, Checkbox, TextArea} from "semantic-ui-react";
+import {connect} from "react-redux";
+import {updateProfile} from "../../actions/profile";
 
 const interestOptions = [
-  { key: "1", value: "dancing", label: "Dancing" },
-  { key: "2", value: "singing", label: "Singing" },
-  { key: "3", value: "music", label: "Music" },
-  { key: "4", value: "drama", label: "Drama/Theatre" },
-  { key: "5", value: "story", label: "Story Telling/Poetry" },
-  { key: "6", value: "comedy", label: "Standip Comedy" },
-  { key: "7", value: "magic", label: "Magic/Illusion Art" },
-  { key: "8", value: "photography", label: "Photography/Video-making" },
-  { key: "9", value: "drawing", label: "Drawing" },
-  { key: "10", value: "writing", label: "Writing" },
-  { key: "11", value: "designing", label: "Designing(Graphics)" },
-  { key: "12", value: "sculpture", label: "Sculpture(3D Art)" },
-  { key: "13", value: "painting", label: "Painting" },
-  { key: "14", value: "fashion", label: "Fashion Design" },
-  { key: "15", value: "interior", label: "Interior Design" },
-  { key: "16", value: "jewelry", label: "Jewelry Design" },
-  { key: "17", value: "tattoo", label: "Tattoo Art" },
-  { key: "18", value: "decorative", label: "Decorative Art" },
-  { key: "19", value: "woodcrafts", label: "Wood Crafts/Marble Crafts" },
+  {key: "1", value: "dancing", label: "Dancing"},
+  {key: "2", value: "singing", label: "Singing"},
+  {key: "3", value: "music", label: "Music"},
+  {key: "4", value: "drama", label: "Drama/Theatre"},
+  {key: "5", value: "story", label: "Story Telling/Poetry"},
+  {key: "6", value: "comedy", label: "Standip Comedy"},
+  {key: "7", value: "magic", label: "Magic/Illusion Art"},
+  {key: "8", value: "photography", label: "Photography/Video-making"},
+  {key: "9", value: "drawing", label: "Drawing"},
+  {key: "10", value: "writing", label: "Writing"},
+  {key: "11", value: "designing", label: "Designing(Graphics)"},
+  {key: "12", value: "sculpture", label: "Sculpture(3D Art)"},
+  {key: "13", value: "painting", label: "Painting"},
+  {key: "14", value: "fashion", label: "Fashion Design"},
+  {key: "15", value: "interior", label: "Interior Design"},
+  {key: "16", value: "jewelry", label: "Jewelry Design"},
+  {key: "17", value: "tattoo", label: "Tattoo Art"},
+  {key: "18", value: "decorative", label: "Decorative Art"},
+  {key: "19", value: "woodcrafts", label: "Wood Crafts/Marble Crafts"},
 ];
 
-const About = (props) => {
-  const { about, interests, skills } = props.values;
+const Something = (props) => {
+  const {about, interests, skills} = props.values;
   return (
     <React.Fragment>
       <div
@@ -39,10 +41,10 @@ const About = (props) => {
           <h1 className="ui centered">More About You</h1>
           {/* <h1 className="ui centered">Your Interests</h1> */}
           <Form.Group inline>
-            <label>Sports</label>
+            <label>Interests</label>
             <br />
             <div
-              style={{ display: "grid", gridTemplateColumns: "auto auto auto" }}
+              style={{display: "grid", gridTemplateColumns: "auto auto auto"}}
             >
               {interestOptions.map((i) => (
                 <Form.Field
@@ -70,6 +72,7 @@ const About = (props) => {
             label="Skills"
             value={skills}
             name="skills"
+            placeholder="Please use comma separated values"
             onChange={props.handleChange}
           />
 
@@ -83,7 +86,13 @@ const About = (props) => {
           />
 
           <Button onClick={props.prev}>Back</Button>
-          <Button color="blue" type="submit">
+          <Button
+            color="blue"
+            type="submit"
+            onClick={() => {
+              props.updateProfile(props.values);
+            }}
+          >
             Submit
           </Button>
         </div>
@@ -92,4 +101,4 @@ const About = (props) => {
   );
 };
 
-export { About };
+export const About = connect(null, {updateProfile})(Something);

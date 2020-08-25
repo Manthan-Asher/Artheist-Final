@@ -82,42 +82,24 @@ const Login = ({openButton, handleClose, login, history}) => {
           Login Now
         </DialogTitle> */}
         <DialogActions className="icon-button">
-        <div className="google-btn-container">
-            <div class="google-btn">
-                <div class="google-icon-wrapper">
-                  <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
-                </div>
-                <a
-                href="/auth/google"
-                style={{textDecoration: "none", color: "inherit"}}
-                >
-                  <p class="btn-text"><b>Sign In with Google</b></p>
-                </a>
-                  
-            </div>
-          </div>
-          {/* <Button
-            size="large"
-            variant="contained"
-            style={{backgroundColor: "red", fontWeight: "bold"}}
-          >
+          <div className="google-btn-container">
             <a
               href="/auth/google"
               style={{textDecoration: "none", color: "inherit"}}
             >
-              <i className="fab fa-google" />
-              Login with Google
+              <div class="google-btn">
+                <div class="google-icon-wrapper">
+                  <img
+                    class="google-icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                  />
+                </div>
+                <p class="btn-text">
+                  <b>Sign In with Google</b>
+                </p>
+              </div>
             </a>
-          </Button>
-          <Button size="large" color="primary" variant="contained">
-            <a
-              href="/auth/facebook"
-              style={{textDecoration: "none", color: "inherit"}}
-            >
-              <i className="fab fa-facebook" />
-              Login with Facebook
-            </a>
-          </Button> */}
+          </div>
         </DialogActions>
         <DialogContent>
           <hr />

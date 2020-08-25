@@ -1,4 +1,8 @@
-import {ADD_AVATAR, UPDATE_PROFILE_FAILED} from "../actions/types";
+import {
+  ADD_AVATAR,
+  UPDATE_PROFILE_FAILED,
+  UPDATE_PROFILE,
+} from "../actions/types";
 
 const INITIAL_STATE = {
   response: "",
@@ -10,6 +14,7 @@ const profile = (state = INITIAL_STATE, action) => {
 
   switch (type) {
     case ADD_AVATAR:
+    case UPDATE_PROFILE:
       return {...state, response: payload};
 
     case UPDATE_PROFILE_FAILED:

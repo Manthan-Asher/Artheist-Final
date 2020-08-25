@@ -133,12 +133,7 @@ function CustomizedDialogs(props) {
                       </button>
                     </div>
                   </form>
-                  <Progress
-                    max="100"
-                    color="success"
-                    value={loaded}
-                    style={{marginTop: "10px"}}
-                  >
+                  <Progress max="100" color="success" value={loaded}>
                     {Math.round(loaded, 2)}%
                   </Progress>
                 </div>

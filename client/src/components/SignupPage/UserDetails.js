@@ -38,6 +38,7 @@ const UserDetails = (props) => {
             label="Phone Number"
             value={phoneNumber}
             name="phoneNumber"
+            type="tel"
             onChange={props.handleChange}
           />
           <Form.Field
@@ -45,6 +46,7 @@ const UserDetails = (props) => {
             label="Date of Birth"
             value={dob}
             name="dob"
+            type="date"
             onChange={props.handleChange}
           />
 

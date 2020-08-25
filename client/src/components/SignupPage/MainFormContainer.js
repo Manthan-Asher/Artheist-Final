@@ -7,7 +7,6 @@ import {About} from "./About";
 import {Success} from "./Success";
 
 import {Form} from "semantic-ui-react";
-import {connect} from "react-redux";
 
 class MainFormContainer extends React.Component {
   constructor(props) {
@@ -104,11 +103,6 @@ class MainFormContainer extends React.Component {
       skills,
       phoneNumber,
     };
-
-    if (!this.props.userData) {
-      return <div>Loading...</div>;
-    }
-
     return (
       <Container textAlign="left">
         <Form onSubmit={this.handleSubmit}>
@@ -147,8 +141,4 @@ const Step = ({step, values, handleChange, next, prev}) => {
   }
 };
 
-const mapStateToProps = (state) => ({
-  userData: state.auth.user,
-});
-
-export default connect(mapStateToProps)(MainFormContainer);
+export default MainFormContainer;
