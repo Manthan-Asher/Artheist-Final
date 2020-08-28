@@ -11,14 +11,11 @@ import Typography from "@material-ui/core/Typography";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Box from "@material-ui/core/Box";
 import "../ContestDesc.css";
-import {Progress} from "reactstrap";
 import {connect} from "react-redux";
 import {uploadPost} from "../../../actions/posts";
 
-
 function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
-  const [loaded, setLoaded] = React.useState(25);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -33,69 +30,63 @@ function CustomizedDialogs(props) {
     var post = new FormData();
     post.append("post", postFile.files[0]);
     post.append("contestId", props.contestId);
-    const onUploadProgress = (ProgressEvent) => {
-      //console.log(loaded,(ProgressEvent.loaded / ProgressEvent.total) * 100);
-      setLoaded((ProgressEvent.loaded / ProgressEvent.total) * 100);
-    };
-    props.uploadPost(post, onUploadProgress);
+    props.uploadPost(post);
   };
 
-const ColorButton = withStyles((theme) => ({
-  root: {
-    color: theme.palette.getContrastText(yellow[500]),
-    backgroundColor: yellow[500],
-    "&:hover": {
-      backgroundColor: yellow[600],
+  const ColorButton = withStyles((theme) => ({
+    root: {
+      color: theme.palette.getContrastText(yellow[500]),
+      backgroundColor: yellow[500],
+      "&:hover": {
+        backgroundColor: yellow[600],
+      },
     },
-  },
-}))(Button);
+  }))(Button);
 
-const styles = (theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(2),
-  },
-  closeButton: {
-    position: "absolute",
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.grey[500],
-  },
-  enterContest: {
-    color: theme.palette.getContrastText(yellow[500]),
-    backgroundColor: yellow[500],
-    "&:hover": {
-      backgroundColor: yellow[600],
+  const styles = (theme) => ({
+    root: {
+      margin: 0,
+      padding: theme.spacing(2),
     },
-  },
-});
+    closeButton: {
+      position: "absolute",
+      right: theme.spacing(1),
+      top: theme.spacing(1),
+      color: theme.palette.grey[500],
+    },
+    enterContest: {
+      color: theme.palette.getContrastText(yellow[500]),
+      backgroundColor: yellow[500],
+      "&:hover": {
+        backgroundColor: yellow[600],
+      },
+    },
+  });
 
-const DialogTitle = withStyles(styles)((props) => {
-  const {children, classes, onClose, ...other} = props;
-  return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
-      {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
-          <i className="fa fa-close"></i>
-          {/* <CloseIcon /> */}
-        </IconButton>
-      ) : null}
-    </MuiDialogTitle>
-  );
-});
+  const DialogTitle = withStyles(styles)((props) => {
+    const {children, classes, onClose, ...other} = props;
+    return (
+      <MuiDialogTitle disableTypography className={classes.root} {...other}>
+        <Typography variant="h6">{children}</Typography>
+        {onClose ? (
+          <IconButton
+            aria-label="close"
+            className={classes.closeButton}
+            onClick={onClose}
+          >
+            <i className="fa fa-close"></i>
+            {/* <CloseIcon /> */}
+          </IconButton>
+        ) : null}
+      </MuiDialogTitle>
+    );
+  });
 
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiDialogContent);
-
-
+  const DialogContent = withStyles((theme) => ({
+    root: {
+      padding: theme.spacing(2),
+    },
+  }))(MuiDialogContent);
 
   return (
     <div className="fileUploadBoxContainer">
@@ -137,9 +128,6 @@ const DialogContent = withStyles((theme) => ({
                       </button>
                     </div>
                   </form>
-                  <Progress max="100" color="success" value={loaded}>
-                    {Math.round(loaded, 2)}%
-                  </Progress>
                 </div>
               </div>
             </div>

@@ -7,7 +7,7 @@ import {
 import AlertToast from "../components/Alert/AlertToast";
 import axios from "axios";
 
-const uploadPost = (post, onUploadProgress) => async (dispatch) => {
+const uploadPost = (post) => async (dispatch) => {
   try {
     const headers = {
       "Content-Type": "multipart/form-data",
@@ -18,7 +18,6 @@ const uploadPost = (post, onUploadProgress) => async (dispatch) => {
       url: "/posts",
       data: post,
       headers,
-      onUploadProgress,
     });
 
     AlertToast("Your post has been Successfully Uploaded!", "success");

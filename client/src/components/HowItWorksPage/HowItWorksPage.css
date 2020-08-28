@@ -1,110 +1,114 @@
 .howItWorksContainer {
-    height: auto;
-    margin-top: 64px;
+  height: auto;
+  margin-top: 64px;
 }
 
 .howItWorksHeader {
-    height: calc(100vh - 65px);
-    background-image: url("../../assets/howitworksbg.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    color: white;
-    display: flex;
+  height: calc(100vh - 65px);
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/howitworksbg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  display: flex;
 }
 
 .howItWorksHeader > div {
-    padding-top: 200px;
-    padding-left: 2em;
-    /* width: 60%; */
+  padding-top: 200px;
+  padding-left: 2em;
+  /* width: 60%; */
 }
 
 .howItWorksHeader > div > p {
-    font-size: 38px;
-    text-align: left !important;
+  font-size: 38px;
+  text-align: left !important;
 }
 
 .howItWorksHeader > div > p::after {
-    color: orange;
+  color: orange;
 }
 
-
 .howItWorksHeader h2 {
-    /* width: 900px; */
-    font-size: 38px;
-    text-align: left !important;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .05em; /* Adjust as needed */
-    animation: 
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+  /* width: 900px; */
+  font-size: 38px;
+  text-align: left !important;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.05em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .howItWorksHeader h1 {
-    text-align: left !important;
-    /* max-width: 300px; */
-    /* width: 500px; */
+  text-align: left !important;
+  /* max-width: 300px; */
+  /* width: 500px; */
 }
-
 
 /* The typing effect */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
   }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+  to {
+    width: 100%;
   }
+}
 
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
 
 .howItWorksPoster {
-    min-height: 400px;
-    height: calc(100vh - 65px);
-    background-image: url("../../assets/artheistProcessMap.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 90%;
-    /* width: 90%; */
-    margin: 0 auto;
+  min-height: 400px;
+  height: calc(100vh - 65px);
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artheistProcessMap.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 90%;
+  /* width: 90%; */
+  margin: 0 auto;
 }
 
 .offersSection {
-    height: calc(100vh - 65px);
-    text-align: center;
-    margin-top: 30px;
-    background-color: #efefef;
+  height: calc(100vh - 65px);
+  text-align: center;
+  margin-top: 30px;
+  background-color: #efefef;
 }
 
 .offerHeader {
-    height: 170px;
-    background-color: #ffd11b;
-    margin-bottom: 0px;
-    padding: 60px 0px;
+  height: 170px;
+  background-color: #ffd11b;
+  margin-bottom: 0px;
+  padding: 60px 0px;
 }
 
 .offerTabs {
-    width: 90%;
-    height: auto;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 90%;
+  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .offerTabs > div > header > div {
-    background: white;
-    color: black !important;
+  background: white;
+  color: black !important;
 }
 
 .offerTabs > div > header > div > div > div > a {
-    color: black !important;
-    font-weight: bold;
-    height: 100px;
-    padding: initial;
+  color: black !important;
+  font-weight: bold;
+  height: 100px;
+  padding: initial;
 }
 
 /* .offerTabs > div > header > div > div > div > .Mui-selected {
@@ -112,110 +116,103 @@
 } */
 
 .offerTabs > div > header > div > div > div > a > span {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .offerTabs > div > div > div > p > p {
-    color: black;
-    padding: 25px;
-    text-align: left;
+  color: black;
+  padding: 25px;
+  text-align: left;
 }
 
 .offerTabs > div > .tabPanel {
-    background: white;
-    height: 270px;
+  background: white;
+  height: 270px;
 }
 
 .offersSection h2 {
-    font-size: 44px;
-    /* margin-bottom: 25px; */
+  font-size: 44px;
+  /* margin-bottom: 25px; */
 }
 
-
 .offerContent {
-    min-height: 200px;
-    padding: 10px;
-    text-align: left;
+  min-height: 200px;
+  padding: 10px;
+  text-align: left;
 }
 
 .offerTabs > div > div > div > p > ul {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
-
 .offerTabs > div > div > div > p > ul > li {
-    padding: 5px 0;
-    color: black;
-    text-align: left;
+  padding: 5px 0;
+  color: black;
+  text-align: left;
 }
 
 .howItWorksBtnContainer {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-
 .howItWorksBtnContainer button {
-    outline: 0;
-    border: 0;
-    padding: 10px 20px;
-    background-color: #ffd11b;
-    color: #000;
-    border-radius: 10px;
-    font-weight: bold;
-
+  outline: 0;
+  border: 0;
+  padding: 10px 20px;
+  background-color: #ffd11b;
+  color: #000;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 780px) {
-    .howItWorksHeader h1 {
-        font-size: 60px;
-    }
-    .howItWorksHeader h2 {
-        font-size: 30px;
-    }
+  .howItWorksHeader h1 {
+    font-size: 60px;
+  }
+  .howItWorksHeader h2 {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 675px) {
-    .howItWorksHeader h1 {
-        font-size: 55px;
-    }
-    .howItWorksHeader h2 {
-        font-size: 25px;
-    }
-    .offersSection h2 {
-        font-size: 38px;  
-    }
+  .howItWorksHeader h1 {
+    font-size: 55px;
+  }
+  .howItWorksHeader h2 {
+    font-size: 25px;
+  }
+  .offersSection h2 {
+    font-size: 38px;
+  }
 }
 
 @media screen and (max-width: 470px) {
-    .howItWorksHeader {
-        width: 100%;
-        height: 250px;
-        background-size: contain;
-    }
-    .howItWorksHeader h1 {
-        font-size: 55px;
-    }
-    .howItWorksHeader > div > p {
-        font-size: 23px;
-    }
-    .offersSection h2 {
-        font-size: 32px;  
-    }
-    .offerHeader {
-        padding: 40px 0px;
-        height: 130px;
-    }
+  .howItWorksHeader {
+    width: 100%;
+    height: 250px;
+    background-size: contain;
+  }
+  .howItWorksHeader h1 {
+    font-size: 55px;
+  }
+  .howItWorksHeader > div > p {
+    font-size: 23px;
+  }
+  .offersSection h2 {
+    font-size: 32px;
+  }
+  .offerHeader {
+    padding: 40px 0px;
+    height: 130px;
+  }
 }
 
 @media screen and (max-width: 375px) {
-    .offersSection h2 {
-        font-size: 28px;  
-    }
-    .offerHeader {
-        padding: 40px 0px;
-        height: 130px;
-    }
+  .offersSection h2 {
+    font-size: 28px;
+  }
+  .offerHeader {
+    padding: 40px 0px;
+    height: 130px;
+  }
 }
-
-
-

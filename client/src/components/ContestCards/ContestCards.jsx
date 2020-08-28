@@ -78,54 +78,64 @@ function NavTabs({getContests, contests: {contests}}) {
   };
 
   return (
-    <div className="ContestContainer">
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Tabs
-            variant="fullWidth"
-            value={value}
-            className="tabs2"
-            onChange={handleChange}
-            aria-label="nav tabs example"
-          >
-            <LinkTab label="Active Contests" href="/drafts" {...a11yProps(0)} />
-            <LinkTab
-              label="Upcoming Contests"
-              href="/trash"
-              {...a11yProps(1)}
-            />
-            <LinkTab label="Previous Contests" href="/spam" {...a11yProps(2)} />
-          </Tabs>
-        </AppBar>
-        <TabPanel value={value} index={0}>
-          {contests.length > 0 &&
-            contests.map((contest) => (
-              <ImgMediaCard key={contest._id} contest={contest} />
-            ))}
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          {contests.length > 0 ? (
-            contests.map((contest) => (
-              <ImgMediaCard key={contest._id} contest={contest} />
-            ))
-          ) : (
-            <h1>Loading..</h1>
-          )}
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          {contests.length > 0 ? (
-            contests.map((contest) => (
-              <ImgMediaCard key={contest._id} contest={contest} />
-            ))
-          ) : (
-            <h1>Loading..</h1>
-          )}
-        </TabPanel>
-        <div>
-          <Pagination />
+    contests && (
+      <div className="ContestContainer">
+        <div className={classes.root}>
+          <AppBar position="static">
+            <Tabs
+              variant="fullWidth"
+              value={value}
+              className="tabs2"
+              onChange={handleChange}
+              aria-label="nav tabs example"
+            >
+              <LinkTab
+                label="Active Contests"
+                href="/drafts"
+                {...a11yProps(0)}
+              />
+              <LinkTab
+                label="Upcoming Contests"
+                href="/trash"
+                {...a11yProps(1)}
+              />
+              <LinkTab
+                label="Previous Contests"
+                href="/spam"
+                {...a11yProps(2)}
+              />
+            </Tabs>
+          </AppBar>
+          <TabPanel value={value} index={0}>
+            {contests.length > 0 &&
+              contests.map((contest) => (
+                <ImgMediaCard key={contest._id} contest={contest} />
+              ))}
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            {contests.length > 0 ? (
+              contests.map((contest) => (
+                <ImgMediaCard key={contest._id} contest={contest} />
+              ))
+            ) : (
+              <h1>Loading..</h1>
+            )}
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            {contests.length > 0 ? (
+              contests.map((contest) => (
+                <ImgMediaCard key={contest._id} contest={contest} />
+              ))
+            ) : (
+              <h1>Loading..</h1>
+            )}
+          </TabPanel>
+          <div>
+            <Pagination />
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 }
 
