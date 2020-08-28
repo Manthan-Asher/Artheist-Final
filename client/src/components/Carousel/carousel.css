@@ -12,7 +12,7 @@
 
 .slick-track {
   height: 100%;
-  padding: 50px 0px;
+  padding: 70px 0px;
   width: 13000px !important;
 }
 
@@ -94,7 +94,7 @@
   background-position: bottom;
   background-size: contain;
   position: relative;
-  margin-top: 65px; 
+  margin-top: 95px; 
   height: 92vh;
 }
 

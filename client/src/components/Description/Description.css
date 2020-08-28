@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
 p {
   font-weight: 500;
   font-size: large;
@@ -7,10 +10,11 @@ p {
   box-sizing: content-box;
   display: flex !important;
   flex-wrap: wrap;
-  font-size: 17px !important;
+  font-size: 25px !important;
   padding-top: 3%;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   line-height: 28px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .description-box {

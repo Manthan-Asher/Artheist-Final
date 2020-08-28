@@ -20,11 +20,8 @@ const Description = () => {
           </Box>
           <Box textAlign="center" fontFamily="Open Sans">
             <p className="description">
-              We organize contests with well-known artists from Instagram, ad
-              firms &amp; different social media handles to promote talented
-              people like you and guess what ! The winners of each contest will
-              be featured alongside the judge, giving ordinary people an
-              extraordinary opportunity to showcase their skills
+            We organize contests with well-known artists from Instagram, ad firms &amp; different social media handles to promote talented people like you,
+             giving ordinary people an extraordinary opportunity to showcase their skills on a large scale platform. 
             </p>
             <button className="whatWeDoBtn">Know More</button>
           </Box>

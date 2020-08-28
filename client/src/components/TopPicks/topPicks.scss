@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
 $duration: 450ms;
 $tileWidth: 250px;
 $tileHeight: ($tileWidth / (16/9));
@@ -53,11 +56,13 @@ p {
 }
 
 .topPicksPara {
-  line-height: 1;
-  word-spacing: 0.1em;
+  line-height: 1.2;
+  word-spacing: 0.2em;
   max-width: 60%;
+  font-size: 25px;
   font-weight: 100;
   margin-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .contain > p > a:link,

@@ -1,11 +1,11 @@
 .search-container {
-    height: 250px;
+    height: 350px;
     /* padding: 80px 50px; */
     text-align: center;
-    background: url('https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/searchBg.jpg');
+    background: url('../../assets/contestbg.png');
     background-repeat: no-repeat;
     background-position: center; 
-    background-size: 100% 100%;
+    background-size: 1500px;
     margin-top: 65px;
     position: relative;
 }

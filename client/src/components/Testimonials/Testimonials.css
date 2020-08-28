@@ -15,15 +15,17 @@
 }
 
 .test-head {
-    text-align: left;
+    text-align: center;
     font-size: 50px;
     padding-top: 30px;
 }
 
 .test-para {
-    text-align: left;
-    width: 100%;
-    max-width: 100%;
+    text-align: center;
+    width: 80%;
+    font-size: 22px;
+    padding: 30px 0;
+    max-width: 80%;
 }
 
 .testVideoContainer {

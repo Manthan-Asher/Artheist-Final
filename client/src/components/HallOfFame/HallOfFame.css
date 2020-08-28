@@ -10,6 +10,7 @@
 .HallOfFameContainer > h1 {
     text-align: left;
     font-size: 50px;
+    margin-bottom: 40px;
 }
 
 .tabs {

@@ -309,7 +309,8 @@ class TopPicks extends Component {
             </div>
           </div>
         </div>
-        <p className="topPicksPara">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veniam necessitatibus nisi excepturi officia quasi nam quo vero optio pariatur repudiandae aliquid, accusamus vitae saepe praesentium quidem sit? Provident, similique. "</p>
+        <p className="topPicksPara">" Welcome to artHeist! This is a collection of some of the top entries that we have received.
+         Do have a look and support these gifted artists and also participate in our various contests to get featured here. "</p>
         {/* <p className="topPicksPara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veniam necessitatibus nisi excepturi officia quasi nam quo vero optio pariatur repudiandae aliquid, accusamus vitae saepe praesentium quidem sit? Provident, similique</p> */}
       </div>
     );

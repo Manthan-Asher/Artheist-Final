@@ -1,0 +1,28 @@
+.fullScrVideoSection {
+    position: relative;
+    margin-top: 64px;
+    width: 100%;
+    display: block;
+}
+
+.fullScrVideoSection > div {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.fullScrVideoSection > div > div {
+    display: flex;
+    width: 100%;
+    /* padding-bottom: 56.25%; */
+}
+
+.fullScrVideoSection video {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    line-height: 1;
+    border: none;
+    object-fit: cover;
+}

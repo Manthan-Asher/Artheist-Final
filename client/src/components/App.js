@@ -18,6 +18,8 @@ import {authLogin} from "../actions/auth";
 import {connect} from "react-redux";
 import Alert from "./Alert/Alert";
 
+//import FullScrVideo from "./FullScrVideo/FullScrVideo";
+
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faFilter, faFile, faSearch} from "@fortawesome/free-solid-svg-icons";
 
@@ -42,6 +44,9 @@ class App extends React.Component {
           <Route path="/profileChange" exact component={ImageGetter}></Route>
           <Route path="/userProfile" exact component={UserProfile}></Route>
           <Route path="/howItWorks" exact component={HowItWorksPage}></Route>
+
+          {/* <Route path="/videoPlayer" exact component={FullScrVideo}></Route> */}
+
         </Switch>
         <Footer />
       </Router>

@@ -1,7 +1,9 @@
 import React from "react";
 import "./HowItWorks.css";
-
-  
+import user from "../../assets/user.svg";
+import magnifier from "../../assets/magnifier.svg";
+import enter from "../../assets/enter.svg";
+import upload from "../../assets/upload.svg";  
 
 const HowItWorks = () => {
   return (
@@ -11,52 +13,49 @@ const HowItWorks = () => {
       <div className="step">
         <div className="step-icon">
           {/* <img src={Profile} /> */}
-          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/profile2.gif" alt="icons" />
+          <img src={user} alt="icons" />
         </div>
         <div className="step-content">
-          <h4>Head1</h4>
+          <h4>Create Your Profile</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            impedit tempora eius repudiandae ut praesentium
+            To begin your artistic journey, you need to first create your profile on Artheist.in
           </p>
           <button>Button</button>
         </div>
       </div>
       <div className="step">
         <div className="step-icon" >
-          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/browse2.gif" alt="icons" />
+          <img src={magnifier} alt="icons" />
         </div>
         <div className="step-content">
-          <h4>Head2</h4>
+          <h4>Explore Contests</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            impedit tempora eius repudiandae ut praesentium
+            As soon as you sign in, you will be able to browse through the ongoing Contests
           </p>
            <button>Button</button>
         </div>
       </div>
       <div className="step">
         <div className="step-icon">
-          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/register2.gif" alt="icons" />
+          <img src={enter} alt="icons" />
         </div>
         <div className="step-content">
-          <h4>Head3</h4>
+          <h4>Register For Contests</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            impedit tempora eius repudiandae ut praesentium
+          Select the contest that is most appealing to you &amp; click on the Enter Contest to register yourself.
           </p>
            <button>Button</button>
         </div>
       </div>
       <div className="step">
         <div className="step-icon">
-          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/upload.gif" alt="icons" />
+          <img src={upload} alt="icons" />
         </div>
         <div className="step-content">
-          <h4>Head4</h4>
+          <h4>Submit Your Work</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-            impedit tempora eius repudiandae ut praesentium
+          Now finally you need to submit your work,
+           you can just sit back and share your performance to as many people as possible.
           </p>
            <button>Button</button>
         </div>

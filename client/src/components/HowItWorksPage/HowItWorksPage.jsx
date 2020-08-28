@@ -82,15 +82,15 @@ const HowItWorksPage = () => {
         return ( 
             <div className="howItWorksContainer">
                 <section className="howItWorksHeader">
-                    <div>
+                    {/* <div>
                         <h1>How It Works?</h1>
-                        {/* <h2>Artheist is #1 Contest Aggregation Platform</h2> */}
+                        
                         <Typical
                           steps={['Artheist is #1 Contest Aggregation Platform', 5000, 'Join Today For Early Benefits!', 5000]}
                           loop={Infinity}
                           wrapper="p"
                         />
-                    </div>
+                    </div> */}
                 </section>
                 <section className="howItWorksPoster"></section>
                 <section className="offersSection">

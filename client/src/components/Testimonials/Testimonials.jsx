@@ -8,9 +8,8 @@ const Testimonials = () => {
     <div className="testimonials">
       <h1 className="test-head">Testimonials</h1>
       <p className="test-para">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
-        alias, iure fugit corrupti deserunt magni corporis cum aspernatur rem
-        magnam veniam totam beatae dolorem facere impedit.
+      One thing that we pride ourselves at artHeist is the satisfaction of our artists, and what better way to judge it than to hear from a few of our many super satisfied users. Have a look at some of their testimonials.
+
       </p>
       <div className="testVideoContainer">
         <div className="testVideoSlider">

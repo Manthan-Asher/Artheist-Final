@@ -15,6 +15,31 @@ import {Progress} from "reactstrap";
 import {connect} from "react-redux";
 import {uploadPost} from "../../../actions/posts";
 
+
+function CustomizedDialogs(props) {
+  const [open, setOpen] = React.useState(false);
+  const [loaded, setLoaded] = React.useState(25);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    var postFile = document.querySelector("#post-file");
+    var post = new FormData();
+    post.append("post", postFile.files[0]);
+    post.append("contestId", props.contestId);
+    const onUploadProgress = (ProgressEvent) => {
+      //console.log(loaded,(ProgressEvent.loaded / ProgressEvent.total) * 100);
+      setLoaded((ProgressEvent.loaded / ProgressEvent.total) * 100);
+    };
+    props.uploadPost(post, onUploadProgress);
+  };
+
 const ColorButton = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(yellow[500]),
@@ -70,28 +95,7 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent);
 
-function CustomizedDialogs(props) {
-  const [open, setOpen] = React.useState(false);
-  const [loaded, setLoaded] = React.useState(0);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    var postFile = document.querySelector("#post-file");
-    var post = new FormData();
-    post.append("post", postFile.files[0]);
-    post.append("contestId", props.contestId);
-    const onUploadProgress = (ProgressEvent) => {
-      setLoaded((ProgressEvent.loaded / ProgressEvent.total) * 100);
-    };
-    props.uploadPost(post, onUploadProgress);
-  };
 
   return (
     <div className="fileUploadBoxContainer">
@@ -137,7 +141,7 @@ function CustomizedDialogs(props) {
                     max="100"
                     color="success"
                     value={loaded}
-                    style={{marginTop: "10px"}}
+                    //style={{marginTop: "10px"}}
                   >
                     {Math.round(loaded, 2)}%
                   </Progress>

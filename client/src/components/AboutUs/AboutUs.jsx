@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AboutUs.css";
+import integrity from "../../assets/integrity.gif";
+import FullScrVideo from "../FullScrVideo/FullScrVideo";
+import OurTeam from "../OurTeam/OurTeam";
 
 const AboutUs = () => {
+
+    const listener = () => {
+      console.log(window.scrollY);
+      
+    }
+
+    useEffect(() => {
+      window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+    });
+
+
   return (
     <section className="aboutUsContainer">
       <div className="aboutUsHeader">
@@ -16,50 +33,28 @@ const AboutUs = () => {
         <div className="essenceContent">
           <h2>Artheist Essence</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-            quibusdam iure, aliquid molestias in impedit ullam praesentium
-            officiis enim,eveniet nisi voluptatem facere sequi modi fuga cumque
-            debitis porro aperiam.{" "}
+          ArtHeist was born out of an idea that each person is talented in their very own way. All of us have so many hidden talents that we never explore, majorly because we don't know how to showcase it.
+           We at ArtHeist solve this problem by offering you a large scale platform for this very purpose.{" "}
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-            quibusdam iure, aliquid molestias in impedit ullam praesentium
-            officiis enim, eveniet nisi voluptatem facere sequi modi fuga cumque
-            debitis porro aperiam.
-          </p>
+        
         </div>
       </div>
-      <div className="trailerVideo">
-        <video
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-          controls
-          autoPlay
-          loop
-          muted
-        ></video>
+
+      <div class="ArtheistTrailer">
+        <FullScrVideo />
       </div>
+      
       <div className="ourIntegrity">
         <h1> Our Integrity </h1>
         <div className="ourIntegrityContent">
-          <p className="equation">
-            Integrity = Artists Experience/ Artists expectations....
-          </p>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-            illo nostrum sunt repellendus ex delectus repudiandae nulla
-            distinctio autem tempora harum exercitationem, doloribus obcaecati!
-            Harum inventore commodi possimus consectetur architecto.
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-            illo nostrum sunt repellendus ex delectus repudiandae nulla
-            distinctio autem tempora harum exercitationem, doloribus obcaecati!
-            Harum inventore commodi possimus consectetur architecto.
+          Our world is full of abilities, but not everyone gets a chance to showcase it to a broader audience. Many times people miss excellent opportunities, and this is where we come in. We make sure that you do not miss any chance anymore to perform, showcase what you are good at, and win contests along the way. Our contests span over almost every field of 
+          art including dance, music/singing, art, acting, poetry, photography, stand-up, movie making, designing and much more.
           </p>
         </div>
         <div className="ourIntegrityImg">
           <img
-            src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg"
+            src={integrity}
             alt="logo"
           />
         </div>
@@ -67,82 +62,33 @@ const AboutUs = () => {
       <div className="whoAreWe">
         <h1>Who are we ?</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum
-          dolor, sit amet consectetur adipisicing elit. Mollitia illo nostrum
-          sunt repellendus ex delectus repudiandae nulla distinctio autem
-          tempora harum exercitationem, doloribus obcaecati! Harum inventore
-          commodi possimus consectetur architecto Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Mollitia illo nostrum sunt repellendus
-          ex delectus repudiandae nulla distinctio autem tempora harum
-          exercitationem, doloribus obcaecati! Harum inventore commodi possimus
-          consectetur architecto Nulla perspiciatis officiis aperiam vitae illo
-          sed atque sint velit tempora nam ea hic odio dolores, doloremque a
-          voluptatem doloribus? Ullam, ea.
+        Artheist is #1 contest aggregation platform for people pursuing their interest either in visual, performance or applied arts.
+        Art has many forms, and cannot be defined into a single category.
+        We at artHeist provide different platforms to make sure that your talent gets a chance to shine in the spotlight.
+        ArtHeist was born out of an idea that each person is talented in their very own way. All of us have
+        so many hidden talents that we never explore, majorly because we don't know how to showcase it. We at ArtHeist solve this problem by offering you a large scale platform for this very purpose.</p>
+
+        <p>
+        We also offer online contest management and help you create and execute your own contests using our website services. We can offer you full management of your online contest from the stage of planning 
+        to sending out the awards. Isn’t that great? Using our specialized software for online contest organization, you will save time, money and effort and success is guaranteed! 
+        We will take care that your message reaches as many people as possible by an innovative, creative and pleasant online contest, targeting thousands of artists.
+        The target of ArtHeist is to constantly improve the online contest management process, to help talented young people and creative artists to present their works and show their skills. ArtHeist is a platform, where users can explore a wide range of talents and reconnect with them. 
+        Our goal is to work for people and help support their work, by showcasing it to a digital audience, giving them the praise and resepct they truly deserve.
+
         </p>
       </div>
+
       <div className="feedbackVideo">
         <h1>What People Say</h1>
-        <div className="trailerVideo">
-          <video
-            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-            controls
-            autoPlay
-            loop
-            muted
-          ></video>
+        <div class="vid-container">
+          <FullScrVideo />
         </div>
       </div>
+
       <div className="ourTeam">
         <h1>Meet Our People</h1>
         <div>
-          <div className="memberPhotos">
-            <div>
-              <img
-                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
-                alt="member-pic"
-              />
-            </div>
-            <div>
-              <img
-                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
-                alt="member-pic"
-              />
-            </div>
-            <div>
-              <img
-                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
-                alt="member-pic"
-              />
-            </div>
-            <div>
-              <img
-                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
-                alt="member-pic"
-              />
-            </div>
-            <div>
-              <img
-                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
-                alt="member-pic"
-              />
-            </div>
-            <div>
-              <img
-                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
-                alt="member-pic"
-              />
-            </div>
-          </div>
-          <div className="aboutMember">
-            <h2>Aditya Rathore</h2>
-            <p>
-              Delectus repudiandae nulla distinctio autem tempora harum
-              exercitationem, doloribus obcaecati! Harum inventore commodi
-              possimus consectetur architecto Nulla perspiciatis officiis
-              aperiam electus repudiandae nulla distinctio autem tempora harum
-              exercitationem, doloribus obcaecati! Harum
-            </p>
-          </div>
+            <OurTeam />
         </div>
       </div>
     </section>
