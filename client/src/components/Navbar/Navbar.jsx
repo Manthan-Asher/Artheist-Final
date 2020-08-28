@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
+import {connect} from "react-redux";
+import {logout} from "../../actions/auth";
 
 class NavBar extends Component {
   state = {loginOpen: false, signupOpen: false};
@@ -30,31 +32,34 @@ class NavBar extends Component {
         <div>
           <Navbar bg="info" expand="lg" className="navBar fixed-top">
             <Link to="/">
-              <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg" alt="logo" className="logo-img" />
+              <img
+                src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg"
+                alt="logo"
+                className="logo-img"
+              />
               <Navbar.Brand className="navbar-brand">artHeist</Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-
             <MobileNavbar />
 
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-5 mr-auto">     
-                <Link to="/userProfile" className="navLink" style={{color: "inherit"}}>
-                  <Nav.Link href="/feed" className="mb4">
-                    Feed
-                  </Nav.Link>
-                </Link>               
+              <Nav className="ml-5 mr-auto">
+                <Nav.Link href="/feed" className="mb4">
+                  Feed
+                </Nav.Link>
                 <Link to="/contest" className="navLink">
                   <Nav.Link href="/contests" to="/contest">
                     Contest
                   </Nav.Link>
                 </Link>
                 <Nav.Link href="/createContest">Create Contest</Nav.Link>
-                <Link to="/profileChange" className="navLink" style={{color: "inherit"}}>
-                  <Nav.Link href="/artists">
-                    Artists
-                  </Nav.Link>
+                <Link
+                  to="/profileChange"
+                  className="navLink"
+                  style={{color: "inherit"}}
+                >
+                  <Nav.Link href="/artists">Artists</Nav.Link>
                 </Link>
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
@@ -68,7 +73,9 @@ class NavBar extends Component {
                       What we do ?
                     </Dropdown.Item>
                     <Link to="/howItWorks" className="navLink">
-                      <Dropdown.Item href="howItWorks">How It Works?</Dropdown.Item>
+                      <Dropdown.Item href="howItWorks">
+                        How It Works?
+                      </Dropdown.Item>
                     </Link>
                     <Dropdown.Item href="#/action-3">
                       Testimonials
@@ -77,20 +84,45 @@ class NavBar extends Component {
                   </Dropdown.Menu>
                 </Dropdown>
               </Nav>
-              <Button
-                variant="outline"
-                onClick={this.handleSignupOpen}
-                className="signUpBtn"
-              >
-                Sign Up
-              </Button>
-              <Button
-                variant="outline"
-                onClick={this.handleLoginOpen}
-                className="loginBtn"
-              >
-                Login
-              </Button>
+              {this.props.auth.isAuthenticated ? (
+                <>
+                  <span className="userName">
+                    <Link
+                      to="/userProfile"
+                      className="navLink"
+                      style={{color: "inherit"}}
+                    >
+                      Hi, {this.props.auth.user.firstName}
+                    </Link>
+                  </span>
+                  <Button
+                    variant="outline"
+                    className="logoutBtn"
+                    onClick={this.props.logout}
+                  >
+                    <Link to="/" style={{color: "inherit"}}>
+                      Logout
+                    </Link>
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="outline"
+                    onClick={this.handleSignupOpen}
+                    className="signUpBtn"
+                  >
+                    Sign Up
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={this.handleLoginOpen}
+                    className="loginBtn"
+                  >
+                    Login
+                  </Button>
+                </>
+              )}
             </Navbar.Collapse>
           </Navbar>
           {this.state.loginOpen ? (
@@ -111,4 +143,8 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, {logout})(NavBar);

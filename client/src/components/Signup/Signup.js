@@ -103,34 +103,24 @@ const Signup = ({openButton, handleClose, register, history}) => {
       >
         {/* <DialogTitle id="form-dialog-title">Signup Now</DialogTitle> */}
         <DialogActions className="icon-button">
-          {/* <Button
-            size="large"
-            variant="contained"
-            style={{backgroundColor: "red", fontWeight: "bold"}}
-          >
+          <div className="google-btn-container">
             <a
               href="/auth/google"
               style={{textDecoration: "none", color: "inherit"}}
             >
-              <i className="fab fa-google" />
-              Signup with Google
-            </a>
-          </Button> */}
-          <div className="google-btn-container">
-            <div class="google-btn">
+              <div class="google-btn">
                 <div class="google-icon-wrapper">
-                  <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                  <img
+                    class="google-icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                  />
                 </div>
-                <a
-                href="/auth/google"
-                style={{textDecoration: "none", color: "inherit"}}
-                >
-                  <p class="btn-text"><b>Sign Up with Google</b></p>
-                </a>
-                  
-            </div>
+                <p class="btn-text">
+                  <b>Sign Up with Google</b>
+                </p>
+              </div>
+            </a>
           </div>
-         
         </DialogActions>
         <DialogContent>
           <hr />

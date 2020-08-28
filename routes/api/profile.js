@@ -41,4 +41,42 @@ router.get("/:id/avatar", requireLogin, async (req, res) => {
   }
 });
 
+router.patch("/me", requireLogin, async (req, res) => {
+  const profileFields = {};
+  const {
+    username,
+    gender,
+    age,
+    interests,
+    about,
+    dob,
+    phoneNumber,
+    skills,
+  } = req.body;
+
+  if (username) profileFields.site_name = username;
+  if (gender) profileFields.gender = gender;
+  if (age) profileFields.age = age;
+  if (about) profileFields.about = about;
+  if (phoneNumber) profileFields.mobile_number = phoneNumber;
+  if (dob) profileFields.dob = dob;
+  if (skills) {
+    profileFields.skills = skills.split(",").map((skill) => skill.trim());
+  }
+  if (interests) {
+    profileFields.interests = interests;
+  }
+
+  try {
+    const user = await User.findOneAndUpdate(
+      {user: req.user.id},
+      {$set: profileFields}
+    );
+    res.send(user);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;

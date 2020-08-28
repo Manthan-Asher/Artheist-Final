@@ -22,7 +22,11 @@ const UserSchema = new mongoose.Schema({
   profile_pic: String,
   avatar: Buffer,
   about: String,
-  insta_handle: String,
+  dob: Date,
+  age: Number,
+  gender: String,
+  interest: [],
+  skills: [],
   contests: [
     {
       type: mongoose.Schema.Types.ObjectId,
