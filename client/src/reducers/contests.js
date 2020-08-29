@@ -18,11 +18,13 @@ export default (state = INITIAL_STATE, action) => {
     case GET_CONTEST:
       return {
         ...state,
+        contests: null,
         contest: payload,
       };
     case CONTEST_ERROR:
       return {
-        ...state,
+        contests: [],
+        contest: null,
         error: payload,
       };
     default:

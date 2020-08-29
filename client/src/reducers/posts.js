@@ -28,6 +28,8 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_POSTS_ERROR:
       return {
         ...state,
+        postsByUser: [],
+        post: null,
         error: payload,
       };
     default:

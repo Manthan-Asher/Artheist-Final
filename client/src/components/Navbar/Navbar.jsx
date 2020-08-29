@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Nav, Navbar, Dropdown, Button} from "react-bootstrap";
 import "./Navbar.css";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
@@ -98,7 +98,9 @@ class NavBar extends Component {
                   <Button
                     variant="outline"
                     className="logoutBtn"
-                    onClick={this.props.logout}
+                    onClick={() => {
+                      this.props.logout(this.props.history);
+                    }}
                   >
                     <Link to="/" style={{color: "inherit"}}>
                       Logout
@@ -147,4 +149,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, {logout})(NavBar);
+export default connect(mapStateToProps, {logout})(withRouter(NavBar));

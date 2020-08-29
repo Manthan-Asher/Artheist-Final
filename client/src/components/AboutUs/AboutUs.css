@@ -1,119 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
 .aboutUsContainer {
-    margin-top: 64px;
-    background-color: #0e0f11;
-    color: white;
+  margin-top: 64px;
+  background-color: #0e0f11;
+  color: white;
 }
 
 .aboutUsHeader {
-    height: 620px;
-    padding: 200px 0;
-    /* background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2(1).png"); */
-    background-image: url("../../assets/picss.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom bottom;
-    background-size: cover;
-    position: relative;
+  height: 620px;
+  padding: 200px 0;
+  /* background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2(1).png"); */
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/picss.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom bottom;
+  background-size: cover;
+  position: relative;
 }
 
 .aboutUsHeader::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .aboutHeaderContent {
-    position: absolute;
-    text-align: left;
-    padding: 110px 60px;
-    /* background-color: #e1e1e1; */
+  position: absolute;
+  text-align: left;
+  padding: 110px 60px;
+  /* background-color: #e1e1e1; */
 }
 
 .aboutHeaderContent > h1 {
-    
-    text-align: left;
-    font-size: 60px;
-    margin-bottom: 20px;
-    color: #ff384f;
-    z-index: 1;
+  text-align: left;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #ff384f;
+  z-index: 1;
 }
 
 .aboutHeaderContent > h2 {
-    margin-bottom: 20px;
-    z-index: 1;
+  margin-bottom: 20px;
+  z-index: 1;
 }
 
 .aboutHeaderContent > button {
-    position: absolute;
-    padding: 15px;
-    background-color: #ff384f;
-    border: 2px solid #ff384f;
-    outline: 0;
-    font-size: 20px;
-    border-radius: 15px;
-    color: white;
-    font-weight: bold;
-    z-index: 4;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+  position: absolute;
+  padding: 15px;
+  background-color: #ff384f;
+  border: 2px solid #ff384f;
+  outline: 0;
+  font-size: 20px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  z-index: 4;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .aboutHeaderContent > button:hover {
-    background-color: transparent;
-    color: #ff384f;
+  background-color: transparent;
+  color: #ff384f;
 }
 
 .artheistEssence {
-    padding-bottom: 100px; 
-    margin: 0 auto;
-    max-width: 1140px;
-    height: auto;  
+  padding-bottom: 100px;
+  margin: 0 auto;
+  max-width: 1140px;
+  height: auto;
 }
 
 .artheistEssence > div {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .essenceContent {
-    width: 52%;
-    height: 499px;
-    padding: 90px;
-    background-color: #fafafa;
-    color: black;
+  width: 52%;
+  height: 499px;
+  padding: 90px;
+  background-color: #fafafa;
+  color: black;
 }
 
 .essenceContent > h2 {
-    margin-bottom: 30px;
-    font-size: 27px;
-    font-weight: bold;
-    position: relative;
+  margin-bottom: 30px;
+  font-size: 27px;
+  font-weight: bold;
+  position: relative;
 }
 
 .essenceContent > p {
-    text-align: justify;
-    /* font-family: "Montserrat", sans-serif; */
-    font-size: 22px;
-    font-family: 'Josefin Sans', sans-serif;
+  text-align: justify;
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 22px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .essenceLogo {
-    background-color: black;
-    background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artHeist_logo.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 18%;
-    background-size: 500px;
-    background-origin: content-box;
-    width: 48%;
-    height: 500px;
+  background-color: black;
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artHeist_logo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 18%;
+  background-size: 500px;
+  background-origin: content-box;
+  width: 48%;
+  height: 500px;
 }
 
 /* .ourIntegrity img {
@@ -123,183 +122,186 @@
 } */
 
 .trailerVideo {
-    margin: 70px auto;
-    /* padding: 40px 60px;  */
-    height: auto;
-    width: 75%;
+  margin: 70px auto;
+  /* padding: 40px 60px;  */
+  height: auto;
+  width: 75%;
 }
 
 .trailerVideo > video {
-    width: 1066px;
-    height: 600px;
+  width: 1066px;
+  height: 600px;
 }
 
-.ourIntegrity, .whoAreWe {
-    padding: 0px 60px; 
-    height: auto;
-    margin-bottom: 100px;
-    margin-top: 100px;
+.ourIntegrity,
+.whoAreWe {
+  padding: 0px 60px;
+  height: auto;
+  margin-bottom: 100px;
+  margin-top: 100px;
 }
 
-.ourIntegrity > h1, .whoAreWe > h1 {
-    text-align: left;
-    font-size: 50px;
-    position: relative;
+.ourIntegrity > h1,
+.whoAreWe > h1 {
+  text-align: left;
+  font-size: 50px;
+  position: relative;
 }
 
-.ourIntegrity > h1::after, .whoAreWe > h1::after, .essenceContent > h2::after {
-    content: "";
-    position: absolute;
-    top: 108%;
-    display: block;
-    height: 4px;
-    width: 10%;
-    background-color: #ff3843;
+.ourIntegrity > h1::after,
+.whoAreWe > h1::after,
+.essenceContent > h2::after {
+  content: "";
+  position: absolute;
+  top: 108%;
+  display: block;
+  height: 4px;
+  width: 10%;
+  background-color: #ff3843;
 }
 
 .whoAreWe > h1::after {
-    width: 130px;
+  width: 130px;
 }
 
 .ourIntegrity > div {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .ourIntegrityContent {
-    width: 50%;
-    margin-top: 40px;
+  width: 50%;
+  margin-top: 40px;
 }
 
 .ourIntegrityContent > p {
-    text-align: left;
-    padding: 40px 0;
-    font-size: 20px;
+  text-align: left;
+  padding: 40px 0;
+  font-size: 20px;
 }
 
 .equation {
-    margin: 40px 0;
+  margin: 40px 0;
 }
 
 .ourIntegrityImg {
-    width: 40%;
-    margin-left: 5%;
-    margin-top: 20px;
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 20px;
 }
 
 .ourIntegrity img {
-    width: 500px;
-    height: 333.33px;
-    margin: 0 auto;
+  width: 500px;
+  height: 333.33px;
+  margin: 0 auto;
 }
 
 .whoAreWe > h1 {
-    text-align: center;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 300px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
 }
 
 .whoAreWe > p {
-    margin-top: 20px;
-    text-align: center;
-    width: 80%;
+  margin-top: 20px;
+  text-align: center;
+  width: 80%;
 }
 
-.feedbackVideo > h1, .ourTeam > h1 {
-    font-size: 60px;
+.feedbackVideo > h1,
+.ourTeam > h1 {
+  font-size: 60px;
 }
 
 .ourTeam {
-    padding: 50px 60px;
-    height: auto;
+  padding: 50px 60px;
+  height: auto;
 }
 
 .ourTeam > div {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .memberPhotos {
-    display: inline-block;
-    width: 60%;
-    height: auto;
-    vertical-align: top;
-    padding: 15px;
+  display: inline-block;
+  width: 60%;
+  height: auto;
+  vertical-align: top;
+  padding: 15px;
 }
 
 .memberPhotos > div {
-    width: 26%;
-    display: inline-block;
-    vertical-align: top;
-    margin: 2.66%;
-    height: 190px;
+  width: 26%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2.66%;
+  height: 190px;
 }
 
 .memberPhotos > div > img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .aboutMember {
-    display: inline-block;
-    width: 40%;
-    height: 450px;
-    vertical-align: top;
-    padding: 15px;
+  display: inline-block;
+  width: 40%;
+  height: 450px;
+  vertical-align: top;
+  padding: 15px;
 }
 
 .aboutMember > h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .aboutMember > p {
-    text-align: justify;
-    margin-top: 40px;
-    padding: 0px 20px;
+  text-align: justify;
+  margin-top: 40px;
+  padding: 0px 20px;
 }
 
-
 @media screen and (max-width: 750px) {
-    .artheistEssence > div {
-        display: block;
-    }
-    .trailerVideo > video {
-        transform: scale(0.5);
-    }
-    .ourIntegrity img {
-        width: 200px;
-        height: 300px;
-    }
-    .essenceLogo {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .essenceContent {
-        width: 90%;
-        margin: 0 auto;
-    }
-    /* .aboutUsHeader {
+  .artheistEssence > div {
+    display: block;
+  }
+  .trailerVideo > video {
+    transform: scale(0.5);
+  }
+  .ourIntegrity img {
+    width: 200px;
+    height: 300px;
+  }
+  .essenceLogo {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .essenceContent {
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* .aboutUsHeader {
         background-position: -400px 40px;
     } */
 }
 
 @media screen and (max-width: 1100px) {
-    .essenceLogo {
-        background-position: 5%;
-    }
+  .essenceLogo {
+    background-position: 5%;
+  }
 }
 
 @media screen and (max-width: 850px) {
-    .essenceLogo {
-        background-position: -3%;
-    }
-    .essenceContent {
-        padding: 60px;
-    }
+  .essenceLogo {
+    background-position: -3%;
+  }
+  .essenceContent {
+    padding: 60px;
+  }
 }
-
 
 /* video experiment with iframe */
 

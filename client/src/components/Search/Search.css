@@ -1,41 +1,40 @@
 .search-container {
-    height: 350px;
-    /* padding: 80px 50px; */
-    text-align: center;
-    background: url('../../assets/contestbg.png');
-    background-repeat: no-repeat;
-    background-position: center; 
-    background-size: 1500px;
-    margin-top: 65px;
-    position: relative;
+  height: 350px;
+  /* padding: 80px 50px; */
+  text-align: center;
+  background: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/contestbg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1500px;
+  margin-top: 65px;
+  position: relative;
 }
 
 .search-container > .search-bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
 }
 
-
 .search-bar > input {
-    width: 100%;
-    padding: 10px 45px;
-    outline: 0;
-    border: 0;
-    border-radius: 25px;
+  width: 100%;
+  padding: 10px 45px;
+  outline: 0;
+  border: 0;
+  border-radius: 25px;
 }
 
 .search-bar > i {
-    position: absolute;
-    top: 35%;
-    left: 1%;
-    min-width: 30px;
+  position: absolute;
+  top: 35%;
+  left: 1%;
+  min-width: 30px;
 }
 
 .search-bar > input::placeholder {
-    font-weight: 500;
+  font-weight: 500;
 }
 /* 
 @media screen and (max-width: 680px) {

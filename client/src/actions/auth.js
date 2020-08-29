@@ -5,6 +5,8 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
+  CONTEST_ERROR,
+  FETCH_POSTS_ERROR,
 } from "./types";
 import AlertToast from "../components/Alert/AlertToast";
 
@@ -78,12 +80,15 @@ export const authLogin = () => async (dispatch) => {
   }
 };
 
-export const logout = () => async (dispatch) => {
+export const logout = (history) => async (dispatch) => {
   try {
     await axios.get("/auth/logout");
 
     dispatch({type: LOGOUT, payload: "User Logged out"});
+    dispatch({type: CONTEST_ERROR, payload: "User logged out"});
+    dispatch({type: FETCH_POSTS_ERROR, payload: "User logged out"});
     AlertToast("You're now logged out", "success");
+    history.push("/");
   } catch (error) {
     dispatch({type: LOGIN_FAIL, payload: "Failed to Logout"});
     AlertToast("Failed to logout", "error");
