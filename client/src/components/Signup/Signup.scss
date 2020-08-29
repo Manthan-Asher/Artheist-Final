@@ -147,3 +147,44 @@ $button-active-blue: #1669F2;
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
+@media screen and (max-width: 360px) and (max-height: 640px) {
+  .signUpDialog .MuiDialog-paperWidthSm {
+    height: 75vh !important;
+  }
+  .signUpDialog .MuiDialogContent-root {
+    padding: 0 !important;
+  }
+  .signUpDialog .MuiDialog-paper {
+    margin: 16px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-height: 1024px) {
+  .signUpDialog .MuiDialog-paperWidthSm {
+    height: 50vh !important;
+  }
+  .signUpDialog .MuiDialogContent-root {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width: 361px) and (min-height: 641px) and (max-width: 760px) and (max-height: 1020px){
+  .signUpDialog .MuiDialog-paperWidthSm {
+    height: calc(100vh - 204px) !important;
+  }
+  .signUpDialog .MuiDialogContent-root {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: 330px) and (max-height: 570px) {
+  .signUpDialog .MuiDialog-paperWidthSm {
+    height: 85vh !important;
+  }
+  .signUpDialog .MuiDialogContent-root {
+    padding: 0 !important;
+  }
+  .signUpDialog .MuiDialog-paper {
+    margin: 10px !important;
+  }
+}
