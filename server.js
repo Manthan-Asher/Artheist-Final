@@ -42,6 +42,7 @@ app.use(passport.session());
 // connect Database
 try {
   mongoose.connect(keys.mongoURL, {
+    useFindAndModify: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

@@ -1,13 +1,16 @@
 import React from "react";
-import {Form, Button, Input, Select, Radio} from "semantic-ui-react";
+import {Form, Button, Input, Select, Radio, TextArea} from "semantic-ui-react";
+import {connect} from "react-redux";
+import {updateProfile} from "../../actions/profile";
+import {withRouter} from "react-router-dom";
 
 const genderOptions = [
   {key: "m", label: "Male", value: "male"},
   {key: "f", label: "Female", value: "female"},
 ];
 
-const UserDetails = (props) => {
-  const {username, phoneNumber, gender, age, dob} = props.values;
+const About = (props) => {
+  const {username, phoneNumber, gender, age, dob, about} = props.values;
 
   let ageOptions = [];
   for (var i = 18; i < 30; i++) {
@@ -20,10 +23,10 @@ const UserDetails = (props) => {
           height: "80vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-around",
         }}
       >
-        <div>
+        <div style={{width: "40vw"}}>
           <h1 className="ui centered">User Details</h1>
 
           <Form.Field
@@ -75,11 +78,28 @@ const UserDetails = (props) => {
             onChange={props.handleChange}
           />
 
-          <Button onClick={props.next}>Next</Button>
+          <Form.Field
+            control={TextArea}
+            name="about"
+            value={about}
+            label="About"
+            placeholder="Tell us more about you..."
+            onChange={props.handleChange}
+          />
+
+          <Button
+            color="blue"
+            type="submit"
+            onClick={() => {
+              props.updateProfile(props.values, props.history);
+            }}
+          >
+            Submit
+          </Button>
         </div>
       </div>
     </React.Fragment>
   );
 };
 
-export {UserDetails};
+export const UserDetails = connect(null, {updateProfile})(withRouter(About));

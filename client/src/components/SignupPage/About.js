@@ -1,7 +1,5 @@
 import React from "react";
 import {Input, Form, Button, Checkbox, TextArea} from "semantic-ui-react";
-import {connect} from "react-redux";
-import {updateProfile} from "../../actions/profile";
 
 const interestOptions = [
   {key: "1", value: "dancing", label: "Dancing"},
@@ -86,13 +84,7 @@ const Something = (props) => {
           />
 
           <Button onClick={props.prev}>Back</Button>
-          <Button
-            color="blue"
-            type="submit"
-            onClick={() => {
-              props.updateProfile(props.values);
-            }}
-          >
+          <Button color="blue" type="submit">
             Submit
           </Button>
         </div>
@@ -101,4 +93,4 @@ const Something = (props) => {
   );
 };
 
-export const About = connect(null, {updateProfile})(Something);
+export {Something};

@@ -25,8 +25,6 @@ const UserSchema = new mongoose.Schema({
   dob: Date,
   age: Number,
   gender: String,
-  interest: [],
-  skills: [],
   contests: [
     {
       type: mongoose.Schema.Types.ObjectId,
