@@ -63,6 +63,13 @@
   color: gold !important;
 }
 
+
+/* TODO active link color */
+
+/* .navbar-nav .active {
+  color: gold !important;
+} */
+
 .navbar-brand {
   font-size: xx-large;
   color: white !important;

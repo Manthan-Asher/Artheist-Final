@@ -7,7 +7,7 @@
 }
 
 .aboutUsHeader {
-  height: 620px;
+  height: 100vh;
   padding: 200px 0;
   /* background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2(1).png"); */
   background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/picss.jpg");
@@ -71,7 +71,7 @@
 
 .artheistEssence {
   padding-bottom: 100px;
-  margin: 0 auto;
+  margin: 60px auto;
   max-width: 1140px;
   height: auto;
 }
@@ -85,8 +85,8 @@
   width: 52%;
   height: 499px;
   padding: 90px;
-  background-color: #fafafa;
-  color: black;
+  background-color: black;
+  color: #fafafa;
 }
 
 .essenceContent > h2 {
@@ -104,8 +104,8 @@
 }
 
 .essenceLogo {
-  background-color: black;
-  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artHeist_logo.png");
+  background-color: white;
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 18%;
@@ -148,7 +148,7 @@
   position: relative;
 }
 
-.ourIntegrity > h1::after,
+/* .ourIntegrity > h1::after,
 .whoAreWe > h1::after,
 .essenceContent > h2::after {
   content: "";
@@ -158,7 +158,7 @@
   height: 4px;
   width: 10%;
   background-color: #ff3843;
-}
+} */
 
 .whoAreWe > h1::after {
   width: 130px;
@@ -206,13 +206,15 @@
 
 .whoAreWe > p {
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   width: 80%;
 }
 
-.feedbackVideo > h1,
 .ourTeam > h1 {
   font-size: 60px;
+  text-align: center;
 }
 
 .ourTeam {

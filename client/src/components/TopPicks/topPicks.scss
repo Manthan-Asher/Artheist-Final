@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
 
 $duration: 450ms;
@@ -41,18 +41,22 @@ $moveRight: $tileWidth * ($growFactor - 1);
   box-sizing: border-box;
 }
 
-h1 {
+.contain > h1 {
   text-align: center;
   font-size: 10vh;
   padding-bottom: 0vh;
+  font-weight: 200;
+  color: #e9cdcd;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-p {
-  width: 100%;
+.contain p {
+  width: 70%;
   max-width: initial;
   margin: auto;
   margin-top: 10px;
   text-align: center;
+  color: #ebd9d9;
 }
 
 .topPicksPara {
@@ -95,7 +99,7 @@ p {
   font-size: 0;
   white-space: nowrap;
   // margin: ($tileHeight / 2) 0;
-  margin: 50px 0;
+  margin: 50px auto;
   padding-bottom: 10px; // Account for OS X scroll bar
 }
 .tile {

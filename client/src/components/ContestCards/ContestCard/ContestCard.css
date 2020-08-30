@@ -6,20 +6,27 @@
     height: auto;
 }
 
-.MuiCardContent-root > h2 {
+.MuiCardContent-root h2, .MuiCardContent-root p {
     visibility: visible;
+    text-align: center;
 }
 
 .MuiCardActions-spacing > button {
-    margin-left: 10px !important;
+    margin: 0px auto !important;
     background-color: #f755a6;
     color: white !important;
 }
 
-.MuiCardActions-spacing > button:hover {
+/* .MuiCardActions-spacing > button:hover {
     color: #f755a6 !important;
-}
+} */
+
 .MuiCardActions-spacing > button > span > a {
     text-decoration: none !important;
     color: white !important;
+}
+
+.MuiCardActions-spacing > button > span > a:hover {
+    text-decoration: none !important;
+    color: #f755a6 !important;
 }

@@ -54,33 +54,20 @@ class NavBar extends Component {
                   </Nav.Link>
                 </Link>
                 <Nav.Link href="/createContest">Create Contest</Nav.Link>
-                <Link
-                  to="/profileChange"
-                  className="navLink"
-                  style={{color: "inherit"}}
-                >
-                  <Nav.Link href="/artists">Artists</Nav.Link>
+                <Link to="/aboutUs" className="navLink">
+                      <Nav.Link href="/aboutUs">About Us</Nav.Link>
                 </Link>
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
                     <i className="fa fa-bars" aria-hidden="true"></i>
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Link to="/aboutUs" className="navLink">
-                      <Dropdown.Item href="aboutUs">About Us</Dropdown.Item>
-                    </Link>
-                    <Dropdown.Item href="#/action-2">
-                      What we do ?
+                    <Dropdown.Item href="/artists">
+                      Artists
                     </Dropdown.Item>
-                    <Link to="/howItWorks" className="navLink">
-                      <Dropdown.Item href="howItWorks">
-                        How It Works?
-                      </Dropdown.Item>
-                    </Link>
-                    <Dropdown.Item href="#/action-3">
-                      Testimonials
+                    <Dropdown.Item href="/contactUs">
+                      Contact Us
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-4">Contact Us</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Nav>

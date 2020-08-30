@@ -27,6 +27,7 @@ export default function ImgMediaCard() {
           width="330"
           height="180"
           controls
+          controlsList="nodownload"
           poster="https://387b72ivq1z3mni0n261y7l1-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/app-store-video.jpg"
         >
           <source

@@ -96,12 +96,12 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="feedbackVideo">
+      {/* <div className="feedbackVideo">
         <h1>What People Say</h1>
         <div class="vid-container">
           <FullScrVideo />
         </div>
-      </div>
+      </div> */}
 
       <div className="ourTeam">
         <h1>Meet Our People</h1>

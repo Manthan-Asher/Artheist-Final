@@ -49,6 +49,7 @@ p {
   /* margin-top: 100px; */
   height: 92vh;
   position: relative;
+  background-color: #dbd5d4;
 }
 
 .what-we-do img {
@@ -88,9 +89,9 @@ p {
   display: inline-block;
   vertical-align: top;
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-size: 60% 90%;
-  background-position: bottom left;
+  background-attachment: initial;
+  background-size: 80% 80%;
+  background-position: center center;
   background-repeat: no-repeat;
   /* background-size: contain; */
 }

@@ -20,7 +20,7 @@ const Team = () => {
                     src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
                   ></img>
                   <h4 className="title">Aditya Rathore</h4>
-                 
+                  <p>Some description of each team members come here ... this is just a demo text for now.</p>
 
                   <Button
                     className="btn-icon btn-round"
@@ -60,7 +60,7 @@ const Team = () => {
                     src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
                   ></img>
                   <h4 className="title">Ashutosh Vyas</h4>
-                
+                  <p>Some description of each team members come here ... this is just a demo text for now.</p>
                   <Button
                     className="btn-icon btn-round"
                     color="primary"
@@ -98,7 +98,7 @@ const Team = () => {
                     src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
                   ></img>
                   <h4 className="title">Chahat Bhatia</h4>
-                  
+                    <p>Some description of each team members come here ... this is just a demo text for now.</p>
                   <Button
                     className="btn-icon btn-round"
                     color="primary"
@@ -136,12 +136,13 @@ const Team = () => {
                     className="rounded-circle img-fluid img-raised"
                     src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
                   ></img>
-                  <h4 className="title">Arpit Bhardwaj</h4>
-                  <Button
+                  <h4 className="title">Manav Suresh</h4>
+                  <p>Some description of each team members come here ... this is just a demo text for now.</p>
+                  <Button 
                     className="btn-icon btn-round"
                     color="primary"
                     target="_blank"
-                    href="https://instagram.com/maybe_arpit?igshid=1p7kkjnkhywc6"
+                    href="#"
                     //onClick={(e) => e.preventDefault()}
                   >
                     <i className="fab fa-instagram"></i>
@@ -149,7 +150,7 @@ const Team = () => {
                   <Button
                     className="btn-icon btn-round"
                     color="primary"
-                    href="https://www.facebook.com/arpit.bhardwaj.16"
+                    href="#"
                     target="_blank"
                     //onClick={(e) => e.preventDefault()}
                   >
@@ -159,7 +160,7 @@ const Team = () => {
                     className="btn-icon btn-round"
                     color="primary"
                     target="_blank"
-                    href="https://www.linkedin.com/in/arpit-bhardwaj-3a170a121"
+                    href="#"
                     //onClick={(e) => e.preventDefault()}
                   >
                     <i className="fab fa-linkedin"></i>
@@ -174,7 +175,7 @@ const Team = () => {
                     src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
                   ></img>
                   <h4 className="title">Manthan Asher</h4>
-                
+                  <p>Some description of each team members come here ... this is just a demo text for now.</p>
                   <Button
                     className="btn-icon btn-round"
                     color="primary"
@@ -211,8 +212,8 @@ const Team = () => {
                     className="rounded-circle img-fluid img-raised"
                     src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/ryan.jpg"
                   ></img>
-                  <h4 className="title">Shreyansh</h4>
-                
+                  <h4 className="title">Shreyash</h4>
+                  <p>Some description of each team members come here ... this is just a demo text for now.</p>
                   <Button
                     className="btn-icon btn-round"
                     color="primary"
