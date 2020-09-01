@@ -61,4 +61,29 @@ router.get("/:id", requireLogin, async (req, res) => {
   }
 });
 
+// @route  Patch /posts/like/:id
+// @desc   like post
+// @access  private
+
+router.patch("/like/:postId", requireLogin, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.postId);
+    if (
+      post.likes.filter((like) => like.user.toString() === req.user.id).length >
+      0
+    ) {
+      return res.status(400).send("Post has been already liked");
+    }
+
+    post.likes.unshift({user: req.user.id});
+
+    await post.save();
+
+    res.send(post.likes);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;
