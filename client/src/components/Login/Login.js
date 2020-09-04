@@ -77,6 +77,7 @@ const Login = ({openButton, handleClose, login, history}) => {
         open={openButton}
         onClose={openButton}
         aria-labelledby="form-dialog-title"
+        className="loginDialog"
       >
         {/* <DialogTitle id="form-dialog-title" style={{fontWeight: "bold"}}>
           Login Now

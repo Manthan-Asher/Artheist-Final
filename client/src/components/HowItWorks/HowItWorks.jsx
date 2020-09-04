@@ -1,5 +1,6 @@
 import React from "react";
 import "./HowItWorks.css";
+import { Link } from "react-router-dom";
 
 const HowItWorks = () => {
   return (
@@ -20,7 +21,12 @@ const HowItWorks = () => {
               To begin your artistic journey, you need to first create your
               profile on Artheist.in
             </p>
-            <button>Button</button>
+            <button>
+              Register Now
+
+              {/* TODO: signup Popup Box*/}
+
+            </button>
           </div>
         </div>
         <div className="step">
@@ -36,7 +42,9 @@ const HowItWorks = () => {
               As soon as you sign in, you will be able to browse through the
               ongoing Contests
             </p>
-            <button>Button</button>
+            <button>  
+              <Link to="/contest">Active Contests</Link>
+            </button>
           </div>
         </div>
         <div className="step">
@@ -52,7 +60,9 @@ const HowItWorks = () => {
               Select the contest that is most appealing to you &amp; click on
               the Enter Contest to register yourself.
             </p>
-            <button>Button</button>
+            <button>
+              <Link to="/contest">Enter Contest</Link>
+            </button>
           </div>
         </div>
         <div className="step">
@@ -68,7 +78,9 @@ const HowItWorks = () => {
               Now finally you need to submit your work, you can just sit back
               and share your performance to as many people as possible.
             </p>
-            <button>Button</button>
+            <button>     
+              <Link to="/contest">Browse Now</Link>
+            </button>
           </div>
         </div>
       </div>

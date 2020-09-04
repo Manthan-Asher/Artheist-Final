@@ -27,3 +27,10 @@
     border: none;
     object-fit: cover;
 }
+
+@media screen and (max-width: 500px) {
+    .fullScrVideoSection video {
+        max-width: 90%;
+        width: 90%;
+    }
+}

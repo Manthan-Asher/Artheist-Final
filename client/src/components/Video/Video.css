@@ -5,3 +5,13 @@
 .MuiCard-root:hover  video{
     transform: scale(1.1);
 }
+
+.HallOfFameContainer .MuiButton-root {
+    outline: 0;
+    padding: 8px !important;
+    font-size: 13px;
+}
+
+.HallOfFameContainer .MuiButton-root:hover {
+    color: #f755a6 !important;
+}
