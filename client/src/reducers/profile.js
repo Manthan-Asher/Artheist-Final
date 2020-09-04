@@ -19,7 +19,7 @@ const profile = (state = INITIAL_STATE, action) => {
 
     case UPDATE_PROFILE_FAILED:
       return {
-        ...state,
+        response: "",
         error: payload,
       };
     default:

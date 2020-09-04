@@ -1,91 +1,95 @@
 .mobileNavBarToggle button {
-    background: transparent;
-    color: white;
-    outline: 0;
-    border: 1px solid white;
-    border-radius: 3px;
-
+  background: transparent;
+  color: white;
+  outline: 0;
+  border: 1px solid white;
+  border-radius: 3px;
 }
 
 .mobileNavBarToggle i {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .MobileNavBtnContainer {
-    display: flex;
-    padding: 20px;
-    justify-content: space-around;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
 }
 
 .MobileNavBtnContainer > button {
-    background-color: #fad149;
-    color: #000;
-    outline: 0;
-    padding: 10px;
-    font-weight: 500;
-    width: 100px;
-    border: 1px solid #000;
-    border-radius: 3px;
+  background-color: #fad149;
+  color: #000;
+  outline: 0;
+  padding: 10px;
+  font-weight: 500;
+  width: 100px;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
 
 .sideNavigation {
-    display: block;
-    position: absolute;
-    height: calc(100vh - 65px);
-    width: 280px;
-    right: -280px;
-    top: 65px;
-    z-index: 2;
-    margin-top: 0 !important;
-    background-color: black;
-    transition: all 0.4s ease-in-out;
+  display: block;
+  position: absolute;
+  height: calc(100vh - 65px);
+  width: 280px;
+  right: -280px;
+  top: 65px;
+  z-index: 2;
+  margin-top: 0 !important;
+  background-color: black;
+  transition: all 0.4s ease-in-out;
 }
 
 .showNavbar {
-    right: 0px;
+  right: 0px;
 }
 
 .sideNavigation > div > p {
-    padding: 10px 0px;
-    text-align: left;
-    padding-left: 40px;
-    margin: 0;
+  padding: 10px 0px;
+  text-align: left;
+  padding-left: 40px;
+  margin: 0;
 }
 
-.sideNavigation > div > p  a {
-    color: white;
-    text-decoration: none;
+.sideNavigation > div > p a {
+  color: white;
+  text-decoration: none;
 }
 
 .sideNavigation .dropdown button {
-    font-size: large;
-    font-weight: 500;
-    padding: 10px 40px;
-    padding-bottom: 0;
+  font-size: large;
+  font-weight: 500;
+  padding: 10px 40px;
+  padding-bottom: 0;
 }
 
 .sideNavigation .dropdown .dropdown-menu {
-    top: 40px;
-    left: 40px;
-    width: 150px;
-    transition: all 0.4s ease-in-out;
-    background: black;
+  top: 40px;
+  left: 40px;
+  width: 150px;
+  transition: all 0.4s ease-in-out;
+  background: black;
 }
 
 /* .sideNavigation .dropdown .dropdown-menu a {
     border-bottom: 1px solid white;
 } */
 
-
+.userName {
+  font-size: large;
+  font-weight: 600;
+  color: white;
+  margin-right: 30px;
+}
 
 @media screen and (max-width: 990px) {
-    .mobileNavbar {
-        display: block;
-    }
+  .mobileNavbar {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 991px) {
-    .mobileNavbar {
-        display: none;
-    }
+  .mobileNavbar {
+    display: none;
+  }
 }

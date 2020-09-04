@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import {Dropdown} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import "./MobileNavbar.css";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
+import {connect} from "react-redux";
+import {logout} from "../../actions/auth";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({auth, logout, history}) => {
   const [showNavbar, setShowNavbar] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [signupOpen, setSignupOpen] = useState(false);
@@ -42,14 +44,36 @@ const MobileNavbar = () => {
       </div>
       <div className={navBarClasses}>
         <div>
-          <div className="MobileNavBtnContainer">
-            <button className="signupBtn" onClick={handleSignupOpen}>
-              Sign Up
-            </button>
-            <button className="loginBTN" onClick={handleLoginOpen}>
-              Log In
-            </button>
-          </div>
+          {auth.isAuthenticated ? (
+            <div className="MobileNavBtnContainer">
+              <span className="userName">
+                <Link
+                  to="/userProfile"
+                  className="navLink"
+                  style={{color: "inherit"}}
+                >
+                  Hi, {auth.user.firstName}
+                </Link>
+              </span>
+              <button
+                className="signupBtn"
+                onClick={() => {
+                  logout(history);
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="MobileNavBtnContainer">
+              <button className="signupBtn" onClick={handleSignupOpen}>
+                Sign Up
+              </button>
+              <button className="loginBTN" onClick={handleLoginOpen}>
+                Log In
+              </button>
+            </div>
+          )}
           <p>
             <a href="" alt="navlinks">
               Feed
@@ -105,4 +129,8 @@ const MobileNavbar = () => {
   );
 };
 
-export default MobileNavbar;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, {logout})(withRouter(MobileNavbar));

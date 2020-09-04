@@ -7,6 +7,7 @@ import {
   LOGOUT,
   CONTEST_ERROR,
   FETCH_POSTS_ERROR,
+  UPDATE_PROFILE_FAILED,
 } from "./types";
 import AlertToast from "../components/Alert/AlertToast";
 
@@ -87,6 +88,7 @@ export const logout = (history) => async (dispatch) => {
     dispatch({type: LOGOUT, payload: "User Logged out"});
     dispatch({type: CONTEST_ERROR, payload: "User logged out"});
     dispatch({type: FETCH_POSTS_ERROR, payload: "User logged out"});
+    dispatch({type: UPDATE_PROFILE_FAILED, payload: "User logged out"});
     AlertToast("You're now logged out", "success");
     history.push("/");
   } catch (error) {
