@@ -18,6 +18,7 @@ const ContactUs = () => {
                             <p>Instagram - @artheist.in</p>
                         </div> 
                     </div>
+                    <hr />
                     <div className="artheistEmail">
                         <div>                    
                             <a href="mailto:artheistindia@gmail.com" 
@@ -28,6 +29,7 @@ const ContactUs = () => {
                             <p>artheistindia@gmail.com</p> 
                         </div>
                     </div>
+                    <hr />
                     <div className="artheistContactNo">
                         <div>
                             <a href="tel:+91-1234567890" 

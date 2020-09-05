@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
 .aboutUsContainer {
   margin-top: 64px;
   background-color: #0e0f11;
   color: white;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .aboutUsHeader {
@@ -141,6 +142,15 @@
   margin-top: 100px;
 }
 
+.whoAreWe {
+  /* height: 90vh; */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 0px;
+  background-color: #eee;
+  color: #444;
+}
+
 .ourIntegrity > h1,
 .whoAreWe > h1 {
   text-align: left;
@@ -148,17 +158,6 @@
   position: relative;
 }
 
-/* .ourIntegrity > h1::after,
-.whoAreWe > h1::after,
-.essenceContent > h2::after {
-  content: "";
-  position: absolute;
-  top: 108%;
-  display: block;
-  height: 4px;
-  width: 10%;
-  background-color: #ff3843;
-} */
 
 .whoAreWe > h1::after {
   width: 130px;
@@ -188,6 +187,12 @@
   width: 40%;
   margin-left: 5%;
   margin-top: 20px;
+}
+
+.ourIntegrityImgMob {
+  display: none !important;
+  width: 100%;
+  margin-top: 60px;
 }
 
 .ourIntegrity img {
@@ -220,6 +225,7 @@
 .ourTeam {
   padding: 50px 60px;
   height: auto;
+  background: linear-gradient(#f96332 -10%, #222 70%);
 }
 
 .ourTeam > div {
@@ -270,16 +276,12 @@
   .artheistEssence > div {
     display: block;
   }
-  .trailerVideo > video {
-    transform: scale(0.5);
-  }
-  .ourIntegrity img {
-    width: 200px;
-    height: 300px;
-  }
+
+  
   .essenceLogo {
     width: 90%;
     margin: 0 auto;
+    background-position: 24% !important; 
   }
   .essenceContent {
     width: 90%;
@@ -294,6 +296,22 @@
   .essenceLogo {
     background-position: 5%;
   }
+  .ourIntegrity > div {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .ourIntegrityImgMob {
+    display: block !important;
+  }
+  .ourIntegrityImg {
+    display: none !important;
+  }
+  
+  .ourIntegrityContent > p {
+    text-align: center;
+    width: 100% !important;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -303,7 +321,52 @@
   .essenceContent {
     padding: 60px;
   }
+  .ourIntegrityImgMob > img {
+    width: 100%;
+    height: auto;
+  }
 }
+
+@media screen and (max-width: 500px) {
+  .aboutHeaderContent {
+    padding: 110px 20px;
+  }
+  .aboutHeaderContent > h1 {
+    font-size: 45px;
+  }
+  .aboutHeaderContent > h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .essenceLogo {
+    background-position: 10% !important;
+    background-size: 400px !important;
+    height: 400px ;
+  }
+  .essenceContent {
+    padding: 50px;
+    height: auto;
+  }
+  .ourIntegrity {
+    padding: 0px 20px !important;
+  }
+  .ourIntegrity > h1,
+  .whoAreWe > h1 {
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+  }
+  .whoAreWe {
+    padding: 0px 0px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+}
+
+
 
 /* video experiment with iframe */
 

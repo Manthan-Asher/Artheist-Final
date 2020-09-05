@@ -80,11 +80,11 @@ const MobileNavbar = ({auth, logout, history}) => {
             </a>
           </p>
           <p>
-            <Link to="/contest">
-              <a href="" alt="navlinks">
+            {/* <Link to="/contest"> */}
+              <a href="/contest" alt="navlinks">
                 Contest
               </a>
-            </Link>
+            {/* </Link> */}
           </p>
           <p>
             <a href="" alt="navlinks">
@@ -92,13 +92,18 @@ const MobileNavbar = ({auth, logout, history}) => {
             </a>
           </p>
           <p>
-            <a href="/profileChange" alt="navlinks">
-              Artists
+            <a href="/aboutUs" alt="navlinks">
+              About Us
             </a>
           </p>
-          <Dropdown>
+          <p>
+            <a href="/contactUs" alt="navlinks">
+              Contact Us
+            </a>
+          </p>
+          {/* <Dropdown>
             <Dropdown.Toggle variant="none" id="dropdown-basic">
-              More <i className="fa fa-caret-down" aria-hidden="true"></i>
+              Contact Us <i className="fa fa-caret-down" aria-hidden="true"></i>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Link to="/aboutUs" className="navLink">
@@ -111,7 +116,7 @@ const MobileNavbar = ({auth, logout, history}) => {
               <Dropdown.Item href="#/action-3">Testimonials</Dropdown.Item>
               <Dropdown.Item href="#/action-4">Contact Us</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
         </div>
       </div>
       {loginOpen ? (

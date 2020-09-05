@@ -10,6 +10,11 @@ $growFactor: 1.3; // 1.3 times the original size
 $moveLeft: -($tileWidth * ($growFactor - 1) / 2);
 $moveRight: $tileWidth * ($growFactor - 1);
 
+
+$tileMobWidth: 200px;
+$tileMobHeight: ($tileMobWidth / (16/9));
+$iconMobSize: 40px;
+
 // body, html {
 //   padding: 0 10px;
 //   margin: 0;
@@ -62,7 +67,7 @@ $moveRight: $tileWidth * ($growFactor - 1);
 .topPicksPara {
   line-height: 1.2;
   word-spacing: 0.2em;
-  max-width: 60%;
+  // max-width: 60%;
   font-size: 25px;
   font-weight: 100;
   margin-top: 20px;
@@ -222,5 +227,25 @@ $moveRight: $tileWidth * ($growFactor - 1);
   }
   .contain {
     height: auto;
+  }
+  .contain p {
+    width: 80%;
+  }
+  .tile {
+    height: $tileMobHeight;
+    width: $tileMobWidth;
+  }
+  .tile__details:after {
+    margin-top: (-($iconMobSize / 2));
+    margin-left: (-($iconMobSize / 2));
+    width: $iconMobSize;
+    height: $iconMobSize;
+    line-height: $iconMobSize;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .topPicksPara {
+    font-size: 22px;
   }
 }

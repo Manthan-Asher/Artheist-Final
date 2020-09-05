@@ -10,15 +10,15 @@
     color: initial;
 }
 
-.MuiButtonBase-root {
+.ContestContainer .MuiButtonBase-root {
     color: black ;
 }
 
-.Mui-selected {
+.ContestContainer .Mui-selected {
     border-bottom: 2px solid crimson !important;
 }
 
-.Mui-selected::after {
+.ContestContainer .Mui-selected::after {
     content: " ";
     position: absolute;
     top: 100%; 
@@ -29,11 +29,11 @@
     border-color: white;
 }
 
-.Mui-selected:focus {
+.ContestContainer .Mui-selected:focus {
     text-decoration: none;
 }
 
-.MuiTab-root , .MuiTab-root:hover{
+.ContestContainer .MuiTab-root , .ContestContainer .MuiTab-root:hover{
     text-decoration: none;
 }
 
@@ -43,7 +43,7 @@
     min-height: 700px;
 } 
 
-.MuiCard-root {
+.ContestContainer .MuiCard-root {
     display: inline-block;
     width: 30%;
     margin: 10px;
@@ -53,9 +53,35 @@
     color: initial;
 }
 
+@media screen and (max-width: 1010px) {
+    
+    .ContestContainer .MuiCard-root {
+        display: inline-block;
+        width: 45% !important;
+        margin: 2.5% !important;
+    }
+  }
+
+
 @media screen and (max-width: 975px) {
     .ContestContainer {
         width: 100% !important;
         /* margin-top: 50px !important; */
+    }
+    .ContestContainer .MuiCard-root {
+        display: inline-block;
+        width: 45% !important;
+        margin: 2.5% !important;
+        max-width: 450px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ContestContainer .MuiCard-root {
+        display: inline-block;
+        width: 95% !important;
+        margin: 2.5% !important;
+        max-width: 450px !important;
+        min-height: 250px;
     }
   }

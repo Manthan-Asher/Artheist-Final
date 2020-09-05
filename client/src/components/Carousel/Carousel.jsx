@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Slider from "react-slick";
 import "./carousel.css";
 import MobileCarousel from "../MobileCarousel/MobileCarousel";
+import { Link } from "react-router-dom";
 
 export default class Carousel extends Component {
   render() {
@@ -24,6 +25,16 @@ export default class Carousel extends Component {
     return (
       <div className="carouselContainer">
         <MobileCarousel />
+
+        <div className="contentBelowMobileCarousel">
+            <h1 className="h1-seo fade-in"  
+            style={{fontWeight:300}}>Welcome to <span style={{fontWeight:600}}>Artheist.in </span>!</h1>
+            <p className="intro fade-in" style={{fontWeight:300}}>
+              The platform where we help people to pursue their creative interests.
+            </p>
+        </div>
+
+
         <Slider {...settings}>
           <div className="contestPoster">
             <img
@@ -32,7 +43,9 @@ export default class Carousel extends Component {
             ></img>
             <div>
               <h4>Active Contest</h4>
-              <button className="participateBtn">Participate Now</button>
+              <button className="participateBtn">
+                <Link to="/contest">Participate Now</Link>
+              </button>
             </div>
           </div>
           <div className="contestPoster">
@@ -42,7 +55,9 @@ export default class Carousel extends Component {
             ></img>
             <div>
               <h4>Active Contest</h4>
-              <button className="participateBtn">Participate Now</button>
+              <button className="participateBtn">
+                <Link to="/contest">Participate Now</Link>
+              </button>
             </div>
           </div>
           <div className="contestPoster">
@@ -52,7 +67,9 @@ export default class Carousel extends Component {
             ></img>
             <div>
               <h4>Active Contest</h4>
-              <button className="participateBtn">Participate Now</button>
+              <button className="participateBtn">
+                <Link to="/contest">Participate Now</Link>
+              </button>
             </div>
           </div>
           <div className="contestPoster">
@@ -62,7 +79,9 @@ export default class Carousel extends Component {
             ></img>
             <div>
               <h4>Active Contest</h4>
-              <button className="participateBtn">Participate Now</button>
+              <button className="participateBtn">
+                <Link to="/contest">Participate Now</Link>
+              </button>
             </div>
           </div>
           <div className="contestPoster">
@@ -72,7 +91,9 @@ export default class Carousel extends Component {
             ></img>
             <div>
               <h4>Active Contest</h4>
-              <button className="participateBtn">Participate Now</button>
+              <button className="participateBtn">
+                <Link to="/contest">Participate Now</Link>
+              </button>
             </div>
           </div>
           <div className="contestPoster">
@@ -82,7 +103,9 @@ export default class Carousel extends Component {
             ></img>
             <div>
               <h4>Active Contest</h4>
-              <button className="participateBtn">Participate Now</button>
+              <button className="participateBtn">
+                <Link to="/contest">Participate Now</Link>
+              </button>
             </div>
           </div>
         </Slider>

@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "./HallOfFame.css";
 import Video from "../Video/Video";
+import { Link } from "react-router-dom";
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -105,7 +106,9 @@ const HallOfFame = () => {
           <p>There are no videos for now come back soon......</p>
         </TabPanel>
         <div className="fameBtnContainer">
-          <button className="hallOfFameBtn">View More</button>
+          <button className="hallOfFameBtn">
+            <Link to="/feed">View More</Link>
+          </button>
         </div>
       </div>
     </div>

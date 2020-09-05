@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "./Description.css";
-
+import { Link } from "react-router-dom";
 
 const Description = () => {
   return (
@@ -23,7 +23,9 @@ const Description = () => {
             We organize contests with well-known artists from Instagram, ad firms &amp; different social media handles to promote talented people like you,
              giving ordinary people an extraordinary opportunity to showcase their skills on a large scale platform. 
             </p>
-            <button className="whatWeDoBtn">Know More</button>
+            <button className="whatWeDoBtn">
+              <Link to="/aboutUs">Know More</Link>
+            </button>
           </Box>
         </Typography>
       </div>

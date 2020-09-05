@@ -16,10 +16,52 @@
     display: initial;
 }
 
-.mobileCarousel > .carousel .carousel-control-prev-icon, .mobileCarousel > .carousel  .carousel-control-next-icon {
+/* .mobileCarousel > .carousel .carousel-control-prev-icon, .mobileCarousel > .carousel  .carousel-control-next-icon {
     top: 50%;
     position: absolute;
+    color: #000 !important;
+    background-color: #fff;
+} */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  top: 48%;
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  outline: 0;
+  background-color: #fff;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  background-image: none;
 }
+
+.carousel-control-prev-icon {
+    left: 10px;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 22px;
+  font-weight: 800;
+  color: #000;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 22px;
+  font-weight: 800;
+  color: #000;
+  z-index: 20 !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1 !important;
+}
+
 
 .mobileCarousel > .carousel > .carousel-indicators {
     top: 100%;

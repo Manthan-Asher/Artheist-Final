@@ -8,7 +8,7 @@
 }
 
 .contactUsCard {
-    width: 70%;
+    width: 75%;
     height: 500px;
     background-color: #191919;
     margin: 0px auto;
@@ -68,5 +68,47 @@
 .contactLink > i {
     margin: 0;
     height: 100%;
+}
+
+hr {
+    display: none;
+    width: 85%;
+    border-top: 1px solid #e2e2e2 !important;
+    margin: 40px auto !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .contactUsCard {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    hr {
+        display: block;
+    }
+    .contactUsCard {
+        width: 70%;
+        height: auto;
+    }
+    .artheistContactDetails {
+        height: auto;
+    }
+    .artheistContactDetails > div {
+        display: block;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    .artheistInstagram a, .artheistEmail a, .artheistContactNo a {
+        height: 130px !important;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contactUsCard {
+        width: 90%;
+    }
 }
 
