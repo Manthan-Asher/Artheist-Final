@@ -27,6 +27,28 @@ router.post("/", requireLogin, uploadPost.single("post"), async (req, res) => {
   }
 });
 
+// @route  GET /posts
+// @desc   get posts by a user
+// @access  private
+
+router.get("/", async (req, res) => {
+  try {
+    const posts = await Post.find({})
+      .limit(parseInt(req.query.limit))
+      .populate("participant")
+      .populate("contest")
+      .exec();
+
+    if (posts.length === 0) {
+      return res.status(404).send("No posts yet");
+    }
+
+    res.send(posts);
+  } catch (error) {
+    res.status(500).send("Server Error");
+  }
+});
+
 // @route  GET /posts/user/:userId
 // @desc   get posts by a user
 // @access  private
@@ -47,9 +69,12 @@ router.get("/user/:userId", requireLogin, async (req, res) => {
 // @desc   get post by id
 // @access  private
 
-router.get("/:id", requireLogin, async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
+    const post = await Post.findById(req.params.id)
+      .populate("participant")
+      .populate("contest")
+      .exec();
 
     if (!post) {
       return res.status(404).send("Post Not Found");

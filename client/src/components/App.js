@@ -15,6 +15,7 @@ import SignUpPage from "./SignupPage";
 import ImageGetter from "./SignupPage/ImageGetter";
 import ContestDesc from "./ContestDescription/ContestDesc";
 import UserProfile from "./UserProfile/UserProfile";
+import PostHighlight from "./PostHighlight/PostHighlight";
 import {authLogin} from "../actions/auth";
 import {connect} from "react-redux";
 import Alert from "./Alert/Alert";
@@ -45,10 +46,10 @@ class App extends React.Component {
           <Route path="/profileChange" exact component={ImageGetter}></Route>
           <Route path="/userProfile" exact component={UserProfile}></Route>
           <Route path="/contactUs" exact component={ContactUs}></Route>
+          <Route path="/post/:id" exact component={PostHighlight}></Route>
           {/* <Route path="/howItWorks" exact component={HowItWorksPage}></Route> */}
 
           {/* <Route path="/videoPlayer" exact component={FullScrVideo}></Route> */}
-
         </Switch>
         <Footer />
       </Router>

@@ -31,7 +31,7 @@ export const register = (user, history) => async (dispatch) => {
       });
       AlertToast(res.data.message, "error");
     } else {
-      history.push("/profileChange");
+      history.push("/additionalDetails");
       AlertToast("Wohoo! You have Signed Up successfully", "success");
       return dispatch({type: REGISTER_SUCCESS, payload: res.data});
     }

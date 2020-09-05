@@ -3,10 +3,11 @@ import {
   POST_UPLOAD_ERROR,
   FETCH_POSTS,
   FETCH_POSTS_ERROR,
+  FETCH_POST,
 } from "../actions/types";
 
 const INITIAL_STATE = {
-  postsByUser: [],
+  posts: [],
   post: null,
   error: null,
 };
@@ -22,7 +23,13 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_POSTS:
       return {
         ...state,
-        postsByUser: payload,
+        posts: payload,
+      };
+    case FETCH_POST:
+      return {
+        ...state,
+        post: payload,
+        postsByUser: [],
       };
     case POST_UPLOAD_ERROR:
     case FETCH_POSTS_ERROR:
