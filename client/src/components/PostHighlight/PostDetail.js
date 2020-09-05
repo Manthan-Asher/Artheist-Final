@@ -14,7 +14,7 @@ const PostDetail = ({post}) => {
         {file === "img" ? (
           <img src={post.URL} alt=""></img>
         ) : (
-          <iframe src={post.URL}></iframe>
+          <video src={post.URL}></video>
         )}
       </div>
       <div className="ui segment">

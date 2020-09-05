@@ -1,7 +1,8 @@
 import React from "react";
+import {Redirect} from "react-router-dom";
 import "./Postitem.css";
 
-const PostItem = ({post, onPostSelect}) => {
+const PostItem = ({post}) => {
   const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
   let file;
   if (ext === "jpg" || "png" || "jfif") {
@@ -14,13 +15,13 @@ const PostItem = ({post, onPostSelect}) => {
     <div
       className="video-item item"
       onClick={() => {
-        onPostSelect(post._id);
+        return <Redirect to={`/post/${post._id}`} />;
       }}
     >
       {file === "img" ? (
         <img src={post.URL} alt=""></img>
       ) : (
-        <iframe src={post.URL}></iframe>
+        <video src={post.URL}></video>
       )}
     </div>
   );

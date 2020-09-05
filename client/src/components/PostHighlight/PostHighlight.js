@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import PostList from "./PostList";
 import PostDetail from "./PostDetail";
 import {connect} from "react-redux";
-import {Redirect} from "react-router-dom";
 import {getPostById, getPostsForDisplay} from "../../actions/posts";
 
 class PostHighlight extends Component {
@@ -13,9 +12,6 @@ class PostHighlight extends Component {
 
   // issue
 
-  onPostSelect(id) {
-    return <Redirect to={`/post/${id}`} />;
-  }
   render() {
     if (!this.props.postFetched || !this.props.posts) {
       return "Loading....";
@@ -28,10 +24,7 @@ class PostHighlight extends Component {
               <PostDetail post={this.props.postFetched} />
             </div>
             <div className="five wide column">
-              <PostList
-                posts={this.props.posts}
-                onPostSelect={this.onPostSelect}
-              />
+              <PostList posts={this.props.posts} />
             </div>
           </div>
         </div>
