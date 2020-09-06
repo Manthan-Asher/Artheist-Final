@@ -3,6 +3,7 @@ import PostList from "./PostList";
 import PostDetail from "./PostDetail";
 import {connect} from "react-redux";
 import {getPostById, getPostsForDisplay} from "../../actions/posts";
+import "./PostHighlight.css";
 
 class PostHighlight extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class PostHighlight extends Component {
       return "Loading....";
     }
     return (
-      <div className="ui container">
+      <div className="ui container postContainer">
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">

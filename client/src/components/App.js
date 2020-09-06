@@ -20,7 +20,7 @@ import {authLogin} from "../actions/auth";
 import {connect} from "react-redux";
 import Alert from "./Alert/Alert";
 
-//import FullScrVideo from "./FullScrVideo/FullScrVideo";
+import ArtheistLoader from "./ArtheistLoader/ArtheistLoader";
 
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faFilter, faFile, faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -48,7 +48,8 @@ class App extends React.Component {
           <Route path="/post/:id" exact component={PostHighlight}></Route>
           {/* <Route path="/howItWorks" exact component={HowItWorksPage}></Route> */}
 
-          {/* <Route path="/videoPlayer" exact component={FullScrVideo}></Route> */}
+          <Route path="/artheistLoader" exact component={ArtheistLoader}></Route> 
+          
         </Switch>
         <Footer />
       </Router>

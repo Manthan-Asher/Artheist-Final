@@ -1,4 +1,5 @@
 import React from "react";
+import "./PostHighlight.css";
 
 const PostDetail = ({post}) => {
   const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
@@ -10,7 +11,7 @@ const PostDetail = ({post}) => {
   }
   return (
     <div>
-      <div className="ui embed">
+      <div className="ui embed postEmbeded">
         {file === "img" ? (
           <img src={post.URL} alt=""></img>
         ) : (
