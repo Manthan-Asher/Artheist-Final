@@ -73,12 +73,13 @@ class NavBar extends Component {
               </Nav>
               {this.props.auth.isAuthenticated ? (
                 <>
-                  <span className="userName">
+                  <span className="userName">    
                     <Link
                       to="/userProfile"
                       className="navLink"
                       style={{color: "inherit"}}
                     >
+                      <i className="fas fa-user"></i>{" "}
                       Hi, {this.props.auth.user.firstName}
                     </Link>
                   </span>

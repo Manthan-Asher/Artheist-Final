@@ -2,8 +2,24 @@ import React, {useEffect} from "react";
 import "./AboutUs.css";
 import FullScrVideo from "../FullScrVideo/FullScrVideo";
 import OurTeam from "../OurTeam/OurTeam";
+import $ from "jquery";
 
 const AboutUs = () => {
+
+  $(document).ready(function() {
+    $("#toggle").click(function() {
+      var elem = $("#toggle").text();
+      if (elem == "Read More") {
+        //Stuff to do when btn is in the read more state
+        $("#toggle").text("Read Less");
+        $("#whoAreWeText").slideDown();
+      } else {
+        //Stuff to do when btn is in the read less state
+        $("#toggle").text("Read More");
+        $("#whoAreWeText").slideUp();
+      }
+    });
+  });
   
   // const listener = () => {
   //   console.log(window.scrollY);
@@ -22,7 +38,7 @@ const AboutUs = () => {
         <div className="aboutHeaderContent">
           <h1>About Us</h1>
           <h2>"Where Talent Meets Opportunity"</h2>
-          <button>Meet Our Team</button>
+          <a href="#ourTeam">Meet Our Team</a>
         </div>
       </div>
       <div className="artheistEssence">
@@ -84,7 +100,7 @@ const AboutUs = () => {
           you a large scale platform for this very purpose.
         </p>
 
-        <p>
+        <p id="whoAreWeText" className="whoAreWeText">
           We also offer online contest management and help you create and
           execute your own contests using our website services. We can offer you
           full management of your online contest from the stage of planning to
@@ -101,6 +117,9 @@ const AboutUs = () => {
           showcasing it to a digital audience, giving them the praise and
           resepct they truly deserve.
         </p>
+        <div class="whoAreWeTextBtn">
+            <button id="toggle">Read More</button>
+        </div>
       </div>
 
       {/* <div className="feedbackVideo">
@@ -110,7 +129,7 @@ const AboutUs = () => {
         </div>
       </div> */}
 
-      <div className="ourTeam">
+      <div id="ourTeam" className="ourTeam">
         <h1>Meet Our People</h1>
         <div>
           <OurTeam />

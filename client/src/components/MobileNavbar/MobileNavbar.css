@@ -16,11 +16,13 @@
   justify-content: space-around;
 }
 
-.MobileNavBtnContainer > button {
+.logOutBtn {
   background-color: #fad149;
   color: #000;
   outline: 0;
-  padding: 10px;
+  padding: 6px;
+  margin-left: 40px;
+  margin-top: 20px;
   font-weight: 500;
   width: 100px;
   border: 1px solid #000;
@@ -76,10 +78,12 @@
 } */
 
 .userName {
+  display: block;
   font-size: large;
   font-weight: 600;
   color: white;
   margin-right: 30px;
+  text-align: left;
 }
 
 @media screen and (max-width: 990px) {

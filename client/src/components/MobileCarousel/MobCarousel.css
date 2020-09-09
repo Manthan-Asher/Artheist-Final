@@ -25,10 +25,10 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  top: 48%;
+  top: 45%;
   position: absolute;
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   outline: 0;
   background-color: #fff;
   background-size: 100% 100%;
@@ -41,8 +41,15 @@
     left: 10px;
 }
 
+.carousel-control-next-icon {
+    right: 10px;
+}
+
 .carousel-control-next-icon:after
 {
+  top: -2px;
+  left: 8px;
+  position: absolute;
   content: '>';
   font-size: 22px;
   font-weight: 800;
@@ -50,6 +57,9 @@
 }
 
 .carousel-control-prev-icon:after {
+  top: -2px;
+  right: 8px;
+  position: absolute;
   content: '<';
   font-size: 22px;
   font-weight: 800;
@@ -67,8 +77,80 @@
     top: 100%;
 }
 
+.carousel-item > div {
+    position: absolute;
+    width: 160px !important;
+    height: 100px !important;
+    top: 10px !important;
+    right: 0px !important;
+    color: white;
+}
+
+.carousel-item > div > .participateBtnMobile {
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.carousel-item > div > .participateBtnMobile a {
+    color: white !important;
+}
+
+
+@keyframes glowing {
+    0% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+    50% {
+        background-color: #49e819;
+        box-shadow: 0 0 20px #49e819;
+    }
+    100% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+}
+
+.carousel-item > div > .participateBtnMobile {
+animation: glowing 1300ms infinite;
+}
+
+
 @media screen and (max-width: 900px) {
     .mobileCarousel {
       display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .carousel-item > div h4 {
+        display: none;
+    }
+    .carousel-item > div {
+        width: 130px !important;
+        height: 50px !important;
+        top: initial !important;
+        bottom: 10px !important;
+        right: 5px !important;
+    }
+    .carousel-item > div > .participateBtnMobile {
+        font-size: 11px;
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .carousel-item > div {
+        width: 100px !important;
+        bottom: 5px !important;
     }
 }

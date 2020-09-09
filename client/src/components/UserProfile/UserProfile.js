@@ -1,8 +1,8 @@
 import React from "react";
 import "./UserProfile.css";
-// import { Button } from "react-bootstrap";
+//import { Link } from "react-router-dom";
 import {Paper, Tab, Tabs} from "@material-ui/core";
-import {Form, Button, Input, TextArea, Container} from "semantic-ui-react";
+import {Container} from "semantic-ui-react";
 import {makeStyles} from "@material-ui/core";
 import {useState} from "react";
 
@@ -39,72 +39,32 @@ const AboutUs = () => {
           gridTemplateColumns: "auto auto",
           gridColumnGap: "20vw",
         }}
+        className="info-container"
       >
-        <Form.Field control={Input} label="First Name" name="firstName" />
-
-        <Form.Field control={Input} label="First Name" name="lastName" />
-
-        <Form.Field
-          control={Input}
-          label="Username"
-          // value={username}
-          name="username"
-        />
-
-        <Form.Field
-          control={Input}
-          label="Email"
-          // value={email}
-          name="email"
-        />
-        <Form.Field
-          control={Input}
-          label="Phone Number"
-          // value={phoneNumber}
-          name="phoneNumber"
-        />
-        <Form.Field
-          control={Input}
-          label="Date of Birth"
-          // value={dob}
-          name="dob"
-        />
-        <Form.Field
-          control={Input}
-          label="Gender"
-          // value={gender}
-          name="gender"
-        />
-        <Form.Field
-          control={Input}
-          label="Age"
-          // value={age}
-          name="age"
-        />
-        <Form.Field
-          control={Input}
-          label="Interests"
-          // value={interests}
-          name="interests"
-        />
-        <Form.Field
-          control={Input}
-          label="Skills"
-          // value={skills}
-          name="skills"
-        />
-      </div>
-      <div style={{display: "flex", justifyContent: "center"}}>
-        <Form.Field
-          control={TextArea}
-          name="about"
-          // value={about}
-          label="About"
-        />
+        <p>First Name : Chahat</p>
+        <p>Last Name :  Bhatia</p>
+        <p>Username : username</p>
+        <p>Email : chahatbhatia@gmail.com</p>
+        <p>Phone Number : 9929638046</p>
+        <p>Date of Birth : 12/12/2000</p>
+        <p>Gender : Male</p>        
+        <p>Age : 20</p>        
       </div>
     </Container>
   );
 };
+
+const ContestsParticipated = () => {
+  return (
+    <div className="contestsParticipated">
+      <h3>You Haven't Participated in any contests yet !!</h3>
+      <a href="/contest">Participate Now</a>
+    </div>
+  );
+};
+
+
+
 
 const UserProfile = () => {
   const classes = useStyles();
@@ -118,20 +78,23 @@ const UserProfile = () => {
     <div className="user-profile">
       <div className="user-profile-container">
         <div className="user-cover-photo">
-          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/cover.jpg" alt="" className="cover-photo" />
-        </div>
-        <div className="user-avatar">
-          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg" alt="" className="user-avatar-photo" />
-          <ul className="user-activity">
-            <li className="info followers">Followers : 0</li>
-            <li className="info contests">Contests : 0</li>
-            <li className="info insights">Insights</li>
-          </ul>
-          <Button variant="primary" className="invite-button" size="lg">
-            Invite
-          </Button>
-        </div>
+          {/* <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/cover.jpg" alt="" className="cover-photo" /> */}
 
+          <div className="user-avatar">
+            <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg" alt="" className="user-avatar-photo" />
+          </div>
+        </div>
+        
+        <div className="user-insights">
+          <ul className="user-activity">
+              <li className="info followers">Followers : 0</li>
+              <li className="info contests">Contests : 0</li>
+              {/* <li className="info insights">Insights</li> */}
+          </ul>
+          {/* <Button variant="primary" className="invite-button" size="lg">
+            Invite
+          </Button> */}
+        </div>
         <div className="user-posts">
           <Paper
             className={classes.root}
@@ -146,7 +109,7 @@ const UserProfile = () => {
             >
               <Tab label="FEED" />
               <Tab label="ABOUT" />
-              <Tab label="ENTRIES" />
+              <Tab label="CONTESTS" />
             </Tabs>
           </Paper>
 
@@ -157,7 +120,7 @@ const UserProfile = () => {
               case 1:
                 return <AboutUs />;
               case 2:
-                return "#0000FF";
+                return <ContestsParticipated />;
               default:
                 return "#FFFFFF";
             }

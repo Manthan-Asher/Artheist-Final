@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Dropdown} from "react-bootstrap";
 import {Link, withRouter} from "react-router-dom";
 import "./MobileNavbar.css";
 import Signup from "../Signup/Signup";
@@ -52,17 +51,11 @@ const MobileNavbar = ({auth, logout, history}) => {
                   className="navLink"
                   style={{color: "inherit"}}
                 >
+                  <i className="fas fa-user"></i>{" "}
                   Hi, {auth.user.firstName}
                 </Link>
               </span>
-              <button
-                className="signupBtn"
-                onClick={() => {
-                  logout(history);
-                }}
-              >
-                Logout
-              </button>
+              
             </div>
           ) : (
             <div className="MobileNavBtnContainer">
@@ -101,22 +94,14 @@ const MobileNavbar = ({auth, logout, history}) => {
               Contact Us
             </a>
           </p>
-          {/* <Dropdown>
-            <Dropdown.Toggle variant="none" id="dropdown-basic">
-              Contact Us <i className="fa fa-caret-down" aria-hidden="true"></i>
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Link to="/aboutUs" className="navLink">
-                <Dropdown.Item href="aboutUs">About Us</Dropdown.Item>
-              </Link>
-              <Dropdown.Item href="#/action-2">What we do ?</Dropdown.Item>
-              <Link to="/howItWorks" className="navLink">
-                <Dropdown.Item href="howItWorks">How It Works?</Dropdown.Item>
-              </Link>
-              <Dropdown.Item href="#/action-3">Testimonials</Dropdown.Item>
-              <Dropdown.Item href="#/action-4">Contact Us</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown> */}
+          <button
+                className="logOutBtn"
+                onClick={() => {
+                  logout(history);
+                }}
+              >
+                Logout
+          </button>
         </div>
       </div>
       {loginOpen ? (

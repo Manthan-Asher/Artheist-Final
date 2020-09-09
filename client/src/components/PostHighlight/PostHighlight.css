@@ -13,3 +13,60 @@
     width: 100%;
     height: 100%;
 }
+
+.postEmbeded video {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.likeButtonContainer p:first-child {
+    margin-bottom: 10px !important;
+}
+
+.likeButtonContainer, .sharePostBtn {
+    width: 200px;
+    float: left;
+}
+
+.likeButtonOpen {
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.likeButtonOpen:hover {
+    color: black;
+    transform: scale(1.2);
+}
+
+.sharePostBtn {
+    padding-top: 15px;   
+}
+
+.sharePostBtn button {
+    width: 200px;
+    outline: 0;
+    border: 0;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #1b1c1d !important;
+    background-color: #fad149;
+    border: 4px solid #fad149;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.sharePostBtn button:hover {
+    background-color: transparent;
+    color: #1b1c1d;
+}
+
+.ui.segment {
+    display: table;
+    content: "";
+    clear: both;
+    width: 100%;
+}
