@@ -4,6 +4,8 @@ import {
   FETCH_POSTS,
   FETCH_POSTS_ERROR,
   FETCH_POST,
+  LIKE_POST,
+  POST_ERROR,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -30,6 +32,21 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         post: payload,
         postsByUser: [],
+      };
+    case LIKE_POST:
+      return {
+        ...state,
+        post: null,
+        posts: state.posts.map((post1) =>
+          post1._id === payload.postId
+            ? {...post1, likes: payload.likes}
+            : post1
+        ),
+      };
+    case POST_ERROR:
+      return {
+        ...state,
+        error: payload,
       };
     case POST_UPLOAD_ERROR:
     case FETCH_POSTS_ERROR:

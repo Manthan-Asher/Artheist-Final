@@ -4,6 +4,7 @@ import FileUploadBox from "./FileUploadDialog/FileUploadBox";
 //import {Button} from "react-bootstrap";
 import {connect} from "react-redux";
 import {getContestById} from "../../actions/contests";
+import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
 
 class ContestDesc extends Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class ContestDesc extends Component {
 
   render() {
     if (!this.props.contest || !this.props.user) {
-      return "Loading";
+      return <ArtheistLoader />;
     }
     const {
       type,

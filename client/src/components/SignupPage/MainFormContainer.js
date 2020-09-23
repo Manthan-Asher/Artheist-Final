@@ -7,18 +7,14 @@ import {UserDetails} from "./UserDetails";
 import {Form} from "semantic-ui-react";
 
 class MainFormContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      gender: "",
-      age: "",
-      username: "",
-      about: "",
-      dob: "",
-      phoneNumber: "",
-    };
-  }
+  state = {
+    gender: "",
+    age: "",
+    username: "",
+    about: "",
+    dob: "",
+    phoneNumber: "",
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();

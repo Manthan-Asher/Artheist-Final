@@ -14,3 +14,5 @@ export const POST_UPLOAD_ERROR = "POST_UPLOAD_ERROR";
 export const FETCH_POSTS = "FETCH_POSTS";
 export const FETCH_POST = "FETCH_POST";
 export const FETCH_POSTS_ERROR = "FETCH_POSTS_ERROR";
+export const LIKE_POST = "LIKE_POST";
+export const POST_ERROR = "POST_ERROR";
