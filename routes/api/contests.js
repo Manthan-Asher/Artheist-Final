@@ -8,9 +8,19 @@ const Contest = mongoose.model("Contest");
 //@desc    get Contests
 //@access  Private
 
-router.get("/", requireLogin, async (req, res) => {
+router.get("/", async (req, res) => {
+  let sort = {};
+  if (req.query.sortBy !== "") {
+    const parts = req.query.sortBy.split(":");
+    sort[parts[0]] = parts[1];
+  }
   try {
-    const contests = await Contest.find({});
+    const contests = await Contest.find(
+      req.query.type !== "" ? {type: req.query.type} : {}
+    )
+      .sort(req.query.sortBy ? sort : {createdAt: "desc"})
+      .limit(parseInt(req.query.limit))
+      .skip(parseInt(req.query.skip));
     res.send(contests);
   } catch (error) {
     res.status(500).send(error.message);

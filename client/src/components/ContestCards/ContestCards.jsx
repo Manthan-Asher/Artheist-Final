@@ -9,6 +9,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "./ContestCards.css";
+import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
 
 import ImgMediaCard from "./ContestCard/ContestCard";
 import Pagination from "../Pagination/Pagination";
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 
 function NavTabs({getContests, contests: {contests}}) {
   useEffect(() => {
-    getContests();
+    getContests({limit: 3, skip: 0});
   }, [getContests]);
 
   const classes = useStyles();
@@ -77,65 +78,57 @@ function NavTabs({getContests, contests: {contests}}) {
     setValue(newValue);
   };
 
-  return (
-    contests && (
-      <div className="ContestContainer">
-        <div className={classes.root}>
-          <AppBar position="static">
-            <Tabs
-              variant="fullWidth"
-              value={value}
-              className="tabs2"
-              onChange={handleChange}
-              aria-label="nav tabs example"
-            >
-              <LinkTab
-                label="Active Contests"
-                href="/drafts"
-                {...a11yProps(0)}
-              />
-              <LinkTab
-                label="Upcoming Contests"
-                href="/trash"
-                {...a11yProps(1)}
-              />
-              <LinkTab
-                label="Previous Contests"
-                href="/spam"
-                {...a11yProps(2)}
-              />
-            </Tabs>
-          </AppBar>
-          <TabPanel value={value} index={0}>
-            {contests.length > 0 &&
-              contests.map((contest) => (
-                <ImgMediaCard key={contest._id} contest={contest} />
-              ))}
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            {contests.length > 0 ? (
-              contests.map((contest) => (
-                <ImgMediaCard key={contest._id} contest={contest} />
-              ))
-            ) : (
-              <h1>Loading..</h1>
-            )}
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            {contests.length > 0 ? (
-              contests.map((contest) => (
-                <ImgMediaCard key={contest._id} contest={contest} />
-              ))
-            ) : (
-              <h1>Loading..</h1>
-            )}
-          </TabPanel>
-          <div>
-            <Pagination />
-          </div>
+  return contests ? (
+    <div className="ContestContainer">
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Tabs
+            variant="fullWidth"
+            value={value}
+            className="tabs2"
+            onChange={handleChange}
+            aria-label="nav tabs example"
+          >
+            <LinkTab label="Active Contests" href="/drafts" {...a11yProps(0)} />
+            <LinkTab
+              label="Upcoming Contests"
+              href="/trash"
+              {...a11yProps(1)}
+            />
+            <LinkTab label="Previous Contests" href="/spam" {...a11yProps(2)} />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          {contests.length > 0 &&
+            contests.map((contest) => (
+              <ImgMediaCard key={contest._id} contest={contest} />
+            ))}
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          {contests.length > 0 ? (
+            contests.map((contest) => (
+              <ImgMediaCard key={contest._id} contest={contest} />
+            ))
+          ) : (
+            <h1>Loading..</h1>
+          )}
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          {contests.length > 0 ? (
+            contests.map((contest) => (
+              <ImgMediaCard key={contest._id} contest={contest} />
+            ))
+          ) : (
+            <h1>Loading..</h1>
+          )}
+        </TabPanel>
+        <div>
+          <Pagination />
         </div>
       </div>
-    )
+    </div>
+  ) : (
+    <ArtheistLoader />
   );
 }
 

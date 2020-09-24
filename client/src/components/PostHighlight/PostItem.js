@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./Postitem.css";
 
 const PostItem = ({post}) => {
@@ -12,17 +12,14 @@ const PostItem = ({post}) => {
   }
 
   return (
-    <div
-      className="video-item item"
-      onClick={() => {
-        return <Redirect to={`/post/${post._id}`} />;
-      }}
-    >
-      {file === "img" ? (
-        <img src={post.URL} alt=""></img>
-      ) : (
-        <video src={post.URL}></video>
-      )}
+    <div className="video-item item">
+      <Link to={`/post/${post._id}`}>
+        {file === "img" ? (
+          <img src={post.URL} alt=""></img>
+        ) : (
+          <video src={post.URL}></video>
+        )}
+      </Link>
     </div>
   );
 };

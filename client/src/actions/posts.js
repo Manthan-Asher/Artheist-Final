@@ -4,6 +4,8 @@ import {
   FETCH_POSTS,
   FETCH_POSTS_ERROR,
   FETCH_POST,
+  LIKE_POST,
+  POST_ERROR,
 } from "./types";
 import AlertToast from "../components/Alert/AlertToast";
 import axios from "axios";
@@ -48,4 +50,14 @@ const getPostsForDisplay = () => async (dispatch) => {
   }
 };
 
-export {uploadPost, getPostById, getPostsForDisplay};
+const likePost = (postId) => async (dispatch) => {
+  try {
+    const res = await axios.post(`/posts/like/${postId}`);
+    dispatch({type: LIKE_POST, payload: {postId, likes: res.data}});
+  } catch (error) {
+    dispatch({type: POST_ERROR, payload: error.response.data});
+    AlertToast(error.response.data, "error");
+  }
+};
+
+export {uploadPost, getPostById, getPostsForDisplay, likePost};

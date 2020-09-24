@@ -1,15 +1,13 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./FilterSection.css";
 import $ from "jquery";
+import {getContests} from "../../actions/contests";
+import {connect} from "react-redux";
 
 export class FilterSection extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      showFilter: false
-    }
-  }
+  state = {
+    showFilter: false,
+  };
 
   handleClick = (id) => {
     let cls = `.FilterContent${id}`;
@@ -18,18 +16,21 @@ export class FilterSection extends Component {
 
   toggleFilter = () => {
     this.setState({
-      showFilter: !this.state.showFilter
+      showFilter: !this.state.showFilter,
     });
-  }
+  };
 
+  applyFilter = (e) => {
+    this.props.getContests({type: e.target.name, limit: 3});
+  };
   render() {
     let filterClasses = "FilterContainer";
     filterClasses += this.state.showFilter ? " showFilter" : "";
     return (
       <React.Fragment>
         <div className="filterSection">
-          <div className="filterToggle" onClick={this.toggleFilter}>Apply Filters
-            {" "} 
+          <div className="filterToggle" onClick={this.toggleFilter}>
+            Apply Filters{" "}
             <span>
               <i className="fa fa-filter"></i>
             </span>
@@ -37,7 +38,9 @@ export class FilterSection extends Component {
           <div className={filterClasses}>
             <div className="Filter">
               <header>
-                <span>Apply Filters{" "} <i className="fa fa-filter"></i></span>
+                <span>
+                  Apply Filters <i className="fa fa-filter"></i>
+                </span>
               </header>
             </div>
             <div className="closeFilter">
@@ -45,37 +48,43 @@ export class FilterSection extends Component {
             </div>
             <div className="SubFilters">
               <button onClick={() => this.handleClick(1)}>
-                Filter <i className="fa fa-caret-down"></i>
+                Contest-Type <i className="fa fa-caret-down"></i>
               </button>
 
               <ul className="FilterContent1">
                 <li>
-                  SubHeading{" "}
+                  Dance{" "}
                   <input
                     id="checkbox"
                     type="checkbox"
                     value="Filter1"
+                    name="Dance"
+                    onClick={this.applyFilter}
                   ></input>
                 </li>
                 <li>
-                  SubHeading{" "}
+                  Music{" "}
                   <input
                     id="checkbox"
                     type="checkbox"
                     value="Filter2"
+                    name="Music"
+                    onClick={this.applyFilter}
                   ></input>
                 </li>
                 <li>
-                  SubHeading{" "}
+                  Art{" "}
                   <input
                     id="checkbox"
                     type="checkbox"
                     value="Filter3"
+                    name="Art"
+                    onClick={this.applyFilter}
                   ></input>
                 </li>
               </ul>
             </div>
-            <div className="SubFilters">
+            {/* <div className="SubFilters">
               <button onClick={() => this.handleClick(2)}>
                 Filter <i className="fa fa-caret-down"></i>
               </button>
@@ -138,7 +147,7 @@ export class FilterSection extends Component {
                   ></input>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </React.Fragment>
@@ -146,4 +155,4 @@ export class FilterSection extends Component {
   }
 }
 
-export default FilterSection;
+export default connect(null, {getContests})(FilterSection);

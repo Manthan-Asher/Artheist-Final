@@ -86,11 +86,11 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// @route  Patch /posts/like/:id
+// @route  Post /posts/like/:id
 // @desc   like post
 // @access  private
 
-router.patch("/like/:postId", requireLogin, async (req, res) => {
+router.post("/like/:postId", requireLogin, async (req, res) => {
   try {
     const post = await Post.findById(req.params.postId);
     if (
