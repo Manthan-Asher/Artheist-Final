@@ -31,14 +31,14 @@ class NavBar extends Component {
       <>
         <div>
           <Navbar bg="info" expand="lg" className="navBar fixed-top">
-            <Link to="/">
+            <Nav.Link href="/">
               <img
                 src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/logo1.jpeg"
                 alt="logo"
                 className="logo-img"
               />
               <Navbar.Brand className="navbar-brand">artHeist</Navbar.Brand>
-            </Link>
+            </Nav.Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
             <MobileNavbar />
@@ -48,15 +48,15 @@ class NavBar extends Component {
                 <Nav.Link href="/feed" className="mb4">
                   Feed
                 </Nav.Link>
-                <Link to="/contest" className="navLink">
-                  <Nav.Link href="/contests" to="/contest">
+                {/* <Link to="/contest" className="navLink"> */}
+                  <Nav.Link href="/contest" className="navLink">
                     Contest
                   </Nav.Link>
-                </Link>
+                {/* </Link> */}
                 <Nav.Link href="/createContest">Create Contest</Nav.Link>
-                <Link to="/aboutUs" className="navLink">
-                      <Nav.Link href="/aboutUs">About Us</Nav.Link>
-                </Link>
+                
+                <Nav.Link href="/aboutUs" className="navLink">About Us</Nav.Link>
+              
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
                     <i className="fa fa-bars" aria-hidden="true"></i>

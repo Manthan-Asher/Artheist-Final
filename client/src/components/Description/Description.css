@@ -33,6 +33,7 @@ p {
   margin-top: 8% !important;
   width: 35%;
   height: 70%;
+  max-height: 560px;
 }
 
 .description-box > div {
@@ -46,8 +47,8 @@ p {
 }
 
 .what-we-do {
-  /* margin-top: 100px; */
-  height: 92vh;
+  padding: 50px 0;
+  height: auto;
   position: relative;
   background-color: #dbd5d4;
 }
@@ -88,20 +89,27 @@ p {
 }
 
 .bgContainer {
-  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2(1).png");
+  display: inline-block;
+  width: 65%;
+  height: 92vh;
+}
 
-  /* Set a specific height */
+.bgContainer img {
+  width: 90%;
+  height: auto;
+}
+
+/* .bgContainer {
+  background-image: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2(1).png");
   height: 100%;
   width: 65%;
   display: inline-block;
   vertical-align: top;
-  /* Create the parallax scrolling effect */
   background-attachment: initial;
   background-size: 80% 80%;
   background-position: center center;
   background-repeat: no-repeat;
-  /* background-size: contain; */
-}
+} */
 
 @media screen and (max-width: 1010px) {
   .bgContainer {
@@ -112,7 +120,7 @@ p {
     background-size: contain;
     margin: 0 auto;
     width: 100%;
-    height: 500px;
+    height: auto;
   }
   /*   
   .bgContainer img {

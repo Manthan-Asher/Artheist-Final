@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 const Description = () => {
   return (
     <div className="what-we-do">
-      <div className="bgContainer"></div>
+      <div className="bgContainer">
+        <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/artform2(1).png"
+         className="whatWeDoBgImg" alt="whatWeDoBgImg" />
+      </div>
       <div className="description-box">
         <Typography
           component="div"

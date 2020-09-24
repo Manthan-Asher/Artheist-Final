@@ -16,7 +16,7 @@
   justify-content: space-around;
 }
 
-.logOutBtn {
+.signupBtn, .loginBTN, .logOutBtn {
   background-color: #fad149;
   color: #000;
   outline: 0;
@@ -27,6 +27,10 @@
   width: 100px;
   border: 1px solid #000;
   border-radius: 3px;
+}
+
+.signupBtn, .loginBTN {
+  margin: 0 !important;
 }
 
 .sideNavigation {

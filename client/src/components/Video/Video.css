@@ -3,7 +3,8 @@
 }
 
 .MuiCard-root:hover  video{
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    filter: opacity(0.9);
 }
 
 .HallOfFameContainer .MuiButton-root {

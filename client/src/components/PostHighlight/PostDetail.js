@@ -7,13 +7,13 @@ const PostDetail = ({post}) => {
 
   const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
   var file;
-  console.log(ext)
+  // console.log(ext)
   if (ext === "jpg" || "png" || "jfif") {
     file = "img";
   } if (ext === "mp4") {
     file = "video";
   }
-  console.log(likeBtn)
+  // console.log(likeBtn)
   return (
     <div>
       <div className="ui embed postEmbeded">
@@ -51,7 +51,7 @@ const PostDetail = ({post}) => {
             <p>Likes</p>
         </div>
         <div className="sharePostBtn">
-            <button class="btn"> Share Now </button>
+            <button className="btn"> Share Now </button>
         </div>
       </div>
     </div>

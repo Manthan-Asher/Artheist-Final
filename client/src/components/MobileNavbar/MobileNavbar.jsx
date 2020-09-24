@@ -94,7 +94,8 @@ const MobileNavbar = ({auth, logout, history}) => {
               Contact Us
             </a>
           </p>
-          <button
+          { auth.isAuthenticated ? (
+                <button
                 className="logOutBtn"
                 onClick={() => {
                   logout(history);
@@ -102,6 +103,8 @@ const MobileNavbar = ({auth, logout, history}) => {
               >
                 Logout
           </button>
+          ) : null }
+          
         </div>
       </div>
       {loginOpen ? (
