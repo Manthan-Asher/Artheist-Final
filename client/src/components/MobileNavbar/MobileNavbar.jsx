@@ -80,7 +80,7 @@ const MobileNavbar = ({auth, logout, history}) => {
             {/* </Link> */}
           </p>
           <p>
-            <a href="" alt="navlinks">
+            <a href="/createContest" alt="navlinks">
               Create Contest
             </a>
           </p>

@@ -25,6 +25,8 @@ const PostHighlight = (props) => {
             <PostDetail post={props.postFetched} />
           </div>
           <div className="five wide column">
+            <h2>You May Like</h2>
+            <hr style={{ "width": "100%", "display": "block", "margin": "0 !important" }}/>
             <PostList posts={props.posts} />
           </div>
         </div>

@@ -1,0 +1,75 @@
+/* React share button styling */
+
+.Demo__some-network {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    height: auto;
+    top: 105%;
+    left: 50%;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #ada7a7;
+}
+
+.Demo__some-network > button {
+    height: 100% !important;
+    width: 50px !important;
+    margin: 0px 10px;
+} 
+
+.Demo__some-network__share-button svg {
+    position: initial;
+    width: initial;
+}
+
+.Demo__some-network__share-button path {
+    fill: white;
+}
+
+.copyLinkContainer > button {
+    width: 100%;
+    outline: 0;
+    /* border: 0; */
+    padding: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #1b1c1d !important;
+    background-color: #fff;
+    border: 4px solid #fad149;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.Demo__some-network > button:focus {
+    outline: 0;
+}
+
+.copyLinkContainer input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid black;
+    color: black;
+    margin: 10px 0px;
+    padding: 5px;
+    overflow: hidden;
+}
+  
+.Demo__some-network__share-count {
+    display: inline-flex;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: visible;
+    width: 0;
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.Demo__some-network__share-button {
+    cursor: pointer;
+}

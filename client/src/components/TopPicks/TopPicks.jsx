@@ -4,11 +4,7 @@ import "../../../node_modules/video-react/dist/video-react.css";
 import {Player, BigPlayButton, ControlBar} from "video-react";
 import {Button} from "@material-ui/core";
 
-// import x from "../../assets/videos/pqr.mp4";
-// import y from "../../assets/videos/abc.mp4";
-// import z from "../../assets/videos/xyz.mp4";
-// import a from "../../assets/videos/123.mp4";
-// import b from "../../assets/videos/456.mp4";
+
 
 class TopPicks extends Component {
   constructor(props, context) {
@@ -168,7 +164,7 @@ class TopPicks extends Component {
                 <Player
                   playsInline
                   // src={x}
-                  src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/DemoVideo.mp4"
                   ref={(player1) => {
                     this.player1 = player1;
                   }}
@@ -196,7 +192,7 @@ class TopPicks extends Component {
                 <Player
                   playsInline
                   // src={y}
-                  src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/DemoVideo.mp4"
                   ref={(player2) => {
                     this.player2 = player2;
                   }}
@@ -224,7 +220,7 @@ class TopPicks extends Component {
                 <Player
                   playsInline
                   // src={z}
-                  src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/DemoVideo.mp4"
                   num="3"
                   ref={(player3) => {
                     this.player3 = player3;
@@ -253,7 +249,7 @@ class TopPicks extends Component {
                 <Player
                   playsInline
                   // src={a}
-                  src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/DemoVideo.mp4"
                   num="4"
                   ref={(player4) => {
                     this.player4 = player4;
@@ -282,7 +278,7 @@ class TopPicks extends Component {
                 <Player
                   playsInline
                   // src={b}
-                  src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                  src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/DemoVideo.mp4"
                   num="5"
                   ref={(player5) => {
                     this.player5 = player5;

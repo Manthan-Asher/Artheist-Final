@@ -2,24 +2,24 @@ import React, {useEffect} from "react";
 import "./AboutUs.css";
 import FullScrVideo from "../FullScrVideo/FullScrVideo";
 import OurTeam from "../OurTeam/OurTeam";
-import $ from "jquery";
+//import $ from "jquery";
 
 const AboutUs = () => {
 
-  $(document).ready(function() {
-    $("#toggle").click(function() {
-      var elem = $("#toggle").text();
-      if (elem == "Read More") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle").text("Read Less");
-        $("#whoAreWeText").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle").text("Read More");
-        $("#whoAreWeText").slideUp();
-      }
-    });
-  });
+  // $(document).ready(function() {
+  //   $("#toggle").click(function() {
+  //     var elem = $("#toggle").text();
+  //     if (elem == "Read More") {
+  //       Stuff to do when btn is in the read more state
+  //       $("#toggle").text("Read Less");
+  //       $("#whoAreWeText").slideDown();
+  //     } else {
+  //       Stuff to do when btn is in the read less state
+  //       $("#toggle").text("Read More");
+  //       $("#whoAreWeText").slideUp();
+  //     }
+  //   });
+  // });
   
   // const listener = () => {
   //   console.log(window.scrollY);
@@ -100,7 +100,7 @@ const AboutUs = () => {
           you a large scale platform for this very purpose.
         </p>
 
-        <p id="whoAreWeText" className="whoAreWeText">
+        {/* <p id="whoAreWeText" className="whoAreWeText">
           We also offer online contest management and help you create and
           execute your own contests using our website services. We can offer you
           full management of your online contest from the stage of planning to
@@ -119,7 +119,7 @@ const AboutUs = () => {
         </p>
         <div class="whoAreWeTextBtn">
             <button id="toggle">Read More</button>
-        </div>
+        </div> */}
       </div>
 
       {/* <div className="feedbackVideo">

@@ -11,7 +11,7 @@ export default class Carousel extends Component {
       centerMode: true,
       infinite: true,
       centerPadding: "60px",
-      slidesToShow: 3,
+      slidesToShow: 2,
       speed: 600,
       autoplay: true,
       autoplaySpeed: 15000,
@@ -36,7 +36,7 @@ export default class Carousel extends Component {
 
 
         <Slider {...settings}>
-          <div className="contestPoster">
+          {/* <div className="contestPoster">
             <img
               src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/carousal_demo.png"
               alt="carouselPhoto"
@@ -47,8 +47,8 @@ export default class Carousel extends Component {
                 <Link to="/contest">Participate Now</Link>
               </button>
             </div>
-          </div>
-          <div className="contestPoster">
+          </div> */}
+          {/* <div className="contestPoster">
             <img
               src="https://images.unsplash.com/photo-1474308371634-c715850e8d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
               alt="contestPoster"
@@ -71,7 +71,7 @@ export default class Carousel extends Component {
                 <Link to="/contest">Participate Now</Link>
               </button>
             </div>
-          </div>
+          </div> */}
           <div className="contestPoster">
             <img
               src="https://images.unsplash.com/photo-1474308371634-c715850e8d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"

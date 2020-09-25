@@ -7,7 +7,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
-//import HowItWorksPage from "./HowItWorksPage/HowItWorksPage";
+import CreateContestPage from "./CreateContestPage/CreateContestPage";
 import ContactUs from "./ContactUs/ContactUs";
 import AboutUs from "./AboutUs/AboutUs";
 import Contest from "./ContestPage/Contest";
@@ -46,7 +46,7 @@ class App extends React.Component {
           <Route path="/userProfile" exact component={UserProfile}></Route>
           <Route path="/contactUs" exact component={ContactUs}></Route>
           <Route path="/post/:id" exact component={PostHighlight}></Route>
-          {/* <Route path="/howItWorks" exact component={HowItWorksPage}></Route> */}
+          <Route path="/createContest" exact component={CreateContestPage}></Route>
 
           <Route path="/artheistLoader" exact component={ArtheistLoader}></Route> 
           
