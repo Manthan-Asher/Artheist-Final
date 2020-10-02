@@ -12,7 +12,7 @@ import "./ContestCards.css";
 import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
 
 import ImgMediaCard from "./ContestCard/ContestCard";
-import Pagination from "../Pagination/Pagination";
+//import Pagination from "../Pagination/Pagination";
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -122,9 +122,9 @@ function NavTabs({getContests, contests: {contests}}) {
             <h1>Loading..</h1>
           )}
         </TabPanel>
-        <div>
+        {/* <div>
           <Pagination />
-        </div>
+        </div> */}
       </div>
     </div>
   ) : (

@@ -250,7 +250,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   width: 80%;
 }
 
@@ -329,6 +329,18 @@
     } */
 }
 
+@media screen and (max-width: 768px) {
+  .aboutHeaderContent > h1 {
+    font-size: 50px;
+  }
+  .aboutHeaderContent > h2 {
+    font-size: 30px;
+  }
+  .aboutHeaderContent a {
+    font-size: 18px;
+  }
+  
+}
 @media screen and (max-width: 1100px) {
   .essenceLogo {
     background-position: 5%;
@@ -361,6 +373,12 @@
   .ourIntegrityImgMob > img {
     width: 100%;
     height: auto;
+  }
+  .whoAreWe > p {
+    font-size: 20px;
+    width: initial;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -414,9 +432,34 @@
     padding-top: 60px;
     padding-bottom: 60px;
   }
-  
+  .aboutHeaderContent a {
+    padding: 10px !important;
+  }
+  .essenceContent > p {
+    text-align: justify;
+    font-size: 18px;
+  }
+  .whoAreWe > p {
+    font-size: 19px;
+    width: initial;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .essenceLogo {
+    height: 400px;
+  }
 }
 
+@media screen and (max-width: 375px) {
+  .aboutHeaderContent a {
+    padding: 10px !important;
+  }
+  .essenceContent > p {
+    text-align: justify;
+    font-size: 18px;
+  }
+  
+}
 
 
 /* video experiment with iframe */

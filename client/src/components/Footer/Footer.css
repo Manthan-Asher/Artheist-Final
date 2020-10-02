@@ -49,3 +49,17 @@
     color: gold;
 }
 
+@media screen and (max-width: 600px) {
+    .footer {
+        font-size: medium;
+    }
+    .copyRightAndSocialLinks {
+        padding: 10px;
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footerSocialIcons {
+        margin: 0 auto;
+    }
+}

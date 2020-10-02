@@ -11,7 +11,7 @@ const Footer = () => {
                 <a href="/contactUs">Contact Us</a>
             </div>
             <div className="copyRightAndSocialLinks">
-                <p>Copyright (c) 2020 Artheist.in. All rights reserved.</p>
+                <p>Copyright &copy; 2020 Artheist.in. All rights reserved.</p>
                 <p>Made with ❤️ by  <a href="https://artheist.in/">Artheist.</a></p>
                 <div className="footerSocialIcons">
                     <a href="https://www.instagram.com/artheist.in/" target="_blank">

@@ -21,7 +21,7 @@ export class FilterSection extends Component {
   };
 
   applyFilter = (e) => {
-    this.props.getContests({type: e.target.name, limit: 3});
+    this.props.getContests({type: e.target.value, limit: 3});
   };
   render() {
     let filterClasses = "FilterContainer";
@@ -46,7 +46,7 @@ export class FilterSection extends Component {
             <div className="closeFilter">
               <i className="fa fa-close" onClick={this.toggleFilter}></i>
             </div>
-            <div className="SubFilters">
+            {/* <div className="SubFilters">
               <button onClick={() => this.handleClick(1)}>
                 Contest-Type <i className="fa fa-caret-down"></i>
               </button>
@@ -72,82 +72,32 @@ export class FilterSection extends Component {
                     onClick={this.applyFilter}
                   ></input>
                 </li>
-                <li>
-                  Art{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter3"
-                    name="Art"
-                    onClick={this.applyFilter}
-                  ></input>
-                </li>
-              </ul>
-            </div>
-            {/* <div className="SubFilters">
-              <button onClick={() => this.handleClick(2)}>
-                Filter <i className="fa fa-caret-down"></i>
-              </button>
-
-              <ul className="FilterContent2">
-                <li>
-                  SubHeading{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter5"
-                  ></input>
-                </li>
-                <li>
-                  SubHeading{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter6"
-                  ></input>
-                </li>
-                <li>
-                  SubHeading{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter7"
-                  ></input>
-                </li>
-              </ul>
-            </div>
-            <div className="SubFilters">
-              <button onClick={() => this.handleClick(3)}>
-                Filter <i className="fa fa-caret-down"></i>
-              </button>
-
-              <ul className="FilterContent3">
-                <li>
-                  SubHeading{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter5"
-                  ></input>
-                </li>
-                <li>
-                  SubHeading{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter6"
-                  ></input>
-                </li>
-                <li>
-                  SubHeading{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter7"
-                  ></input>
-                </li>
               </ul>
             </div> */}
+
+
+
+            {/* RADIO BUTTONS FOR FILTERING CONTESTS */}
+            <div className="SubFilters">
+              <button onClick={() => this.handleClick(1)}>
+                Contest-Type <i className="fa fa-caret-down"></i>
+              </button>
+              <ul className="FilterContent1">
+                <li>
+                  <label className="filterLabel">Dance
+                    <input type="radio"  name="radio" value="Dance" onClick={this.applyFilter} />
+                    <span className="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                    <label className="filterLabel">Music
+                      <input type="radio"  name="radio" value="Music" onClick={this.applyFilter} />
+                      <span className="checkmark"></span>
+                    </label>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </React.Fragment>

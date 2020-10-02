@@ -38,6 +38,7 @@
     background-color: #f5f5f5;
     margin: 0% auto;
     padding-top: 10px;
+    padding-bottom: 20px;
     padding-left: 40px;
     padding-right: 40px;
     position: relative;
@@ -79,4 +80,11 @@
     right: 25px;
     height: 20px;
     transform: rotate(0deg);
+}
+
+@media screen and (max-width: 700px) {
+    .createContestPageBg {
+        height: auto;
+
+    }
 }

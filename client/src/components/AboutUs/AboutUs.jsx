@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import "./AboutUs.css";
 import FullScrVideo from "../FullScrVideo/FullScrVideo";
 import OurTeam from "../OurTeam/OurTeam";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 //import $ from "jquery";
 
 const AboutUs = () => {
@@ -38,7 +40,15 @@ const AboutUs = () => {
         <div className="aboutHeaderContent">
           <h1>About Us</h1>
           <h2>"Where Talent Meets Opportunity"</h2>
-          <a href="#ourTeam">Meet Our Team</a>
+          {/* <a href="#ourTeam">Meet Our Team</a> */}
+          <Link
+              activeClass="active"
+              to="ourTeam"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={1000}
+          >Meet Our Team</Link>
         </div>
       </div>
       <div className="artheistEssence">
