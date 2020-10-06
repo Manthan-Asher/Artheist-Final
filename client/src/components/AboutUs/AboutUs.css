@@ -389,7 +389,7 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .aboutHeaderContent {
     padding: 110px 20px;
   }
@@ -405,6 +405,10 @@
   }
   .ourTeam {
     padding: 50px 20px;
+  }
+  .aboutUsHeader {
+    background-image: url("../../aboutUsFinal.jpeg");
+    background-size: cover;
   }
 }
 

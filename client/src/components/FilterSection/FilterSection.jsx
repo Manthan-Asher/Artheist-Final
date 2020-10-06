@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 export class FilterSection extends Component {
   state = {
     showFilter: false,
+    contestType: ""
   };
 
   handleClick = (id) => {
@@ -17,11 +18,16 @@ export class FilterSection extends Component {
   toggleFilter = () => {
     this.setState({
       showFilter: !this.state.showFilter,
+      contestType: this.state.contestType
     });
   };
 
   applyFilter = (e) => {
     this.props.getContests({type: e.target.value, limit: 3});
+    this.setState({
+      showFilter: this.state.showFilter,
+      contestType: e.target.value,
+    });
   };
   render() {
     let filterClasses = "FilterContainer";
@@ -46,56 +52,26 @@ export class FilterSection extends Component {
             <div className="closeFilter">
               <i className="fa fa-close" onClick={this.toggleFilter}></i>
             </div>
-            {/* <div className="SubFilters">
-              <button onClick={() => this.handleClick(1)}>
-                Contest-Type <i className="fa fa-caret-down"></i>
-              </button>
-
-              <ul className="FilterContent1">
-                <li>
-                  Dance{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter1"
-                    name="Dance"
-                    onClick={this.applyFilter}
-                  ></input>
-                </li>
-                <li>
-                  Music{" "}
-                  <input
-                    id="checkbox"
-                    type="checkbox"
-                    value="Filter2"
-                    name="Music"
-                    onClick={this.applyFilter}
-                  ></input>
-                </li>
-              </ul>
-            </div> */}
-
-
-
+   
             {/* RADIO BUTTONS FOR FILTERING CONTESTS */}
             <div className="SubFilters">
               <button onClick={() => this.handleClick(1)}>
                 Contest-Type <i className="fa fa-caret-down"></i>
               </button>
-              <ul className="FilterContent1">
-                <li>
-                  <label className="filterLabel">Dance
-                    <input type="radio"  name="radio" value="Dance" onClick={this.applyFilter} />
+              <form className="FilterContent1">
+                  <label className="filterLabel">All
+                    <input type="radio"  name="radio" value=""  onClick={this.applyFilter} checked={ this.state.contestType==="" } />
                     <span className="checkmark"></span>
                   </label>
-                </li>
-                <li>
-                    <label className="filterLabel">Music
-                      <input type="radio"  name="radio" value="Music" onClick={this.applyFilter} />
-                      <span className="checkmark"></span>
-                    </label>
-                </li>
-              </ul>
+                  <label className="filterLabel">Dance
+                    <input type="radio"  name="radio" value="Dance" onClick={this.applyFilter} checked={ this.state.contestType==="Dance" } />
+                    <span className="checkmark"></span>
+                  </label>
+                  <label className="filterLabel">Music
+                    <input type="radio"  name="radio" value="Music" onClick={this.applyFilter} checked={ this.state.contestType==="Music" } />
+                    <span className="checkmark"></span>
+                  </label>
+              </form>
             </div>
 
           </div>
