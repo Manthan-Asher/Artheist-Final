@@ -78,7 +78,11 @@ function NavTabs({getContests, contests: {contests}}) {
     setValue(newValue);
   };
 
-  return contests ? (
+  if (!contests) {
+    return <ArtheistLoader />;
+  }
+
+  return (
     <div className="ContestContainer">
       <div className={classes.root}>
         <AppBar position="static">
@@ -127,8 +131,6 @@ function NavTabs({getContests, contests: {contests}}) {
         </div> */}
       </div>
     </div>
-  ) : (
-    <ArtheistLoader />
   );
 }
 

@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
 //@desc    get contests by id
 //@access  Private
 
-router.get("/:id", requireLogin, async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const contest = await Contest.findById(req.params.id);
     res.send(contest);
