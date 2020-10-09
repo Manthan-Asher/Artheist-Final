@@ -407,8 +407,9 @@
     padding: 50px 20px;
   }
   .aboutUsHeader {
-    background-image: url("../../aboutUsFinal.jpeg");
+    background-image: url("../../mobile-about-3.png");
     background-size: cover;
+    background-position: 40% 0;
   }
 }
 
