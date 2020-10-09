@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import {likePost} from "../../actions/posts";
 import PostShareBtnsContainer from "../PostShareBtnsContainer/PostShareBtnsContainer";
 
-
 const PostDetail = ({post, likePost, loggedUser}) => {
   const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
   var file;
@@ -17,8 +16,8 @@ const PostDetail = ({post, likePost, loggedUser}) => {
   }
 
   let [shareContainerOpen, toggleShareContainer] = useState(false);
-  const shareUrl = 'http://github.com';
-  const title = 'GitHub';
+  const shareUrl = `https://artheist-india.herokuapp.com/post/${post._id}`;
+  const title = "Artheist";
 
   return (
     <div>
@@ -36,7 +35,8 @@ const PostDetail = ({post, likePost, loggedUser}) => {
         <h3 className="ui header">By Artheist India</h3>
         <div className="likeButtonContainer">
           <p>
-            {post.likes.find((like) => like.user === loggedUser._id) ? (
+            {loggedUser &&
+            post.likes.find((like) => like.user === loggedUser._id) ? (
               <i
                 className="fa fa-thumbs-up likeButtonOpen"
                 aria-hidden="true"
@@ -51,18 +51,29 @@ const PostDetail = ({post, likePost, loggedUser}) => {
               ></i>
             )}{" "}
             <span>
-              {post.likes.length > 0 && <span>{post.likes.length}{" "}Likes</span>}
+              {post.likes.length > 0 && <span>{post.likes.length} Likes</span>}
             </span>
           </p>
         </div>
         <div className="sharePostBtn">
-            <button className="btn" onClick={()=> toggleShareContainer(!shareContainerOpen)}> Share Now </button>
-            { shareContainerOpen && <PostShareBtnsContainer shareUrl={shareUrl} title={title}/>  }
+          <button
+            className="btn"
+            onClick={() => toggleShareContainer(!shareContainerOpen)}
+          >
+            {" "}
+            Share Now{" "}
+          </button>
+          {shareContainerOpen && (
+            <PostShareBtnsContainer shareUrl={shareUrl} title={title} />
+          )}
         </div>
       </div>
       <div className="ui segment">
-          <h3 className="ui header">{`Artist Name :- ${post.participant.firstName} ${post.participant.lastName} `}</h3>
-          <p>Featured in :- <a href="#">{post.contest.name}</a></p>
+        <h3 className="ui header">{`Artist Name :- ${post.participant.firstName} ${post.participant.lastName} `}</h3>
+        <p>
+          Featured in :-{" "}
+          <a href={`/contestDesc/${post.contest._id}`}>{post.contest.name}</a>
+        </p>
       </div>
     </div>
   );

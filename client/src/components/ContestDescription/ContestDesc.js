@@ -12,7 +12,7 @@ class ContestDesc extends Component {
   }
 
   render() {
-    if (!this.props.contest || !this.props.user) {
+    if (!this.props.contest) {
       return <ArtheistLoader />;
     }
     const {
@@ -38,7 +38,7 @@ class ContestDesc extends Component {
             </Button> */}
             <FileUploadBox
               contestId={this.props.match.params.id}
-              userId={this.props.user._id}
+              // userId={this.props.user._id}
             />
           </div>
           <div className="contestDetails">
