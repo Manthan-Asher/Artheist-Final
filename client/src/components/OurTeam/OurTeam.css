@@ -47,19 +47,15 @@
     color: #f96332 !important;
 }
 
-.logo-credit {
-    color: white !important;
-
+.btn-icon {
+    background-color: #f96332;
+    border: 0 !important;
 }
 
-.logo-credit span {
-    color: #f96332;
-}
+
+
 
 @media only screen and ( max-width: 530px ) {
-    .logo-credit span {
-        display: block;
-    }
     .team > .row > div {
         padding-right: 0 !important;
         padding-left: 0 !important;

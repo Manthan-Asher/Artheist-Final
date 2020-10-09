@@ -64,7 +64,7 @@ const PostDetail = ({post, likePost, loggedUser}) => {
             Share Now{" "}
           </button>
           {shareContainerOpen && (
-            <PostShareBtnsContainer shareUrl={shareUrl} title={title} />
+            <PostShareBtnsContainer shareUrl={shareUrl} title={title} toggleShareContainer={toggleShareContainer}/>
           )}
         </div>
       </div>

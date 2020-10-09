@@ -73,3 +73,14 @@
 .Demo__some-network__share-button {
     cursor: pointer;
 }
+
+.closeShareBox {
+    margin-bottom: 10px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.closeShareBox i {
+    cursor: pointer;
+    font-size: 18px;
+}

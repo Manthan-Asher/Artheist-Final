@@ -86,3 +86,38 @@
     clear: both;
     width: 100%;
 }
+
+@media screen and (max-width: 1000px) {
+    [class*="eleven wide"].column, .ui.grid>.column.row>[class*="eleven wide"].column, 
+    .ui.grid>.row>[class*="eleven wide"].column, .ui.grid>[class*="eleven wide"].column {
+        width: 100%!important;
+        margin-bottom: 40px;
+    }
+    .ui.column.grid>[class*="five wide"].column, .ui.grid>.column.row>[class*="five wide"].column, .ui.grid>.row>[class*="five wide"].column, .ui.grid>[class*="five wide"].column {
+        width: 100%!important;
+    }
+    .video-item {
+        display: inline-block !important;
+        width: 46% !important;
+        margin: 2%;
+        vertical-align: top;
+        max-height: 330px;
+    }
+    .video-item img {
+        max-height: 330px;
+    }
+    .ui.divided.list>.item {
+        border-top: 0;
+    }
+    .ui.relaxed.list:not(.horizontal)>.item:not(:first-child) {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .ui.container {
+        width: 90%;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}

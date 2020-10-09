@@ -9,9 +9,16 @@
 .HallOfFameContainer .MuiButton-root {
     outline: 0;
     padding: 8px !important;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .HallOfFameContainer .MuiButton-root:hover {
     color: #f755a6 !important;
 }
+
+@media screen and (max-width: 600px) {
+    .HallOfFameContainer .MuiButton-root {
+        font-size: 10px;
+    }
+}
+

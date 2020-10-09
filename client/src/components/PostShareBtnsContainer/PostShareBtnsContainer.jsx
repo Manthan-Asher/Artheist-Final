@@ -9,7 +9,7 @@ import {
 } from "react-share";
 
 
-const PostShareBtnsContainer = ({shareUrl, title}) => {
+const PostShareBtnsContainer = ({shareUrl, title, toggleShareContainer}) => {
 
     const [copySuccess, setCopySuccess] = useState('');
     var textAreaRef = useRef(null);
@@ -23,6 +23,9 @@ const PostShareBtnsContainer = ({shareUrl, title}) => {
 
     return ( 
       <div className="Demo__some-network">
+          <div className="closeShareBox">
+              <i className="fa fa-close" onClick={() => toggleShareContainer(false)}></i>
+          </div>
           <FacebookShareButton
             url={shareUrl}
             quote={title}

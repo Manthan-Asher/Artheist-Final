@@ -61,11 +61,11 @@ export default function ImgMediaCard() {
       </CardContent>
 
       <CardActions>
-        {/* <Button size="small" color="primary">
-          Share
-        </Button> */}
         <Button size="small" color="primary">
           Watch Now
+        </Button>
+        <Button size="small" color="primary">
+          View Profile
         </Button>
       </CardActions>
     </Card>

@@ -21,10 +21,10 @@ const PostHighlight = (props) => {
     <div className="ui container postContainer">
       <div className="ui grid">
         <div className="ui row">
-          <div className="eleven wide column">
+          <div className="eleven wide column postLeft">
             <PostDetail post={props.postFetched} />
           </div>
-          <div className="five wide column">
+          <div className="five wide column postRight">
             <h2>You May Like</h2>
             <hr style={{ "width": "100%", "display": "block", "margin": "0 !important" }}/>
             <PostList posts={props.posts} />

@@ -185,8 +185,9 @@
     display: none;
   }
   .carouselContainer {
-    margin-top: 0px; 
+    margin-top: 78px; 
     background-size: 1000px;
+    height: calc(100vh - 78px);
   } 
 }
 
