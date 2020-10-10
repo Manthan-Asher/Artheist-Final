@@ -49,6 +49,10 @@
     color: gold;
 }
 
+.footerNavLinks span {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
     .footer {
         font-size: medium;
@@ -61,5 +65,8 @@
     }
     .footerSocialIcons {
         margin: 0 auto;
+    }
+    .footerNavLinks span {
+        display: initial;
     }
 }

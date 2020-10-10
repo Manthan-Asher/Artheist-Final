@@ -15,7 +15,7 @@
   position: relative;
   height: 350px;
   text-align: center;
-  background: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/cover.jpg");
+  background: url("https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/contestbg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1500px;
@@ -45,7 +45,7 @@
   border-radius: 100%;
 }
 
-.user-insights {
+/* .user-insights {
   height: 80px;
   width: 80%;
   margin: 0 auto;
@@ -53,7 +53,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: end;
-}
+} */
 
 .invite-button {
   /* position: absolute; transition: all 0.25s ease-in-out;  */
@@ -92,7 +92,12 @@
   outline: 0 !important;
 }
 
-.user-posts .MuiPaper-root, .user-posts .container, .contestsParticipated {
+.user-posts .container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.user-posts .MuiPaper-root, .contestsParticipated {
   width: 80%;
   margin: 0 auto;
 }
@@ -149,6 +154,34 @@
   padding: 20px 0;
 }
 
+.editProfileBtn {
+  display: block;
+  /* width: auto; */
+  width: 250px;
+  outline: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 10px 52px;
+  font-weight: 400;
+  font-size: 18px;
+  border-radius: 30px;
+  color: #fff !important;
+  background-color: #f96332;
+  border: 4px solid #f96332;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.editProfileBtn:focus {
+  box-shadow: none;
+}
+
+.editProfileBtn:hover {
+  background-color: transparent;
+  color: #f96332 !important;
+}
+
 @media screen and (max-width: 800px) {
   .post {
     display: block;
@@ -178,6 +211,38 @@
   .info-container p {
     width: 100%;
     padding: 10px 0;
+    font-size: 14px;
+  }
+  .contestsParticipated h3 {
+    font-size: 18px;
+  }
+  .contestsParticipated a {
+    display: block;
+    width: 200px;
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #1b1c1d !important;
+    background-color: #fad149;
+    border: 4px solid #fad149;
+    margin: 80px auto;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+  }
+  .user-cover-photo {
+    background-size: 100%;
+    height: 200px;
+  }
+  .user-avatar-photo {
+    height: 130px;
+    width: 130px;
+
+  }
+  .user-posts > div > div > div > div {
+    justify-content: space-around !important;
   }
 
 }

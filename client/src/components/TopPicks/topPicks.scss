@@ -7,7 +7,7 @@ $tileHeight: ($tileWidth / (16/9));
 $iconSize: 50px;
 $growFactor: 1.3; // 1.3 times the original size
 
-$moveLeft: -($tileWidth * ($growFactor - 1) / 2);
+$moveLeft: ($tileWidth * ($growFactor - 1) / 2);
 $moveRight: $tileWidth * ($growFactor - 1);
 
 
@@ -184,9 +184,9 @@ $iconMobSize: 40px;
 
 // We assume when you hover .row, you're also hovering a .tile
 // First, move the whole row towards the left
-.row__inner:hover {
-  transform: translate3d($moveLeft, 0, 0);
-}
+// .row__inner:hover {
+//   transform: translate3d($moveLeft, 0, 0);
+// }
 
 .row__inner:hover .tile {
   // Fade out every tile
@@ -241,6 +241,9 @@ $iconMobSize: 40px;
     width: $iconMobSize;
     height: $iconMobSize;
     line-height: $iconMobSize;
+  }
+  .row__inner {
+    width: auto;
   }
 }
 

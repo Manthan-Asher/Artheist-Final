@@ -197,7 +197,7 @@
     display: block;
   }
   .contentBelowMobileCarousel > h1 {
-    font-size: 2.2em;
+    font-size: 3.2em;
   }
   .contentBelowMobileCarousel > p {
     font-size: 1.6em;
@@ -207,10 +207,10 @@
 
 @media screen and (max-width: 460px) {
   .contentBelowMobileCarousel {
-    margin-top: 5em;
+    margin-top: 2em;
   }
   .contentBelowMobileCarousel > h1 {
-    font-size: 2.1em;
+    font-size: 3.1em;
   }
   .contentBelowMobileCarousel > p {
     font-size: 1.4em;
@@ -219,10 +219,10 @@
 
 @media screen and (max-width: 360px) {
   .contentBelowMobileCarousel {
-    margin-top: 6em;
+    margin-top: 3em;
   }
   .contentBelowMobileCarousel > h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
   .contentBelowMobileCarousel > p {
     font-size: 1.2em;

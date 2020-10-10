@@ -28,7 +28,7 @@ export default class Carousel extends Component {
 
         <div className="contentBelowMobileCarousel">
             <h1 className="h1-seo fade-in"  
-            style={{fontWeight:300}}>Welcome to <span style={{fontWeight:600}}>Artheist.in </span>!</h1>
+            style={{fontWeight:100}}>Welcome to <span style={{fontWeight:600}}>Artheist.in </span>!</h1>
             <p className="intro fade-in" style={{fontWeight:300}}>
               The platform where we help people to pursue their creative interests.
             </p>

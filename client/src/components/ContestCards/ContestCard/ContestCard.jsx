@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import {Link} from "react-router-dom";
 
+import poster from "../../../posterbg.png";
+
 import "./ContestCard.css";
 
 const useStyles = makeStyles({
@@ -27,11 +29,11 @@ function ImgMediaCard({
       <CardMedia
         component="img"
         alt="Contest"
-        height="180"
+        height="200"
         image={
           imageUrl
             ? imageUrl
-            : "https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/carousal_demo.png"
+            : poster
         }
         title="Contest"
       />

@@ -2,19 +2,19 @@
 
 .createContestPageContainer p {
     text-align: justify;
-    margin-top: 100px;
+    margin-top: 20px;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 .createContestPageContainer a {
     display: block;
-    width: auto;
-    max-width: 220px;
+    /* width: auto; */
+    width: 250px;
     outline: 0;
     font-family: 'Josefin Sans', sans-serif;
-    padding: 10px 48px;
+    padding: 10px 52px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 30px;
     color: #fff !important;
     background-color: #f96332;
@@ -22,6 +22,7 @@
     text-decoration: none;
     transition: all 0.25s ease-in-out;
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 .createContestPageContainer a:focus {
@@ -30,7 +31,7 @@
 
 .createContestPageContainer a:hover {
     background-color: transparent;
-    color: #1b1c1d;
+    color: #f96332 !important;
 }
 
 
@@ -52,7 +53,7 @@
     height: calc(100vh - 68px);
     margin-top: 68px;
     background-color: #dbd5d4;
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 100px;
 }
 
@@ -85,8 +86,26 @@
     transform: rotate(0deg);
 }
 
-.createContestPageContainer p br {
+.createContestPageContainer p span:first-child {
     display: none;
+}
+
+.createContestPageContainer p br {
+    display: block;
+}
+
+.createContestPageContainer h2 {
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.createContestPageContainer h2::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 80px;
+    background-color: #f96332;
+    margin: 10px 0px;
 }
 
 @media screen and (max-width: 600px) {
@@ -112,5 +131,14 @@
     }
     .createContestPageContainer p br {
         display: block;
+    }
+    .createContestPageContainer span {
+        font-weight: bold;
+    }
+    .createContestPageContainer p span:first-child {
+        display: block;
+    }
+    .createContestPageContainer h2, .createContestPageContainer a {
+        margin-top: 30px;
     }
 }

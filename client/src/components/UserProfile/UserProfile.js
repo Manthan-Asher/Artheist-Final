@@ -79,6 +79,10 @@ const AboutUs = ({
         <p>Gender : {gender} </p>
         <p>Age : {age}</p>
       </div>
+
+      {/* EDIT PROFILE BUTTON */}
+      <button className="editProfileBtn">Edit Profile</button>
+
     </Container>
   );
 };
@@ -118,16 +122,13 @@ const UserProfile = ({user}) => {
           </div>
         </div>
 
-        <div className="user-insights">
+        {/* <div className="user-insights">
           <ul className="user-activity">
             <li className="info followers">Followers : 0</li>
             <li className="info contests">Contests : 0</li>
-            {/* <li className="info insights">Insights</li> */}
           </ul>
-          {/* <Button variant="primary" className="invite-button" size="lg">
-            Invite
-          </Button> */}
-        </div>
+        </div> */}
+
         <div className="user-posts">
           <Paper
             className={classes.root}
