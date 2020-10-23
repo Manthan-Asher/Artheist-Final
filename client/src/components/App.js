@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import CreateContestPage from "./CreateContestPage/CreateContestPage";
+import MobileSignUpPage from "./MobileSignUpPage/MobileSignUpPage";
 import ContactUs from "./ContactUs/ContactUs";
 import AboutUs from "./AboutUs/AboutUs";
 import Contest from "./ContestPage/Contest";
@@ -47,9 +48,9 @@ class App extends React.Component {
           <Route path="/contactUs" exact component={ContactUs}></Route>
           <Route path="/post/:id" exact component={PostHighlight}></Route>
           <Route path="/createContest" exact component={CreateContestPage}></Route>
+          <Route path="/artheistLoader" exact component={ArtheistLoader}></Route>
+          <Route path="/mobileSignUpPage" exact component={MobileSignUpPage}></Route>
 
-          <Route path="/artheistLoader" exact component={ArtheistLoader}></Route> 
-          
         </Switch>
         <Footer />
       </Router>

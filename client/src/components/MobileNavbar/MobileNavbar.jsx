@@ -8,28 +8,28 @@ import {logout} from "../../actions/auth";
 
 const MobileNavbar = ({auth, logout, history}) => {
   const [showNavbar, setShowNavbar] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
-  const [signupOpen, setSignupOpen] = useState(false);
+  // const [loginOpen, setLoginOpen] = useState(false);
+  // const [signupOpen, setSignupOpen] = useState(false);
 
   const toggleNavbar = () => {
     setShowNavbar((showNavbar) => !showNavbar);
     // console.log(showNavbar)
   };
 
-  const handleLoginOpen = () => {
-    setLoginOpen(true);
-  };
+  // const handleLoginOpen = () => {
+  //   setLoginOpen(true);
+  // };
 
-  const handleLoginClose = () => {
-    setLoginOpen(false);
-  };
-  const handleSignupOpen = () => {
-    setSignupOpen(true);
-  };
+  // const handleLoginClose = () => {
+  //   setLoginOpen(false);
+  // };
+  // const handleSignupOpen = () => {
+  //   setSignupOpen(true);
+  // };
 
-  const handleSignupClose = () => {
-    setSignupOpen(false);
-  };
+  // const handleSignupClose = () => {
+  //   setSignupOpen(false);
+  // };
 
   var navBarClasses = "sideNavigation";
   navBarClasses += showNavbar ? " showNavbar" : "";
@@ -59,12 +59,12 @@ const MobileNavbar = ({auth, logout, history}) => {
             </div>
           ) : (
             <div className="MobileNavBtnContainer">
-              <button className="signupBtn" onClick={handleSignupOpen}>
+              <a href="/mobileSignUpPage" className="signupBtn">
                 Sign Up
-              </button>
-              <button className="loginBTN" onClick={handleLoginOpen}>
+              </a>
+              <a href="/mobileSignUpPage" className="loginBTN">
                 Log In
-              </button>
+              </a>
             </div>
           )}
           <p>
@@ -107,12 +107,6 @@ const MobileNavbar = ({auth, logout, history}) => {
           
         </div>
       </div>
-      {loginOpen ? (
-        <Login handleClose={handleLoginClose} openButton={loginOpen} />
-      ) : null}
-      {signupOpen ? (
-        <Signup handleClose={handleSignupClose} openButton={signupOpen} />
-      ) : null}
     </div>
   );
 };

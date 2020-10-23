@@ -1,0 +1,35 @@
+.participatedContests {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+    height: auto;
+}
+
+.participatedContests > .MuiPaper-root {
+    display: inline-block;
+    margin: 15px;
+}
+
+.participatedContests > .MuiPaper-root > img {
+    height: auto;
+}
+
+@media screen and (max-width: 940px) {
+    .participatedContests > .MuiPaper-root {
+        width: 44% !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .participatedContests > .MuiPaper-root {
+        margin: 15px !important;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .participatedContests > .MuiPaper-root {
+        width: 84% !important;
+    }
+}
+

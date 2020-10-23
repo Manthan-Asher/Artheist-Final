@@ -7,6 +7,7 @@ import {makeStyles} from "@material-ui/core";
 import {useState} from "react";
 import {connect} from "react-redux";
 import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
+import ProfileContest from "./ProfileContests/ProfileContests";
 
 const useStyles = makeStyles({
   root: {
@@ -88,11 +89,27 @@ const AboutUs = ({
 };
 
 const ContestsParticipated = () => {
+  // TODO: Participated contests are to be fetched here
+  const contestFlag = true;
+  const contest = {
+    name: "Dance Contest",
+    start_date: "17-10-2020",
+    end_date: "19-10-2020",
+    _id: 1
+  }
   return (
-    <div className="contestsParticipated">
-      <h3>You Haven't Participated in any contests yet !!</h3>
-      <a href="/contest">Participate Now</a>
-    </div>
+     contestFlag ? 
+     <div className="participatedContests">
+       <ProfileContest contest={contest} />
+       <ProfileContest contest={contest} />
+       <ProfileContest contest={contest} />
+       <ProfileContest contest={contest} />
+     </div> :
+      <div className="contestsParticipated">
+        <h3>You Haven't Participated in any contests yet !!</h3>
+        <a href="/contest">Participate Now</a>
+      </div>
+    
   );
 };
 

@@ -1,0 +1,61 @@
+.mobileSignUpAppBar {
+    margin-top: 100px !important;
+    width: 60% !important;
+    margin: 0 auto;
+}
+
+.tabPanelSignUp {
+    width: 60%;
+    height: auto;
+    margin: 20px auto;
+}
+
+.loginCard {
+    height: 420px !important;
+    position: relative;
+}
+
+.loginCard2 {
+    height: 450px !important;
+}
+
+.loginCard hr{
+    width: 90%;
+    margin: 20px !important;
+}
+
+.loginCard .cardContent{
+    text-align: center;
+}
+
+.loginCard .form{
+    width: 200px;
+    margin: 40px !important;
+}
+
+.loginCard .cardButtons {
+    position: absolute;
+    justify-content: space-between;
+    top: 330px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.loginCard .cardButtons2 {
+    position: absolute;
+    justify-content: space-between;
+    top: 400px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 550px) {
+    .mobileSignUpAppBar {
+        width: 80% !important;
+    }
+    .tabPanelSignUp {
+        width: 80%;
+    }
+}
