@@ -4,7 +4,7 @@ const AlertToast = (msg, alertType) =>
   toast(msg, {
     type: alertType,
     position: toast.POSITION.TOP_CENTER,
-    autoClose: 3000,
+    autoClose: 2500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

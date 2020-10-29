@@ -13,6 +13,7 @@ const uploadPost = require("../../config/S3");
 
 router.post("/", requireLogin, uploadPost.single("post"), async (req, res) => {
   try {
+    const user = await User.findById(req.user.id);
     const post = new Post({
       participant: req.user.id,
       contest: req.body.contestId,
@@ -20,10 +21,18 @@ router.post("/", requireLogin, uploadPost.single("post"), async (req, res) => {
     });
 
     await post.save();
-    res.send(post);
+
+    user.contests.unshift(req.body.contestId);
+    user.posts.unshift(post._id);
+    await user.save();
+
+    const contestParticipated = await Contest.findById(req.body.contestId);
+    contestParticipated.posts.unshift(post._id);
+    await contestParticipated.save();
+    return res.send(post);
   } catch (error) {
-    console.log(error.message);
-    res.status(500).send("Server Error");
+    console.log(error);
+    res.status(500).send(error.message);
   }
 });
 

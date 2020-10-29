@@ -23,3 +23,15 @@ export const getContestById = (id) => async (dispatch) => {
     dispatch({type: CONTEST_ERROR, payload: "Failed to load contest"});
   }
 };
+
+export const getContestsByUser = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/profile/user/contests");
+    if (res.data === "You haven't participated in any contests") {
+      return dispatch({type: CONTEST_ERROR, payload: res.data});
+    }
+    dispatch({type: GET_CONTESTS, payload: res.data});
+  } catch (error) {
+    dispatch({type: CONTEST_ERROR, payload: "Failed to load contest"});
+  }
+};

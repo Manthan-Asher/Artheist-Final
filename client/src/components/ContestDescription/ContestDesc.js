@@ -130,7 +130,6 @@ class ContestDesc extends Component {
 
 const mapStateToProps = (state) => ({
   contest: state.contests.contest,
-  user: state.auth.user,
 });
 
 export default connect(mapStateToProps, {getContestById})(ContestDesc);

@@ -69,4 +69,32 @@ router.patch("/me", requireLogin, async (req, res) => {
   }
 });
 
+router.get("/user/contests", requireLogin, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).populate("contests");
+    if (user.contests.length > 0) {
+      return res.send(user.contests);
+    } else {
+      return res.send("You haven't participated in any contests");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Server Error");
+  }
+});
+
+router.get("/user/posts", requireLogin, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).populate("posts");
+    if (user.posts.length > 0) {
+      return res.send(user.posts);
+    } else {
+      return res.send("You haven't uploaded any Posts");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;

@@ -10,9 +10,7 @@ const PostHighlight = (props) => {
   useEffect(() => {
     props.getPostById(props.match.params.id);
     props.getPostsForDisplay();
-  }, [props.posts.likes]);
-
-  // issue
+  }, [props.posts.likes, props.match.params.id]);
 
   if (!props.postFetched || !props.posts) {
     return <ArtheistLoader />;
@@ -26,7 +24,9 @@ const PostHighlight = (props) => {
           </div>
           <div className="five wide column postRight">
             <h2>You May Like</h2>
-            <hr style={{ "width": "100%", "display": "block", "margin": "0 !important" }}/>
+            <hr
+              style={{width: "100%", display: "block", margin: "0 !important"}}
+            />
             <PostList posts={props.posts} />
           </div>
         </div>

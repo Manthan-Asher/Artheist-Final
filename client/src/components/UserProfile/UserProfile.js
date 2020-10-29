@@ -4,10 +4,12 @@ import "./UserProfile.css";
 import {Paper, Tab, Tabs} from "@material-ui/core";
 import {Container} from "semantic-ui-react";
 import {makeStyles} from "@material-ui/core";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {connect} from "react-redux";
 import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
 import ProfileContest from "./ProfileContests/ProfileContests";
+import {getContestsByUser} from "../../actions/contests";
+import {getPostsByUser} from "../../actions/posts";
 
 const useStyles = makeStyles({
   root: {
@@ -15,29 +17,17 @@ const useStyles = makeStyles({
   },
 });
 
-const UserFeed = () => {
-  return (
+const UserFeed = ({posts}) => {
+  return posts.length > 0 ? (
     <div className="user-feed">
-      <img
-        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post1.jpg"
-        alt=""
-        className="post"
-      />
-      <img
-        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post2.jpg"
-        alt=""
-        className="post"
-      />
-      <img
-        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post3.jpg"
-        alt=""
-        className="post"
-      />
-      <img
-        src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/post3.jpg"
-        alt=""
-        className="post"
-      />
+      {posts.map((post) => {
+        return <img key={post._id} src={post.URL} alt="" className="post" />;
+      })}
+    </div>
+  ) : (
+    <div className="contestsParticipated">
+      <h3>You Haven't Uploaded any Posts yet !!</h3>
+      <a href="/contest">Participate Now</a>
     </div>
   );
 };
@@ -83,45 +73,50 @@ const AboutUs = ({
 
       {/* EDIT PROFILE BUTTON */}
       <button className="editProfileBtn">Edit Profile</button>
-
     </Container>
   );
 };
 
-const ContestsParticipated = () => {
-  // TODO: Participated contests are to be fetched here
-  const contestFlag = true;
-  const contest = {
-    name: "Dance Contest",
-    start_date: "17-10-2020",
-    end_date: "19-10-2020",
-    _id: 1
-  }
-  return (
-     contestFlag ? 
-     <div className="participatedContests">
-       <ProfileContest contest={contest} />
-       <ProfileContest contest={contest} />
-       <ProfileContest contest={contest} />
-       <ProfileContest contest={contest} />
-     </div> :
-      <div className="contestsParticipated">
-        <h3>You Haven't Participated in any contests yet !!</h3>
-        <a href="/contest">Participate Now</a>
-      </div>
-    
+const ContestsParticipated = ({contests}) => {
+  return contests.length > 0 ? (
+    <div className="participatedContests">
+      {contests.map((contestParticipated) => {
+        return (
+          <ProfileContest
+            key={contestParticipated._id}
+            contest={contestParticipated}
+          />
+        );
+      })}
+    </div>
+  ) : (
+    <div className="contestsParticipated">
+      <h3>You Haven't Participated in any contests yet !!</h3>
+      <a href="/contest">Participate Now</a>
+    </div>
   );
 };
 
-const UserProfile = ({user}) => {
+const UserProfile = ({
+  user,
+  getContestsByUser,
+  contestsByUser,
+  getPostsByUser,
+  postsByUser,
+}) => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    getContestsByUser();
+    getPostsByUser();
+  }, []);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
     console.log(newValue);
   };
-  if (!user) {
+  if (!user || !contestsByUser || !postsByUser) {
     return <ArtheistLoader />;
   }
   return (
@@ -167,11 +162,11 @@ const UserProfile = ({user}) => {
           {(() => {
             switch (value) {
               case 0:
-                return <UserFeed />;
+                return <UserFeed posts={postsByUser} />;
               case 1:
                 return <AboutUs info={user} />;
               case 2:
-                return <ContestsParticipated />;
+                return <ContestsParticipated contests={contestsByUser} />;
               default:
                 return "#FFFFFF";
             }
@@ -184,6 +179,10 @@ const UserProfile = ({user}) => {
 
 const mapStateToProps = (state) => ({
   user: state.auth.user,
+  contestsByUser: state.contests.contests,
+  postsByUser: state.posts.posts,
 });
 
-export default connect(mapStateToProps)(UserProfile);
+export default connect(mapStateToProps, {getContestsByUser, getPostsByUser})(
+  UserProfile
+);

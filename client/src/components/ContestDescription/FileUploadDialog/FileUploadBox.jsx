@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {withStyles} from "@material-ui/core/styles";
 import {yellow} from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
@@ -9,16 +9,32 @@ import IconButton from "@material-ui/core/IconButton";
 //import CloseIcon from '@material-ui/icons/Close';
 import Typography from "@material-ui/core/Typography";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import AlertToast from "../../Alert/AlertToast";
 import Box from "@material-ui/core/Box";
 import "../ContestDesc.css";
 import {connect} from "react-redux";
 import {uploadPost} from "../../../actions/posts";
+import ArtheistLoader from "../../ArtheistLoader/ArtheistLoader";
 
 function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
 
+  let contestFound;
+
+  if (!props.auth) {
+    return <ArtheistLoader />;
+  }
+  const {contests} = props.auth.user;
+  contestFound = contests.findIndex((contest) => contest === props.contestId);
+
   const handleClickOpen = () => {
-    setOpen(true);
+    if (!props.auth.isAuthenticated) {
+      AlertToast("You need to Signup/Login first!", "error");
+    } else if (contestFound !== -1) {
+      AlertToast("You have already participated in this contest", "error");
+    } else {
+      setOpen(true);
+    }
   };
   const handleClose = () => {
     setOpen(false);
@@ -116,7 +132,7 @@ function CustomizedDialogs(props) {
                       <label>Upload Your File </label>
                       <input
                         type="file"
-                        class="form-control"
+                        className="form-control"
                         id="post-file"
                         name="post"
                       />
@@ -164,4 +180,8 @@ function CustomizedDialogs(props) {
   );
 }
 
-export default connect(null, {uploadPost})(CustomizedDialogs);
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, {uploadPost})(CustomizedDialogs);

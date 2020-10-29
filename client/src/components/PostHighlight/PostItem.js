@@ -10,7 +10,6 @@ const PostItem = ({post}) => {
   } else {
     file = "video";
   }
-
   return (
     <div className="video-item item">
       <Link to={`/post/${post._id}`}>

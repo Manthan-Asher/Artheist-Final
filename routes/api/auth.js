@@ -17,9 +17,10 @@ router.get(
 
 router.get("/google/contests", passport.authenticate("google"), (req, res) => {
   if (req.user.isNew) {
-    return res.redirect("/additionalDetails");
+    res.redirect("/additionalDetails");
+  } else {
+    res.redirect("/contest");
   }
-  res.redirect("/contest");
 });
 
 //@route   GET /auth/facebook

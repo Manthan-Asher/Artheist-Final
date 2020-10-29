@@ -97,7 +97,8 @@
   margin: 0 auto;
 }
 
-.user-posts .MuiPaper-root, .contestsParticipated {
+.user-posts .MuiPaper-root,
+.contestsParticipated {
   width: 80%;
   margin: 0 auto;
 }
@@ -140,7 +141,7 @@
 }
 
 .post {
-  height: auto;
+  height: 30%;
   width: 45%;
   margin: 15px;
   display: inline-block;
@@ -159,7 +160,7 @@
   /* width: auto; */
   width: 250px;
   outline: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   padding: 10px 52px;
   font-weight: 400;
   font-size: 18px;
@@ -188,8 +189,13 @@
     width: 90%;
     margin: 15px 5%;
   }
-  .user-cover-photo, .user-insights, .user-feed, .user-activity,
-  .user-posts .MuiPaper-root, .user-posts .container, .contestsParticipated {
+  .user-cover-photo,
+  .user-insights,
+  .user-feed,
+  .user-activity,
+  .user-posts .MuiPaper-root,
+  .user-posts .container,
+  .contestsParticipated {
     width: 90% !important;
     margin: 0 auto !important;
   }
@@ -206,7 +212,6 @@
   }
   .info-container {
     display: block !important;
-
   }
   .info-container p {
     width: 100%;
@@ -239,12 +244,10 @@
   .user-avatar-photo {
     height: 130px;
     width: 130px;
-
   }
   .user-posts > div > div > div > div {
     justify-content: space-around !important;
   }
-
 }
 
 @media screen and (max-width: 1060px) {

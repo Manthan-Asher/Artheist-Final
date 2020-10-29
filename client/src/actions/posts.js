@@ -24,8 +24,9 @@ const uploadPost = (post) => async (dispatch) => {
     });
 
     AlertToast("Your post has been Successfully Uploaded!", "success");
-
     dispatch({type: POST_UPLOADED, payload: res.data.URL});
+
+    setTimeout(() => window.location.reload(), 2700);
   } catch (e) {
     AlertToast("Sorry! The post failed to upload", "error");
     dispatch({type: POST_UPLOAD_ERROR, payload: e.message});
@@ -60,4 +61,16 @@ const likePost = (postId) => async (dispatch) => {
   }
 };
 
-export {uploadPost, getPostById, getPostsForDisplay, likePost};
+const getPostsByUser = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/profile/user/posts");
+    if (res.data === "You haven't uploaded any Posts") {
+      return dispatch({type: FETCH_POSTS_ERROR, payload: res.data});
+    }
+    dispatch({type: FETCH_POSTS, payload: res.data});
+  } catch (error) {
+    dispatch({type: FETCH_POSTS_ERROR, payload: "Failed to load contest"});
+  }
+};
+
+export {uploadPost, getPostById, getPostsForDisplay, likePost, getPostsByUser};
