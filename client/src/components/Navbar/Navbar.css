@@ -137,8 +137,14 @@
   color: white;
 }
 
+.navLink {
+  color: white !important;
+  font-size: inherit;
+}
+
 .navLink:hover {
   text-decoration: none !important;
+  color: gold !important;
 }
 
 @media screen and (max-width: 1135px) {

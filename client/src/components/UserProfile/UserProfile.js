@@ -21,7 +21,11 @@ const UserFeed = ({posts}) => {
   return posts.length > 0 ? (
     <div className="user-feed">
       {posts.map((post) => {
-        return <img key={post._id} src={post.URL} alt="" className="post" />;
+        return ( 
+          <a href={`/post/${post._id}`} className="post">
+              <img key={post._id} src={post.URL} alt="" className="postMedia" />
+          </a>
+        )
       })}
     </div>
   ) : (

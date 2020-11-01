@@ -18,6 +18,7 @@ import ArtheistLoader from "../../ArtheistLoader/ArtheistLoader";
 
 function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
+  const [fileSelected, setFileSelected] = React.useState(false);
 
   let contestFound;
 
@@ -43,6 +44,9 @@ function CustomizedDialogs(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     var postFile = document.querySelector("#post-file");
+    if(postFile.files[0]) {
+        setFileSelected(true);
+    }
     var post = new FormData();
     post.append("post", postFile.files[0]);
     post.append("contestId", props.contestId);
@@ -123,19 +127,24 @@ function CustomizedDialogs(props) {
           Submit Your Work
         </DialogTitle>
         <DialogContent dividers>
-          <div class="container">
-            <div class="row">
-              <div class="offset-md-3 col-md-6">
-                <div class="form-group">
+          <div className="container">
+            <div className="row">
+              <div className="offset-md-3 col-md-6">
+                <div className="form-group">
                   <form encType="multipart/form-data" onSubmit={onSubmit}>
-                    <div class="form-group files">
+                    <div className="form-group files">
                       <label>Upload Your File </label>
                       <input
                         type="file"
-                        className="form-control"
+                        className="form-control mt-3 mb-3"
                         id="post-file"
                         name="post"
                       />
+                      { 
+                        fileSelected ? 
+                        <p>Please close this window, your pic/video will be uploaded soon</p> : 
+                        null
+                      }
                       <button
                         type="submit"
                         className="btn btn-danger btn-block"

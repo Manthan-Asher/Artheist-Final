@@ -141,10 +141,15 @@
 }
 
 .post {
-  height: 30%;
+  height: auto;
   width: 45%;
   margin: 15px;
   display: inline-block;
+}
+
+.postMedia {
+  height: auto;
+  width: 100%;
 }
 
 .info-container {
