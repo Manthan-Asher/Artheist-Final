@@ -15,15 +15,21 @@ import "../ContestDesc.css";
 import {connect} from "react-redux";
 import {uploadPost} from "../../../actions/posts";
 import ArtheistLoader from "../../ArtheistLoader/ArtheistLoader";
+import {getContestById} from "../../../actions/contests";
 
 function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
 
   let contestFound;
 
-  if (!props.auth) {
+  useEffect(() => {
+    getContestById(props.contestId);
+  }, [props.post]);
+
+  if (!props.auth.user) {
     return <ArtheistLoader />;
   }
+
   const {contests} = props.auth.user;
   contestFound = contests.findIndex((contest) => contest === props.contestId);
 
@@ -123,12 +129,12 @@ function CustomizedDialogs(props) {
           Submit Your Work
         </DialogTitle>
         <DialogContent dividers>
-          <div class="container">
-            <div class="row">
-              <div class="offset-md-3 col-md-6">
-                <div class="form-group">
+          <div className="container">
+            <div className="row">
+              <div className="offset-md-3 col-md-6">
+                <div className="form-group">
                   <form encType="multipart/form-data" onSubmit={onSubmit}>
-                    <div class="form-group files">
+                    <div className="form-group files">
                       <label>Upload Your File </label>
                       <input
                         type="file"
@@ -182,6 +188,9 @@ function CustomizedDialogs(props) {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  post: state.posts.post,
 });
 
-export default connect(mapStateToProps, {uploadPost})(CustomizedDialogs);
+export default connect(mapStateToProps, {uploadPost, getContestById})(
+  CustomizedDialogs
+);

@@ -104,14 +104,14 @@ const Signup = ({openButton, handleClose, register, history}) => {
               href="/auth/google"
               style={{textDecoration: "none", color: "inherit"}}
             >
-              <div class="google-btn">
-                <div class="google-icon-wrapper">
+              <div className="google-btn">
+                <div className="google-icon-wrapper">
                   <img
-                    class="google-icon"
+                    className="google-icon"
                     src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                   />
                 </div>
-                <p class="btn-text" style={{textAlign: "center"}}>
+                <p className="btn-text" style={{textAlign: "center"}}>
                   <b>Sign Up with Google</b>
                 </p>
               </div>

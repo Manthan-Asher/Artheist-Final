@@ -26,7 +26,7 @@ const uploadPost = (post) => async (dispatch) => {
     AlertToast("Your post has been Successfully Uploaded!", "success");
     dispatch({type: POST_UPLOADED, payload: res.data.URL});
 
-    setTimeout(() => window.location.reload(), 2700);
+    // setTimeout(() => window.location.reload(), 2700);
   } catch (e) {
     AlertToast("Sorry! The post failed to upload", "error");
     dispatch({type: POST_UPLOAD_ERROR, payload: e.message});

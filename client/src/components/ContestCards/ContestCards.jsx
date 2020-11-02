@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 
 function NavTabs({getContests, contests: {contests}}) {
   useEffect(() => {
-    getContests({limit: 3, skip: 0});
+    getContests({limit: 6, skip: 0});
   }, [getContests]);
 
   const classes = useStyles();

@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 export class FilterSection extends Component {
   state = {
     showFilter: false,
-    contestType: ""
+    contestType: "",
   };
 
   handleClick = (id) => {
@@ -18,12 +18,12 @@ export class FilterSection extends Component {
   toggleFilter = () => {
     this.setState({
       showFilter: !this.state.showFilter,
-      contestType: this.state.contestType
+      contestType: this.state.contestType,
     });
   };
 
   applyFilter = (e) => {
-    this.props.getContests({type: e.target.value, limit: 3});
+    this.props.getContests({type: e.target.value, limit: 6});
     this.setState({
       showFilter: this.state.showFilter,
       contestType: e.target.value,
@@ -52,28 +52,48 @@ export class FilterSection extends Component {
             <div className="closeFilter">
               <i className="fa fa-close" onClick={this.toggleFilter}></i>
             </div>
-   
+
             {/* RADIO BUTTONS FOR FILTERING CONTESTS */}
             <div className="SubFilters">
               <button onClick={() => this.handleClick(1)}>
                 Contest-Type <i className="fa fa-caret-down"></i>
               </button>
               <form className="FilterContent1">
-                  <label className="filterLabel">All
-                    <input type="radio"  name="radio" value=""  onClick={this.applyFilter} checked={ this.state.contestType==="" } />
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="filterLabel">Dance
-                    <input type="radio"  name="radio" value="Dance" onClick={this.applyFilter} checked={ this.state.contestType==="Dance" } />
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="filterLabel">Music
-                    <input type="radio"  name="radio" value="Music" onClick={this.applyFilter} checked={ this.state.contestType==="Music" } />
-                    <span className="checkmark"></span>
-                  </label>
+                <label className="filterLabel">
+                  All
+                  <input
+                    type="radio"
+                    name="radio"
+                    value=""
+                    onClick={this.applyFilter}
+                    checked={this.state.contestType === ""}
+                  />
+                  <span className="checkmark"></span>
+                </label>
+                <label className="filterLabel">
+                  Dance
+                  <input
+                    type="radio"
+                    name="radio"
+                    value="Dance"
+                    onClick={this.applyFilter}
+                    checked={this.state.contestType === "Dance"}
+                  />
+                  <span className="checkmark"></span>
+                </label>
+                <label className="filterLabel">
+                  Music
+                  <input
+                    type="radio"
+                    name="radio"
+                    value="Music"
+                    onClick={this.applyFilter}
+                    checked={this.state.contestType === "Music"}
+                  />
+                  <span className="checkmark"></span>
+                </label>
               </form>
             </div>
-
           </div>
         </div>
       </React.Fragment>

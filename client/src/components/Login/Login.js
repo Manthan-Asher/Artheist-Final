@@ -88,14 +88,14 @@ const Login = ({openButton, handleClose, login, history}) => {
               href="/auth/google"
               style={{textDecoration: "none", color: "inherit"}}
             >
-              <div class="google-btn">
-                <div class="google-icon-wrapper">
+              <div className="google-btn">
+                <div className="google-icon-wrapper">
                   <img
-                    class="google-icon"
+                    className="google-icon"
                     src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                   />
                 </div>
-                <p class="btn-text">
+                <p className="btn-text">
                   <b>Sign In with Google</b>
                 </p>
               </div>

@@ -11,6 +11,10 @@ class ContestDesc extends Component {
     this.props.getContestById(this.props.match.params.id);
   }
 
+  componentDidUpdate() {
+    this.props.getContestById(this.props.match.params.id);
+  }
+
   render() {
     if (!this.props.contest) {
       return <ArtheistLoader />;
@@ -98,7 +102,7 @@ class ContestDesc extends Component {
             {juries.length > 0 &&
               juries.map((jury) => {
                 return (
-                  <div className="juryBox">
+                  <div key={jury} className="juryBox">
                     <div className="juryPhoto">
                       <img
                         src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg"
