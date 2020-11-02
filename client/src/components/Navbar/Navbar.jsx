@@ -45,18 +45,19 @@ class NavBar extends Component {
 
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-5 mr-auto">
-                <Nav.Link href="/feed" className="mb4">
-                  Feed
+                <Nav.Link >
+                  <Link to="/userProfile" className="navLink">Feed</Link>
                 </Nav.Link>
-                {/* <Link to="/contest" className="navLink"> */}
-                  <Nav.Link href="/contest" className="navLink">
-                    Contest
-                  </Nav.Link>
-                {/* </Link> */}
-                <Nav.Link href="/createContest">Create Contest</Nav.Link>
-                
-                <Nav.Link href="/aboutUs" className="navLink">About Us</Nav.Link>
-              
+                <Nav.Link href="/contest" >
+                  Contest
+                </Nav.Link>
+                <Nav.Link href="/createContest">
+                  Create Contest
+                </Nav.Link>
+                <Nav.Link href="/aboutUs" >
+                  About Us
+                </Nav.Link>
+
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
                     <i className="fa fa-bars" aria-hidden="true"></i>

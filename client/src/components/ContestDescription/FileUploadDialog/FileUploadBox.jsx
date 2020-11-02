@@ -19,6 +19,7 @@ import {getContestById} from "../../../actions/contests";
 
 function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
+  const [fileSelected, setFileSelected] = React.useState(false);
 
   let contestFound;
 
@@ -49,6 +50,9 @@ function CustomizedDialogs(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     var postFile = document.querySelector("#post-file");
+    if(postFile.files[0]) {
+        setFileSelected(true);
+    }
     var post = new FormData();
     post.append("post", postFile.files[0]);
     post.append("contestId", props.contestId);
@@ -138,10 +142,15 @@ function CustomizedDialogs(props) {
                       <label>Upload Your File </label>
                       <input
                         type="file"
-                        className="form-control"
+                        className="form-control mt-3 mb-3"
                         id="post-file"
                         name="post"
                       />
+                      { 
+                        fileSelected ? 
+                        <p>Please close this window, your pic/video will be uploaded soon</p> : 
+                        null
+                      }
                       <button
                         type="submit"
                         className="btn btn-danger btn-block"
