@@ -2,13 +2,12 @@ import React, {useEffect} from "react";
 import "./AboutUs.css";
 import FullScrVideo from "../FullScrVideo/FullScrVideo";
 import OurTeam from "../OurTeam/OurTeam";
-import { Link, animateScroll as scroll } from "react-scroll";
+import {Link, animateScroll as scroll} from "react-scroll";
 import integrityBg from "../../integritybg.png";
 
 //import $ from "jquery";
 
 const AboutUs = () => {
-
   // $(document).ready(function() {
   //   $("#toggle").click(function() {
   //     var elem = $("#toggle").text();
@@ -23,7 +22,7 @@ const AboutUs = () => {
   //     }
   //   });
   // });
-  
+
   // const listener = () => {
   //   console.log(window.scrollY);
   // };
@@ -43,13 +42,15 @@ const AboutUs = () => {
           <h2>"Where Talent Meets Opportunity"</h2>
           {/* <a href="#ourTeam">Meet Our Team</a> */}
           <Link
-              activeClass="active"
-              to="ourTeam"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={1000}
-          >Meet Our Team</Link>
+            activeClass="active"
+            to="ourTeam"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}
+          >
+            Meet Our Team
+          </Link>
         </div>
       </div>
       <div className="artheistEssence">
@@ -66,17 +67,14 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div class="ArtheistTrailer">
+      <div className="ArtheistTrailer">
         <FullScrVideo />
       </div>
 
       <div className="ourIntegrity">
         <h1> Our Integrity </h1>
         <div className="ourIntegrityImgMob">
-          <img
-            src={integrityBg}
-            alt="logo"
-          />
+          <img src={integrityBg} alt="logo" />
         </div>
         <div className="ourIntegrityContent">
           <p>

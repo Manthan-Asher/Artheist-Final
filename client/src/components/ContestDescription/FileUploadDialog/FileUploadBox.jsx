@@ -15,6 +15,7 @@ import "../ContestDesc.css";
 import {connect} from "react-redux";
 import {uploadPost} from "../../../actions/posts";
 import ArtheistLoader from "../../ArtheistLoader/ArtheistLoader";
+import {getContestById} from "../../../actions/contests";
 
 function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
@@ -22,9 +23,14 @@ function CustomizedDialogs(props) {
 
   let contestFound;
 
-  if (!props.auth) {
+  useEffect(() => {
+    getContestById(props.contestId);
+  }, [props.post]);
+
+  if (!props.auth.user) {
     return <ArtheistLoader />;
   }
+
   const {contests} = props.auth.user;
   contestFound = contests.findIndex((contest) => contest === props.contestId);
 
@@ -191,6 +197,9 @@ function CustomizedDialogs(props) {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  post: state.posts.post,
 });
 
-export default connect(mapStateToProps, {uploadPost})(CustomizedDialogs);
+export default connect(mapStateToProps, {uploadPost, getContestById})(
+  CustomizedDialogs
+);

@@ -1,55 +1,54 @@
 .postContainer {
-    padding-top: 132px;
-    padding-bottom: 102px;
+  padding-top: 132px;
+  padding-bottom: 102px;
 }
 
-.postContainer hr { 
-    width: 100%;
-    display: block; 
-    margin: 15px 0px !important;
+.postContainer hr {
+  width: 100%;
+  display: block;
+  margin: 15px 0px !important;
 }
 
 .postEmbeded {
-    height: 100% !important;
-    padding-bottom: 0 !important;
+  height: 100% !important;
+  padding-bottom: 0 !important;
 }
 
-
 .postEmbeded img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .postEmbeded video {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
-
 
 .likeButtonContainer p:first-child {
-    margin-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }
 
-.likeButtonContainer, .sharePostBtn {
-    width: 200px;
-    /* float: left; */
-    display: inline-block;
-    vertical-align: top;
+.likeButtonContainer,
+.sharePostBtn {
+  width: 200px;
+  /* float: left; */
+  display: inline-block;
+  vertical-align: top;
 }
 
 .sharePostBtn {
-    position: relative;
+  position: relative;
 }
 
 .likeButtonOpen {
-    cursor: pointer;
-    transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
 }
 
 .likeButtonOpen:hover {
-    color: black;
-    transform: scale(1.2);
+  color: black;
+  transform: scale(1.2);
 }
 
 /* .sharePostBtn {
@@ -57,67 +56,72 @@
 } */
 
 .sharePostBtn > button {
-    width: 200px;
-    outline: 0;
-    /* border: 0; */
-    padding: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 5px;
-    color: #1b1c1d !important;
-    background-color: #fad149;
-    border: 4px solid #fad149;
-    text-decoration: none;
-    transition: all 0.25s ease-in-out;
+  width: 200px;
+  outline: 0;
+  /* border: 0; */
+  padding: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  color: #1b1c1d !important;
+  background-color: #fad149;
+  border: 4px solid #fad149;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
 }
 
 .sharePostBtn > button:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .sharePostBtn button:hover {
-    background-color: transparent;
-    color: #1b1c1d;
+  background-color: transparent;
+  color: #1b1c1d;
 }
 
 .ui.segment {
-    display: table;
-    content: "";
-    clear: both;
-    width: 100%;
+  display: table;
+  content: "";
+  clear: both;
+  width: 100%;
 }
 
 @media screen and (max-width: 1000px) {
-    [class*="eleven wide"].column, .ui.grid>.column.row>[class*="eleven wide"].column, 
-    .ui.grid>.row>[class*="eleven wide"].column, .ui.grid>[class*="eleven wide"].column {
-        width: 100%!important;
-        margin-bottom: 40px;
-    }
-    .ui.column.grid>[class*="five wide"].column, .ui.grid>.column.row>[class*="five wide"].column, .ui.grid>.row>[class*="five wide"].column, .ui.grid>[class*="five wide"].column {
-        width: 100%!important;
-    }
-    .video-item {
-        display: inline-block !important;
-        width: 46% !important;
-        margin: 2%;
-        vertical-align: top;
-        max-height: 330px;
-    }
-    .video-item img {
-        max-height: 330px;
-    }
-    .ui.divided.list>.item {
-        border-top: 0;
-    }
-    .ui.relaxed.list:not(.horizontal)>.item:not(:first-child) {
-        padding-top: 0;
-    }
+  [class*="eleven wide"].column,
+  .ui.grid > .column.row > [class*="eleven wide"].column,
+  .ui.grid > .row > [class*="eleven wide"].column,
+  .ui.grid > [class*="eleven wide"].column {
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+  .ui.column.grid > [class*="five wide"].column,
+  .ui.grid > .column.row > [class*="five wide"].column,
+  .ui.grid > .row > [class*="five wide"].column,
+  .ui.grid > [class*="five wide"].column {
+    width: 100% !important;
+  }
+  .video-item {
+    display: inline-block !important;
+    width: 46% !important;
+    margin: 2%;
+    vertical-align: top;
+    max-height: 330px;
+  }
+  .video-item img {
+    max-height: 330px;
+  }
+  .ui.divided.list > .item {
+    border-top: 0;
+  }
+  .ui.relaxed.list:not(.horizontal) > .item:not(:first-child) {
+    padding-top: 0;
+  }
 }
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
-    .ui.container {
-        width: 90%;
-        margin-left: auto!important;
-        margin-right: auto!important;
-    }
+  .ui.container {
+    width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
