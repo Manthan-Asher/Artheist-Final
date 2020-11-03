@@ -52,7 +52,7 @@ function ImgMediaCard({
           <Link to={`/contestDesc/${_id}`}>Enter Contest</Link>
         </Button> */}
         <Button size="small" color="secondary" variant="outlined">
-          <Link to={`/contestDesc/${_id}`}>Enter Contest</Link>
+          <Link to={`/contests/${_id}`}>Enter Contest</Link>
         </Button>
       </CardActions>
     </Card>

@@ -12,7 +12,7 @@ const PostItem = ({post}) => {
   }
   return (
     <div className="video-item item">
-      <Link to={`/post/${post._id}`}>
+      <Link to={`/posts/${post._id}`}>
         {file === "img" ? (
           <img src={post.URL} alt=""></img>
         ) : (

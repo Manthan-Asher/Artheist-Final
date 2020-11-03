@@ -16,7 +16,7 @@ const PostDetail = ({post, likePost, loggedUser}) => {
   }
 
   let [shareContainerOpen, toggleShareContainer] = useState(false);
-  const shareUrl = `https://artheist-india.herokuapp.com/post/${post._id}`;
+  const shareUrl = `https://artheist-india.herokuapp.com/posts/${post._id}`;
   const title = "Artheist";
 
   return (
@@ -72,7 +72,7 @@ const PostDetail = ({post, likePost, loggedUser}) => {
         <h3 className="ui header">{`Artist Name :- ${post.participant.firstName} ${post.participant.lastName} `}</h3>
         <p>
           Featured in :-{" "}
-          <a href={`/contestDesc/${post.contest._id}`}>{post.contest.name}</a>
+          <a href={`/contests/${post.contest._id}`}>{post.contest.name}</a>
         </p>
       </div>
     </div>

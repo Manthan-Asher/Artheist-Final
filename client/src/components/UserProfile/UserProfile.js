@@ -22,7 +22,7 @@ const UserFeed = ({posts}) => {
     <div className="user-feed">
       {posts.map((post) => {
         return ( 
-          <a href={`/post/${post._id}`} className="post">
+          <a href={`/posts/${post._id}`} className="post">
               <img key={post._id} src={post.URL} alt="" className="postMedia" />
           </a>
         )
