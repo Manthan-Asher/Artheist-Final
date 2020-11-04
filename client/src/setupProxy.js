@@ -9,7 +9,7 @@ module.exports = function (app) {
         "/contests",
         "/profile",
         "/posts",
-        "/post/:id",
+        "/posts/:id",
         "/contestDesc/:id",
       ],
       {
