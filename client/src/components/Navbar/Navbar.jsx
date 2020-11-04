@@ -45,43 +45,35 @@ class NavBar extends Component {
 
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-5 mr-auto">
-                <Nav.Link >
-                  <Link to="/userProfile" className="navLink">Feed</Link>
+                <Nav.Link>
+                  <Link to="/userProfile" className="navLink">
+                    Feed
+                  </Link>
                 </Nav.Link>
-                <Nav.Link href="/contest" >
-                  Contest
-                </Nav.Link>
-                <Nav.Link href="/createContest">
-                  Create Contest
-                </Nav.Link>
-                <Nav.Link href="/aboutUs" >
-                  About Us
-                </Nav.Link>
+                <Nav.Link href="/contest">Contest</Nav.Link>
+                <Nav.Link href="/createContest">Create Contest</Nav.Link>
+                <Nav.Link href="/aboutUs">About Us</Nav.Link>
 
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
                     <i className="fa fa-bars" aria-hidden="true"></i>
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item href="/artists">
-                      Artists
-                    </Dropdown.Item>
-                    <Dropdown.Item href="/contactUs">
-                      Contact Us
-                    </Dropdown.Item>
+                    <Dropdown.Item href="/artists">Artists</Dropdown.Item>
+                    <Dropdown.Item href="/contactUs">Contact Us</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Nav>
               {this.props.auth.isAuthenticated ? (
                 <>
-                  <span className="userName">    
+                  <span className="userName">
                     <Link
                       to="/userProfile"
                       className="navLink"
                       style={{color: "inherit"}}
                     >
-                      <i className="fas fa-user"></i>{" "}
-                      Hi, {this.props.auth.user.firstName}
+                      <i className="fas fa-user"></i> Hi,{" "}
+                      {this.props.auth.user.firstName}
                     </Link>
                   </span>
                   <Button

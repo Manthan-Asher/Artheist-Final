@@ -40,17 +40,28 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/aboutUs" exact component={AboutUs}></Route>
-          <Route path="/contests" exact component={Contest}></Route>
+          <Route path="/contest" exact component={Contest}></Route>
           <Route path="/additionalDetails" exact component={SignUpPage}></Route>
           <Route path="/contests/:id" exact component={ContestDesc}></Route>
           <Route path="/profileChange" exact component={ImageGetter}></Route>
           <Route path="/userProfile" exact component={UserProfile}></Route>
           <Route path="/contactUs" exact component={ContactUs}></Route>
           <Route path="/posts/:id" exact component={PostHighlight}></Route>
-          <Route path="/createContest" exact component={CreateContestPage}></Route>
-          <Route path="/artheistLoader" exact component={ArtheistLoader}></Route>
-          <Route path="/mobileSignUpPage" exact component={MobileSignUpPage}></Route>
-
+          <Route
+            path="/createContest"
+            exact
+            component={CreateContestPage}
+          ></Route>
+          <Route
+            path="/artheistLoader"
+            exact
+            component={ArtheistLoader}
+          ></Route>
+          <Route
+            path="/mobileSignUpPage"
+            exact
+            component={MobileSignUpPage}
+          ></Route>
         </Switch>
         <Footer />
       </Router>
