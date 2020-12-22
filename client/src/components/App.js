@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.min.js";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import CreateContestPage from "./CreateContestPage/CreateContestPage";
 import MobileSignUpPage from "./MobileSignUpPage/MobileSignUpPage";

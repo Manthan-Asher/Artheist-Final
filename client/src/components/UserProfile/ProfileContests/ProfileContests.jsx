@@ -30,11 +30,7 @@ function ProfileContest({
         component="img"
         alt="Contest"
         height="200"
-        image={
-          imageUrl
-            ? imageUrl
-            : poster
-        }
+        image={imageUrl ? imageUrl : poster}
         title="Contest"
       />
       <CardContent>
@@ -52,7 +48,7 @@ function ProfileContest({
           <Link to={`/contestDesc/${_id}`}>Enter Contest</Link>
         </Button> */}
         <Button size="small" color="secondary" variant="outlined">
-          <Link to={`/contestDesc/${_id}`}>Enter Contest</Link>
+          <Link to={`/contests/${_id}`}>Enter Contest</Link>
         </Button>
       </CardActions>
     </Card>

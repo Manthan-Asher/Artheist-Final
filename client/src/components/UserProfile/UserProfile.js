@@ -21,17 +21,17 @@ const UserFeed = ({posts}) => {
   return posts.length > 0 ? (
     <div className="user-feed">
       {posts.map((post) => {
-        return ( 
-          <a href={`/posts/${post._id}`} className="post">
-              <img key={post._id} src={post.URL} alt="" className="postMedia" />
+        return (
+          <a href={`/#/posts/${post._id}`} className="post">
+            <img key={post._id} src={post.URL} alt="" className="postMedia" />
           </a>
-        )
+        );
       })}
     </div>
   ) : (
     <div className="contestsParticipated">
       <h3>You Haven't Uploaded any Posts yet !!</h3>
-      <a href="/contest">Participate Now</a>
+      <a href="/#/contest">Participate Now</a>
     </div>
   );
 };
@@ -96,7 +96,7 @@ const ContestsParticipated = ({contests}) => {
   ) : (
     <div className="contestsParticipated">
       <h3>You Haven't Participated in any contests yet !!</h3>
-      <a href="/contest">Participate Now</a>
+      <a href="/#/contest">Participate Now</a>
     </div>
   );
 };

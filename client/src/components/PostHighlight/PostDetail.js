@@ -64,7 +64,11 @@ const PostDetail = ({post, likePost, loggedUser}) => {
             Share Now{" "}
           </button>
           {shareContainerOpen && (
-            <PostShareBtnsContainer shareUrl={shareUrl} title={title} toggleShareContainer={toggleShareContainer}/>
+            <PostShareBtnsContainer
+              shareUrl={shareUrl}
+              title={title}
+              toggleShareContainer={toggleShareContainer}
+            />
           )}
         </div>
       </div>
@@ -72,7 +76,7 @@ const PostDetail = ({post, likePost, loggedUser}) => {
         <h3 className="ui header">{`Artist Name :- ${post.participant.firstName} ${post.participant.lastName} `}</h3>
         <p>
           Featured in :-{" "}
-          <a href={`/contests/${post.contest._id}`}>{post.contest.name}</a>
+          <a href={`/#/contests/${post.contest._id}`}>{post.contest.name}</a>
         </p>
       </div>
     </div>

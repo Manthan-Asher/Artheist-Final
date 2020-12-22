@@ -27,17 +27,14 @@ function CustomizedDialogs(props) {
     getContestById(props.contestId);
   }, [props.post]);
 
-  if (!props.auth.user) {
-    return <ArtheistLoader />;
-  }
-
-  const {contests} = props.auth.user;
-  contestFound = contests.findIndex((contest) => contest === props.contestId);
-
   const handleClickOpen = () => {
     if (!props.auth.isAuthenticated) {
-      AlertToast("You need to Signup/Login first!", "error");
-    } else if (contestFound !== -1) {
+      return AlertToast("You need to Signup/Login first!", "error");
+    }
+    contestFound = props.auth.user.contests.findIndex(
+      (contest) => contest === props.contestId
+    );
+    if (contestFound !== -1) {
       AlertToast("You have already participated in this contest", "error");
     } else {
       setOpen(true);
@@ -50,8 +47,8 @@ function CustomizedDialogs(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     var postFile = document.querySelector("#post-file");
-    if(postFile.files[0]) {
-        setFileSelected(true);
+    if (postFile.files[0]) {
+      setFileSelected(true);
     }
     var post = new FormData();
     post.append("post", postFile.files[0]);
@@ -146,11 +143,12 @@ function CustomizedDialogs(props) {
                         id="post-file"
                         name="post"
                       />
-                      { 
-                        fileSelected ? 
-                        <p>Please close this window, your pic/video will be uploaded soon</p> : 
-                        null
-                      }
+                      {fileSelected ? (
+                        <p>
+                          Please close this window, your pic/video will be
+                          uploaded soon
+                        </p>
+                      ) : null}
                       <button
                         type="submit"
                         className="btn btn-danger btn-block"

@@ -50,9 +50,21 @@ class NavBar extends Component {
                     Feed
                   </Link>
                 </Nav.Link>
-                <Nav.Link href="/contest">Contest</Nav.Link>
-                <Nav.Link href="/createContest">Create Contest</Nav.Link>
-                <Nav.Link href="/aboutUs">About Us</Nav.Link>
+                <Nav.Link>
+                  <Link to="/contest" className="navLink">
+                    Contests
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/createContest" className="navLink">
+                    Create Contest
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/aboutUs" className="navLink">
+                    About Us
+                  </Link>
+                </Nav.Link>
 
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">

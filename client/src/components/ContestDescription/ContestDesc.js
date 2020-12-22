@@ -11,10 +11,6 @@ class ContestDesc extends Component {
     this.props.getContestById(this.props.match.params.id);
   }
 
-  componentDidUpdate() {
-    this.props.getContestById(this.props.match.params.id);
-  }
-
   render() {
     if (!this.props.contest) {
       return <ArtheistLoader />;

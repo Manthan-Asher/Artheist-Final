@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footerNavLinks">
-        <a href="/contest">Contest</a>
+        <a href="/#/contest">Contest</a>
         <span>|</span>
-        <a href="/createContest">Create Contest</a>
+        <a href="/#/createContest">Create Contest</a>
         <span>|</span>
-        <a href="/aboutUs">About Us</a>
+        <a href="/#/aboutUs">About Us</a>
         <span>|</span>
-        <a href="/contactUs">Contact Us</a>
+        <a href="/#/contactUs">Contact Us</a>
       </div>
       <div className="copyRightAndSocialLinks">
         <p>Copyright &copy; 2020 Artheist.in. All rights reserved.</p>

@@ -51,18 +51,16 @@ const MobileNavbar = ({auth, logout, history}) => {
                   className="navLink"
                   style={{color: "inherit"}}
                 >
-                  <i className="fas fa-user"></i>{" "}
-                  Hi, {auth.user.firstName}
+                  <i className="fas fa-user"></i> Hi, {auth.user.firstName}
                 </Link>
               </span>
-              
             </div>
           ) : (
             <div className="MobileNavBtnContainer">
-              <a href="/mobileSignUpPage" className="signupBtn">
+              <a href="/#/mobileSignUpPage" className="signupBtn">
                 Sign Up
               </a>
-              <a href="/mobileSignUpPage" className="loginBTN">
+              <a href="/#/mobileSignUpPage" className="loginBTN">
                 Log In
               </a>
             </div>
@@ -74,37 +72,36 @@ const MobileNavbar = ({auth, logout, history}) => {
           </p>
           <p>
             {/* <Link to="/contest"> */}
-              <a href="/contest" alt="navlinks">
-                Contest
-              </a>
+            <a href="/#/contest" alt="navlinks">
+              Contest
+            </a>
             {/* </Link> */}
           </p>
           <p>
-            <a href="/createContest" alt="navlinks">
+            <a href="/#/createContest" alt="navlinks">
               Create Contest
             </a>
           </p>
           <p>
-            <a href="/aboutUs" alt="navlinks">
+            <a href="/#/aboutUs" alt="navlinks">
               About Us
             </a>
           </p>
           <p>
-            <a href="/contactUs" alt="navlinks">
+            <a href="/#/contactUs" alt="navlinks">
               Contact Us
             </a>
           </p>
-          { auth.isAuthenticated ? (
-                <button
-                className="logOutBtn"
-                onClick={() => {
-                  logout(history);
-                }}
-              >
-                Logout
-          </button>
-          ) : null }
-          
+          {auth.isAuthenticated ? (
+            <button
+              className="logOutBtn"
+              onClick={() => {
+                logout(history);
+              }}
+            >
+              Logout
+            </button>
+          ) : null}
         </div>
       </div>
     </div>
