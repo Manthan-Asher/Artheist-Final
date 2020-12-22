@@ -21,9 +21,25 @@ const UserFeed = ({posts}) => {
   return posts.length > 0 ? (
     <div className="user-feed">
       {posts.map((post) => {
+
+        const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
+        
+        let file;
+        if (ext === "jpg" || "png" || "jfif") {
+          file = "img";
+        } if(ext === "mp4") {
+          file = "video";
+        }
+
+        console.log(ext, file)
         return (
           <a href={`/#/posts/${post._id}`} className="post">
-            <img key={post._id} src={post.URL} alt="" className="postMedia" />
+        
+            {file === "img" ? (
+              <img key={post._id} src={post.URL} alt="" className="postMedia" />
+            ) : (
+              <video key={post._id} src={post.URL} className="postMedia"></video>
+            )}
           </a>
         );
       })}
@@ -76,7 +92,9 @@ const AboutUs = ({
       </div>
 
       {/* EDIT PROFILE BUTTON */}
-      <button className="editProfileBtn">Edit Profile</button>
+      <a href="/#/profileChange">
+        <button className="editProfileBtn">Edit Profile</button>
+      </a>
     </Container>
   );
 };
