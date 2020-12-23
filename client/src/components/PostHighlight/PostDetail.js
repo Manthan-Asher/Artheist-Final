@@ -7,7 +7,6 @@ import PostShareBtnsContainer from "../PostShareBtnsContainer/PostShareBtnsConta
 const PostDetail = ({post, likePost, loggedUser}) => {
   const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
   var file;
-  console.log(ext);
   if (ext === "jpg" || "png" || "jfif") {
     file = "img";
   }

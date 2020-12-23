@@ -20,13 +20,11 @@ export default function ImgMediaCard() {
 
   const stopMovie = (e) => {
     e.target.pause();
-    console.log('off');
-  }
-  
+  };
+
   const playMovie = (e) => {
     e.target.play();
-    console.log('on');
-  }
+  };
 
   return (
     <Card className={classes.root}>
