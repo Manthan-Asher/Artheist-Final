@@ -92,7 +92,7 @@ const AboutUs = ({
       </div>
 
       {/* EDIT PROFILE BUTTON */}
-      <a href="/#/profileChange">
+      <a href="/#/profileChange" className="editProfileLink">
         <button className="editProfileBtn">Edit Profile</button>
       </a>
     </Container>

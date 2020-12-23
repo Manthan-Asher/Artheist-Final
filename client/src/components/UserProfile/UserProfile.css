@@ -160,6 +160,11 @@
   padding: 20px 0;
 }
 
+.editProfileLink:hover {
+  text-decoration: none;
+}
+
+
 .editProfileBtn {
   display: block;
   /* width: auto; */

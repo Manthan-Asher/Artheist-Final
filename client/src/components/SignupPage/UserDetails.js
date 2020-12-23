@@ -3,6 +3,8 @@ import {Form, Button, Input, Select, Radio, TextArea} from "semantic-ui-react";
 import {connect} from "react-redux";
 import {updateProfile} from "../../actions/profile";
 import {withRouter} from "react-router-dom";
+import "./SignUpPage.scss"
+
 
 const genderOptions = [
   {key: "m", label: "Male", value: "male"},
@@ -20,6 +22,7 @@ const About = (props) => {
     <React.Fragment>
       <div
         style={{
+          marginTop: "108px",
           height: "80vh",
           display: "flex",
           alignItems: "center",
@@ -59,6 +62,7 @@ const About = (props) => {
               <Form.Field
                 control={Radio}
                 name="gender"
+                className="gender"
                 label={opt.label}
                 value={opt.value}
                 key={opt.key}

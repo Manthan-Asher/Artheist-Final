@@ -2,6 +2,7 @@ import React from "react";
 import {Image} from "semantic-ui-react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import "./SignUpPage.scss"
 
 import {addAvatar} from "../../actions/profile";
 
@@ -23,16 +24,16 @@ const ImageGetter = ({userData, addAvatar}) => {
 
   return (
     <div
-      className="ui container"
+      className=" editImgContainer"
       style={{
-        height: "80vh",
-        marginTop: "5vh",
+        marginTop: "138px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-evenly",
         flexDirection: "column",
       }}
     >
+      <h2>Edit Profile Photo</h2>
       <div
         className="image"
         style={{display: "flex", justifyContent: "center"}}
@@ -43,7 +44,7 @@ const ImageGetter = ({userData, addAvatar}) => {
           height="200px"
           width="100px"
         /> */}
-        <Image src={source} circular height="300px" width="300px" bordered />
+        <Image src={source} circular height="200px" width="200px" bordered />
       </div>
       <form
         className="ui big form"
@@ -51,7 +52,8 @@ const ImageGetter = ({userData, addAvatar}) => {
         onSubmit={handleSubmit}
       >
         <div className="field">
-          <label>Profile Image</label>
+          <label>Browse Image</label>
+          <br />
           <input type="file" id="profile-image" name="avatar" />
         </div>
         <div
