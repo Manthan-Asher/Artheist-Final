@@ -10,7 +10,7 @@ const PostHighlight = (props) => {
   useEffect(() => {
     props.getPostById(props.match.params.id);
     props.getPostsForDisplay();
-  }, [props.posts.likes, props.match.params.id]);
+  }, [props.postFetched, props.match.params.id]);
 
   if (!props.postFetched || !props.posts) {
     return <ArtheistLoader />;

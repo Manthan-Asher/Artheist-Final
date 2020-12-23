@@ -36,7 +36,6 @@ export default (state = INITIAL_STATE, action) => {
     case LIKE_POST:
       return {
         ...state,
-        post: null,
         posts: state.posts.map((post1) =>
           post1._id === payload.postId
             ? {...post1, likes: payload.likes}

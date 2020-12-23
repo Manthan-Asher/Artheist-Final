@@ -7,7 +7,8 @@ const PostItem = ({post}) => {
   let file;
   if (ext === "jpg" || "png" || "jfif") {
     file = "img";
-  } else {
+  }
+  if (ext === "mp4") {
     file = "video";
   }
   return (

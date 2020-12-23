@@ -1,6 +1,6 @@
 import React from "react";
 import "./UserProfile.css";
-//import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {Paper, Tab, Tabs} from "@material-ui/core";
 import {Container} from "semantic-ui-react";
 import {makeStyles} from "@material-ui/core";
@@ -21,26 +21,27 @@ const UserFeed = ({posts}) => {
   return posts.length > 0 ? (
     <div className="user-feed">
       {posts.map((post) => {
-
         const ext = post.URL.substr(post.URL.lastIndexOf(".") + 1);
-        
+
         let file;
         if (ext === "jpg" || "png" || "jfif") {
           file = "img";
-        } if(ext === "mp4") {
+        }
+        if (ext === "mp4") {
           file = "video";
         }
-
-        console.log(ext, file)
         return (
-          <a href={`/#/posts/${post._id}`} className="post">
-        
+          <Link to={`/posts/${post._id}`} className="post">
             {file === "img" ? (
               <img key={post._id} src={post.URL} alt="" className="postMedia" />
             ) : (
-              <video key={post._id} src={post.URL} className="postMedia"></video>
+              <video
+                key={post._id}
+                src={post.URL}
+                className="postMedia"
+              ></video>
             )}
-          </a>
+          </Link>
         );
       })}
     </div>
@@ -136,7 +137,6 @@ const UserProfile = ({
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    console.log(newValue);
   };
   if (!user || !contestsByUser || !postsByUser) {
     return <ArtheistLoader />;
@@ -148,11 +148,7 @@ const UserProfile = ({
           {/* <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/cover.jpg" alt="" className="cover-photo" /> */}
 
           <div className="user-avatar">
-            <img
-              src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/default-avatar.jpg"
-              alt=""
-              className="user-avatar-photo"
-            />
+            <img src={user.profile_pic} alt="" className="user-avatar-photo" />
           </div>
         </div>
 
