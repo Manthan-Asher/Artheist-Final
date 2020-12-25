@@ -3,7 +3,7 @@ import "./AboutUs.css";
 import FullScrVideo from "../FullScrVideo/FullScrVideo";
 import OurTeam from "../OurTeam/OurTeam";
 import {Link, animateScroll as scroll} from "react-scroll";
-import integrityBg from "../../integritybg.png";
+//import integrityBg from "../../integritybg.png";
 
 //import $ from "jquery";
 
@@ -74,7 +74,7 @@ const AboutUs = () => {
       <div className="ourIntegrity">
         <h1> Our Integrity </h1>
         <div className="ourIntegrityImgMob">
-          <img src={integrityBg} alt="logo" />
+          <img src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/integritybg.png" alt="logo" />
         </div>
         <div className="ourIntegrityContent">
           <p>
