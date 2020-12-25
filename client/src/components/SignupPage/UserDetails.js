@@ -7,8 +7,8 @@ import "./SignUpPage.scss"
 
 
 const genderOptions = [
-  {key: "m", label: "Male", value: "male"},
-  {key: "f", label: "Female", value: "female"},
+  {key: "m", label: "Male", value: "Male"},
+  {key: "f", label: "Female", value: "Female"},
 ];
 
 const About = (props) => {
@@ -29,9 +29,9 @@ const About = (props) => {
           justifyContent: "space-around",
         }}
       >
-        <div style={{width: "40vw"}}>
+        <div style={{width: "50vw"}} className="editFormContainer">
           <h1 className="ui centered">User Details</h1>
-
+          <br />
           <Form.Field
             control={Input}
             label="Username"

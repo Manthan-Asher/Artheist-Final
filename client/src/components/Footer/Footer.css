@@ -4,6 +4,10 @@
     font-size: large;
     color: white;
     background-color: #000;
+    /* position: sticky;
+    left: 0;
+    right: 0;
+    bottom: 0; */
 }
 
 .footerNavLinks {

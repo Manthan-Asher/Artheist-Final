@@ -1,12 +1,19 @@
+.editImgContainerBg {
+    height: calc(100vh - 78px);
+    margin-top: 78px;
+    padding-top: 40px;
+}
+
 .editImgContainer {
     max-width: 500px !important;
-    height: auto;
+    height: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     background-color: #efefef;
     border: 3px solid #333;
     border-radius: 20px;
+    
 }
 
 .editImgContainer > h2 {
@@ -15,4 +22,16 @@
 
 .gender > div > label{
     margin-top: 15px !important;
+}
+
+@media screen and (max-width: 650px) {
+    .editFormContainer {
+        width: 90vw !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .editImgContainer {
+        width: 90%;
+    }
 }

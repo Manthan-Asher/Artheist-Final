@@ -23,10 +23,11 @@ const ImageGetter = ({userData, addAvatar}) => {
   }
 
   return (
+    <div className="editImgContainerBg">
     <div
       className=" editImgContainer"
       style={{
-        marginTop: "138px",
+        
         display: "flex",
         alignItems: "center",
         justifyContent: "space-evenly",
@@ -75,6 +76,7 @@ const ImageGetter = ({userData, addAvatar}) => {
           </div>
         </div>
       </form>
+    </div>
     </div>
   );
 };

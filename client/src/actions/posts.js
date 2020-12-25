@@ -44,7 +44,7 @@ const getPostById = (id) => async (dispatch) => {
 
 const getPostsForDisplay = () => async (dispatch) => {
   try {
-    const res = await axios.get("/posts?limit=5");
+    const res = await axios.get("/posts?limit=4");
     dispatch({type: FETCH_POSTS, payload: res.data});
   } catch (error) {
     dispatch({type: FETCH_POSTS_ERROR, payload: error.message});

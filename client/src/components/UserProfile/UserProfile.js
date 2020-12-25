@@ -71,7 +71,10 @@ const AboutUs = ({
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
+        backgroundColor: "white",
+        borderRadius: "10px"
       }}
+      className="user-info-box"
     >
       <div
         style={{
@@ -82,14 +85,14 @@ const AboutUs = ({
         }}
         className="info-container"
       >
-        <p>First Name : {firstName}</p>
-        <p>Last Name : {lastName}</p>
-        <p>Username : {site_name}</p>
-        <p>Email : {username} </p>
-        <p>Phone Number : {mobile_number} </p>
-        <p>Date of Birth : {dob} </p>
-        <p>Gender : {gender} </p>
-        <p>Age : {age}</p>
+        <p><span>First Name : </span> {firstName}</p>
+        <p><span>Last Name : </span> {lastName}</p>
+        <p><span>Username : </span> {site_name}</p>
+        <p><span>Email : </span> {username} </p>
+        <p><span>Phone Number : </span> {mobile_number} </p>
+        <p><span>Date of Birth : </span> {dob} </p>
+        <p><span>Gender : </span> {gender} </p>
+        <p><span>Age : </span> {age}</p>
       </div>
 
       {/* EDIT PROFILE BUTTON */}
