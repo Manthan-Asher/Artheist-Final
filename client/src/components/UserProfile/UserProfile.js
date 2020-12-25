@@ -10,6 +10,8 @@ import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
 import ProfileContest from "./ProfileContests/ProfileContests";
 import {getContestsByUser} from "../../actions/contests";
 import {getPostsByUser} from "../../actions/posts";
+import {getProfile} from "../../actions/profile";
+import Moment from "react-moment";
 
 const useStyles = makeStyles({
   root: {
@@ -72,7 +74,7 @@ const AboutUs = ({
         justifyContent: "center",
         flexDirection: "column",
         backgroundColor: "white",
-        borderRadius: "10px"
+        borderRadius: "10px",
       }}
       className="user-info-box"
     >
@@ -85,14 +87,31 @@ const AboutUs = ({
         }}
         className="info-container"
       >
-        <p><span>First Name : </span> {firstName}</p>
-        <p><span>Last Name : </span> {lastName}</p>
-        <p><span>Username : </span> {site_name}</p>
-        <p><span>Email : </span> {username} </p>
-        <p><span>Phone Number : </span> {mobile_number} </p>
-        <p><span>Date of Birth : </span> {dob} </p>
-        <p><span>Gender : </span> {gender} </p>
-        <p><span>Age : </span> {age}</p>
+        <p>
+          <span>First Name : </span> {firstName}
+        </p>
+        <p>
+          <span>Last Name : </span> {lastName}
+        </p>
+        <p>
+          <span>Username : </span> {site_name}
+        </p>
+        <p>
+          <span>Email : </span> {username}{" "}
+        </p>
+        <p>
+          <span>Phone Number : </span> {mobile_number}{" "}
+        </p>
+        <p>
+          <span>Date of Birth : </span>{" "}
+          <Moment format="DD/MM/YYYY">{dob}</Moment>{" "}
+        </p>
+        <p>
+          <span>Gender : </span> {gender}{" "}
+        </p>
+        <p>
+          <span>Age : </span> {age}
+        </p>
       </div>
 
       {/* EDIT PROFILE BUTTON */}
@@ -127,6 +146,8 @@ const UserProfile = ({
   user,
   getContestsByUser,
   contestsByUser,
+  profile,
+  getProfile,
   getPostsByUser,
   postsByUser,
 }) => {
@@ -136,6 +157,7 @@ const UserProfile = ({
   useEffect(() => {
     getContestsByUser();
     getPostsByUser();
+    getProfile();
   }, []);
 
   const handleChange = (event, newValue) => {
@@ -185,7 +207,7 @@ const UserProfile = ({
               case 0:
                 return <UserFeed posts={postsByUser} />;
               case 1:
-                return <AboutUs info={user} />;
+                return <AboutUs info={profile} />;
               case 2:
                 return <ContestsParticipated contests={contestsByUser} />;
               default:
@@ -202,8 +224,11 @@ const mapStateToProps = (state) => ({
   user: state.auth.user,
   contestsByUser: state.contests.contests,
   postsByUser: state.posts.posts,
+  profile: state.profile.response,
 });
 
-export default connect(mapStateToProps, {getContestsByUser, getPostsByUser})(
-  UserProfile
-);
+export default connect(mapStateToProps, {
+  getContestsByUser,
+  getPostsByUser,
+  getProfile,
+})(UserProfile);

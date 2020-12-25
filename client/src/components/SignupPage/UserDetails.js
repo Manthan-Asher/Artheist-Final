@@ -3,8 +3,8 @@ import {Form, Button, Input, Select, Radio, TextArea} from "semantic-ui-react";
 import {connect} from "react-redux";
 import {updateProfile} from "../../actions/profile";
 import {withRouter} from "react-router-dom";
-import "./SignUpPage.scss"
-
+// import Moment from "react-moment";
+import "./SignUpPage.scss";
 
 const genderOptions = [
   {key: "m", label: "Male", value: "Male"},
