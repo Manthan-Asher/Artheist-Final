@@ -2,7 +2,7 @@ import React from 'react';
 import { Carousel } from "react-bootstrap";
 import "./MobCarousel.css";
 import { Link } from "react-router-dom";
-import poster from "../../posterbg.png";
+//import poster from "../../posterbg.png";
 
 const MobileCarousel = () => {
     return ( 
@@ -11,7 +11,7 @@ const MobileCarousel = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src={poster}
+                    src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/posterbg.png"
                     alt="First slide"
                     />
                     <div>
@@ -24,7 +24,7 @@ const MobileCarousel = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src={poster}
+                    src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/posterbg.png"
                     alt="Third slide"
                     />
                     <div>
@@ -37,7 +37,7 @@ const MobileCarousel = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src={poster}
+                    src="https://node-sdk-sample-a4f56167-eded-4451-b5e3-2c4a36341013.s3.amazonaws.com/assets/posterbg.png"
                     alt="Third slide"
                     />
                     <div>
