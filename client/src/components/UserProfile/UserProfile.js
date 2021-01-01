@@ -223,7 +223,7 @@ const UserProfile = ({
 const mapStateToProps = (state) => ({
   user: state.auth.user,
   contestsByUser: state.contests.contests,
-  postsByUser: state.posts.posts,
+  postsByUser: state.posts.postsByUser,
   profile: state.profile.response,
 });
 

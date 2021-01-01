@@ -2,6 +2,7 @@ import {
   POST_UPLOADED,
   POST_UPLOAD_ERROR,
   FETCH_POSTS,
+  FETCH_POSTS_BY_USER,
   FETCH_POSTS_ERROR,
   FETCH_POST,
   LIKE_POST,
@@ -55,6 +56,8 @@ const likePost = (postId) => async (dispatch) => {
   try {
     const res = await axios.post(`/posts/like/${postId}`);
     dispatch({type: LIKE_POST, payload: {postId, likes: res.data}});
+    const res2 = await axios.get(`/posts/${postId}`);
+    dispatch({type: FETCH_POST, payload: res2.data});
   } catch (error) {
     dispatch({type: POST_ERROR, payload: error.response.data});
     AlertToast(error.response.data, "error");
@@ -67,7 +70,7 @@ const getPostsByUser = () => async (dispatch) => {
     if (res.data === "You haven't uploaded any Posts") {
       return dispatch({type: FETCH_POSTS_ERROR, payload: res.data});
     }
-    dispatch({type: FETCH_POSTS, payload: res.data});
+    dispatch({type: FETCH_POSTS_BY_USER, payload: res.data});
   } catch (error) {
     dispatch({type: FETCH_POSTS_ERROR, payload: "Failed to load contest"});
   }

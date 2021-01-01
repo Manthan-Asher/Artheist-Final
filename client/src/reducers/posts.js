@@ -2,6 +2,7 @@ import {
   POST_UPLOADED,
   POST_UPLOAD_ERROR,
   FETCH_POSTS,
+  FETCH_POSTS_BY_USER,
   FETCH_POSTS_ERROR,
   FETCH_POST,
   LIKE_POST,
@@ -10,6 +11,7 @@ import {
 
 const INITIAL_STATE = {
   posts: [],
+  postsByUser: [],
   post: null,
   error: null,
 };
@@ -25,13 +27,20 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_POSTS:
       return {
         ...state,
+        postsByUser: [],
         posts: payload,
+      };
+    case FETCH_POSTS_BY_USER:
+      return {
+        error: null,
+        post: null,
+        posts: [],
+        postsByUser: payload,
       };
     case FETCH_POST:
       return {
         ...state,
         post: payload,
-        postsByUser: [],
       };
     case LIKE_POST:
       return {
@@ -52,6 +61,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         postsByUser: [],
+        posts: [],
         post: null,
         error: payload,
       };

@@ -10,7 +10,11 @@ const PostHighlight = (props) => {
   useEffect(() => {
     props.getPostById(props.match.params.id);
     props.getPostsForDisplay();
-  }, [props.postFetched, props.match.params.id]);
+  }, [props.match.params.id]);
+
+  useEffect(() => {
+    props.getPostById(props.match.params.id);
+  }, []);
 
   if (!props.postFetched || !props.posts) {
     return <ArtheistLoader />;
@@ -40,6 +44,7 @@ const mapStateToProps = (state) => ({
   posts: state.posts.posts,
 });
 
-export default connect(mapStateToProps, {getPostById, getPostsForDisplay})(
-  PostHighlight
-);
+export default connect(mapStateToProps, {
+  getPostById,
+  getPostsForDisplay,
+})(PostHighlight);

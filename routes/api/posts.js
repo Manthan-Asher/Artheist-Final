@@ -42,11 +42,9 @@ router.post("/", requireLogin, uploadPost.single("post"), async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const posts = await Post.find({})
-      .limit(parseInt(req.query.limit))
-      .populate("participant")
-      .populate("contest")
-      .exec();
+    const posts = await Post.aggregate([
+      {$sample: {size: parseInt(req.query.limit)}},
+    ]).exec();
 
     if (posts.length === 0) {
       return res.status(404).send("No posts yet");
@@ -55,6 +53,7 @@ router.get("/", async (req, res) => {
     res.send(posts);
   } catch (error) {
     res.status(500).send("Server Error");
+    console.log(error);
   }
 });
 
@@ -92,6 +91,7 @@ router.get("/:id", async (req, res) => {
     res.send(post);
   } catch (error) {
     res.status(500).send("Server Error");
+    console.log(error);
   }
 });
 

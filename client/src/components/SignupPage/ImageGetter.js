@@ -1,16 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Image} from "semantic-ui-react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import "./SignUpPage.scss"
+import "./SignUpPage.scss";
 
-import {addAvatar} from "../../actions/profile";
+import {addAvatar, getProfile} from "../../actions/profile";
+import ArtheistLoader from "../ArtheistLoader/ArtheistLoader";
 
-const ImageGetter = ({userData, addAvatar}) => {
+const ImageGetter = ({userData, addAvatar, getProfile}) => {
+  useEffect(() => {
+    getProfile();
+  }, [addAvatar]);
+
   if (!userData) {
-    return <div>Loading...</div>;
+    return <ArtheistLoader />;
   }
 
+  console.log(userData);
   const source = userData.avatar
     ? `/profile/${userData._id}/avatar`
     : userData.profile_pic;
@@ -24,65 +30,64 @@ const ImageGetter = ({userData, addAvatar}) => {
 
   return (
     <div className="editImgContainerBg">
-    <div
-      className=" editImgContainer"
-      style={{
-        
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-evenly",
-        flexDirection: "column",
-      }}
-    >
-      <h2>Edit Profile Photo</h2>
       <div
-        className="image"
-        style={{display: "flex", justifyContent: "center"}}
+        className=" editImgContainer"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          flexDirection: "column",
+        }}
       >
-        {/* <image
+        <h2>Edit Profile Photo</h2>
+        <div
+          className="image"
+          style={{display: "flex", justifyContent: "center"}}
+        >
+          {/* <image
           className="ui image rounded"
           src={require("../../assets/default-avatar.jpg")}
           height="200px"
           width="100px"
         /> */}
-        <Image src={source} circular height="200px" width="200px" bordered />
-      </div>
-      <form
-        className="ui big form"
-        encType="mutipart/form-data"
-        onSubmit={handleSubmit}
-      >
-        <div className="field">
-          <label>Browse Image</label>
-          <br />
-          <input type="file" id="profile-image" name="avatar" />
+          <Image src={source} circular height="200px" width="200px" bordered />
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "space-between",
-            justifyContent: "space-evenly",
-          }}
+        <form
+          className="ui big form"
+          encType="mutipart/form-data"
+          onSubmit={handleSubmit}
         >
-          <div>
-            <button type="submit" className="ui big blue button">
-              Change
-            </button>
+          <div className="field">
+            <label>Browse Image</label>
+            <br />
+            <input type="file" id="profile-image" name="avatar" />
           </div>
-          <div>
-            <Link to="/additionalDetails" className="ui big blue button">
-              Next
-            </Link>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "space-between",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <div>
+              <button type="submit" className="ui big blue button">
+                Change
+              </button>
+            </div>
+            <div>
+              <Link to="/additionalDetails" className="ui big blue button">
+                Next
+              </Link>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  userData: state.auth.user,
+  userData: state.profile.response,
 });
 
-export default connect(mapStateToProps, {addAvatar})(ImageGetter);
+export default connect(mapStateToProps, {addAvatar, getProfile})(ImageGetter);
