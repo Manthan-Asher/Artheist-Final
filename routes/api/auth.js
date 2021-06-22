@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-
+var prevURL;
 //@route   GET /auth/google
 //@desc   Login with google
 //@access  Public
@@ -16,11 +16,8 @@ router.get(
 //@access  Public
 
 router.get("/google/contests", passport.authenticate("google"), (req, res) => {
-  if (req.user.isNew) {
-    res.redirect("/");
-  } else {
-    res.redirect("/");
-  }
+  console.log(prevURL);
+  res.redirect("/" + prevURL);
 });
 
 //@route   GET /auth/facebook
@@ -52,6 +49,7 @@ router.get(
 //@access  Public
 
 router.get("/current_user", (req, res) => {
+  prevURL = req.query.prevURL;
   res.send(req.user);
 });
 

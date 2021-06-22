@@ -30,7 +30,7 @@ library.add(faFilter, faFile, faSearch);
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.authLogin();
+    this.props.authLogin(window.location.hash);
   }
   render() {
     return (

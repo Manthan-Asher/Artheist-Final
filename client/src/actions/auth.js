@@ -31,7 +31,7 @@ export const register = (user, history) => async (dispatch) => {
       });
       AlertToast(res.data.message, "error");
     } else {
-      history.push("/additionalDetails");
+      // history.goBack();
       AlertToast("Wohoo! You have Signed Up successfully", "success");
       return dispatch({type: REGISTER_SUCCESS, payload: res.data});
     }
@@ -56,16 +56,16 @@ export const login = (user, history) => async (dispatch) => {
 
     dispatch({type: LOGIN_SUCCESS, payload: res.data});
     AlertToast("You are now logged in !", "success");
-    history.push("/contest");
+    // history.goBack();
   } catch (error) {
     dispatch({type: LOGIN_FAIL, payload: "Invalid Credentials"});
     AlertToast("Failed to login :(", "error");
   }
 };
 
-export const authLogin = () => async (dispatch) => {
+export const authLogin = (prevURL) => async (dispatch) => {
   try {
-    const res = await axios.get("/auth/current_user");
+    const res = await axios.get(`/auth/current_user?prevURL=${prevURL}`);
 
     if (res.data === "") {
       return dispatch({

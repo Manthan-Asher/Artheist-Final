@@ -52,7 +52,6 @@ const Login = ({openButton, handleClose, login, history}) => {
     email: "",
     password: "",
   });
-
   const {email, password} = input;
 
   const handleChange = (e) => {
@@ -85,7 +84,7 @@ const Login = ({openButton, handleClose, login, history}) => {
         <DialogActions className="icon-button">
           <div className="google-btn-container">
             <a
-              href="/auth/google"
+              href={`/auth/google`}
               style={{textDecoration: "none", color: "inherit"}}
             >
               <div className="google-btn">

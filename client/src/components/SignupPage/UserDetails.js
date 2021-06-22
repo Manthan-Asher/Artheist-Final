@@ -12,6 +12,7 @@ const genderOptions = [
 ];
 
 const About = (props) => {
+  console.log(props);
   const {username, phoneNumber, gender, age, dob, about} = props.values;
 
   let ageOptions = [];
